@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | SARG Research Biolabs</title>
+    <meta name="description"
+        content="Explore research areas at SARG Research Biolabs - Multidisciplinary research in Life Sciences, Biotechnology, Environmental Sciences, and interdisciplinary domains.">
+    <link rel="icon" href="images/logo1.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #0a5c36 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        img {
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========================================
+           PAGE HEADER / HERO BANNER
+           ======================================== */
+        .page-header {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.6) 0%, rgba(26, 26, 46, 0.95) 100%);
+            z-index: -2;
+        }
+
+        .page-header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-header-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header-content .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--accent);
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page-header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           SECTION STYLES
+           ======================================== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========================================
+           RESEARCH INTRO SECTION
+           ======================================== */
+        .research-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .research-intro-content .section-badge {
+            margin-bottom: 1rem;
+        }
+
+        .research-intro-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .research-intro-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .research-intro-image {
+            position: relative;
+        }
+
+        .research-intro-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .research-intro-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .research-intro-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: var(--gradient-accent);
+            border-radius: 24px;
+            z-index: -2;
+            opacity: 0.3;
+        }
+
+        .research-stats-badge {
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .research-stats-badge h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .research-stats-badge p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        /* ========================================
+           RESEARCH FOCUS AREAS
+           ======================================== */
+        .research-focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .research-focus-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-focus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .research-focus-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .research-focus-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .research-focus-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .research-focus-card:hover .research-focus-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .research-focus-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .research-focus-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .research-focus-card ul {
+            margin-top: 1rem;
+        }
+
+        .research-focus-card ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .research-focus-card ul li i {
+            color: var(--accent);
+            margin-top: 0.25rem;
+            font-size: 0.75rem;
+        }
+
+        /* ========================================
+           TRAINING & SKILL DEVELOPMENT
+           ======================================== */
+        .training-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .training-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .training-content>p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .training-programs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .training-program-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .training-program-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .training-program-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .training-program-item span {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .training-image {
+            position: relative;
+        }
+
+        .training-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .training-badge {
+            position: absolute;
+            bottom: -20px;
+            right: 30px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .training-badge i {
+            margin-right: 0.5rem;
+        }
+
+        /* ========================================
+           COLLABORATION SECTION
+           ======================================== */
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .collaboration-image {
+            position: relative;
+        }
+
+        .collaboration-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .collaboration-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .collaboration-content>p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .collaboration-initiatives {
+            margin-top: 2rem;
+        }
+
+        .collaboration-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .collaboration-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+
+        .collaboration-item-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .collaboration-item-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .collaboration-item-content p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           SCIENTIFIC TESTING SECTION
+           ======================================== */
+        .testing-section {
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.05) 0%, rgba(26, 115, 232, 0.05) 100%);
+        }
+
+        .testing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .testing-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .testing-content>p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testing-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .testing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .testing-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .testing-feature h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .testing-feature p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .testing-image {
+            position: relative;
+        }
+
+        .testing-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .testing-certification {
+            position: absolute;
+            top: 30px;
+            right: -20px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .testing-certification i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .testing-certification p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           WORKSHOPS SECTION
+           ======================================== */
+        .workshops-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .workshop-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workshop-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .workshop-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .workshop-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+        }
+
+        .workshop-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+
+        .workshop-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           RESEARCH EMPHASIS SECTION
+           ======================================== */
+        .emphasis-section {
+            background: var(--light);
+        }
+
+        .emphasis-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .emphasis-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .emphasis-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .emphasis-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .emphasis-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .emphasis-card:hover .emphasis-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .emphasis-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .emphasis-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: var(--gradient-primary);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .research-focus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .workshops-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .emphasis-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .research-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .research-intro-image {
+                order: -1;
+            }
+
+            .research-stats-badge {
+                left: 20px;
+                top: 20px;
+            }
+
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .training-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .collaboration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collaboration-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .testing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testing-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .testing-certification {
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 150px 0 80px;
+                min-height: 350px;
+            }
+
+
+
+            .page-header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .research-intro-content h2,
+            .training-content h2,
+            .collaboration-content h2,
+            .testing-content h2 {
+                font-size: 2rem;
+            }
+
+            .research-focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .training-programs {
+                grid-template-columns: 1fr;
+            }
+
+            .testing-features {
+                grid-template-columns: 1fr;
+            }
+
+            .workshops-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .emphasis-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-brand {
+                margin-left: 5px;
+                padding-right: 0;
+            }
+
+
+
+
+
+
+
+            .footer-column h4::after {
+                left: 5%;
+                transform: translateX(-50%);
+            }
+
+
+
+
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header-content h1 {
+                font-size: 2rem;
+            }
+
+            .research-focus-card {
+                padding: 1.5rem;
+            }
+
+            .workshop-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .emphasis-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .research-stats-badge {
+                position: relative;
+                left: auto;
+                top: auto;
+                margin-top: 1.5rem;
+                display: inline-block;
+            }
+
+            .research-intro-image::before,
+            .research-intro-image::after {
+                display: none;
+            }
+
+            .testing-certification {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin-top: 1.5rem;
+                display: inline-block;
+            }
+
+            .training-badge {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 1rem;
+                display: inline-block;
+            }
+
+            .collaboration-item {
+                flex-direction: column;
+                /* text-align: center; */
+            }
+            
+            .nav-item a{
+                padding-left: 20px;
+                padding-right: 20px;
+                border-radius: 5px;
+            }
+        }
+
+
+        .nav-link {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        /* .nav-link {
+            position: relative;
+            color: #aaa;
+            text-decoration: none;
+
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        } */
+
+        /* Active tab with light red background */
+        .nav-link.active {
+            color: #fff;
+            font-weight: 600;
+            background: rgba(255, 77, 109, 0.15);
+            /* light red */
+        }
+
+        /* Hover effect (optional) */
+        .nav-link:hover {
+            background: rgba(255, 77, 109, 0.08);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>about our organization</p>
+                            </div>
+                        </a>
+                        <a href="about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Research Laboratory">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-pattern"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Research</span>
+                </div>
+                <h1>Research & Training</h1>
+                <p>Advancing scientific knowledge through multidisciplinary research, hands-on training, and
+                    collaborative innovation in Life Sciences and Biotechnology.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Intro Section -->
+    <section class="section" id="research">
+        <div class="container">
+            <div class="research-intro">
+                <div class="research-intro-content">
+                    <div class="section-badge">
+                        <i class="fas fa-microscope"></i> Scientific Research
+                    </div>
+                    <h2>Multidisciplinary Research Excellence</h2>
+                    <p>
+                        We conduct and facilitate multidisciplinary research in <strong>Life Sciences, Biotechnology,
+                            Environmental Sciences</strong>, and interdisciplinary domains. Our research activities are
+                        designed to generate knowledge, support academic excellence, and contribute to evidence-based
+                        solutions.
+                    </p>
+                    <p>
+                        At SARG Research Biolabs, we emphasize <strong>ethical standards, methodological rigor, and
+                            publication-oriented outcomes</strong>. Our team of experienced researchers works alongside
+                        students and scholars to advance scientific understanding and practical applications.
+                    </p>
+                    <p>
+                        Through state-of-the-art facilities and collaborative partnerships, we provide an environment
+                        conducive to groundbreaking research and innovation.
+                    </p>
+                </div>
+                <div class="research-intro-image">
+                    <img src="https://media.istockphoto.com/id/624034258/photo/flask-in-scientist-hand-with-laboratory-background.jpg?s=612x612&w=0&k=20&c=7_ZB_rY1FZvXga5EvpvpbVzlLu7FlQJb1tS4OL7cV98="
+                        alt="Scientific Research">
+                    <div class="research-stats-badge">
+                        <h3>50+</h3>
+                        <p>Research Projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Focus Areas -->
+    <section class="section section-light" id="focus-areas">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-flask"></i> Research Focus
+                </div>
+                <h2 class="section-title">Our Research Focus Areas</h2>
+                <p class="section-subtitle">
+                    Our research activities span multiple disciplines, focusing on experimental, applied, and
+                    translational research with real-world impact.
+                </p>
+            </div>
+            <div class="research-focus-grid">
+                <div class="research-focus-card">
+                    <div class="research-focus-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Experimental & Applied Research</h3>
+                    <p>Conducting laboratory-based research with practical applications across various scientific
+                        domains.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Experimental laboratory research</li>
+                        <li><i class="fas fa-check"></i> Applied biological sciences</li>
+                        <li><i class="fas fa-check"></i> Translational research studies</li>
+                    </ul>
+                </div>
+                <div class="research-focus-card">
+                    <div class="research-focus-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Molecular & Microbiological Research</h3>
+                    <p>Advanced investigations in molecular biology and microbiology using cutting-edge techniques.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Molecular investigations</li>
+                        <li><i class="fas fa-check"></i> Microbiological studies</li>
+                        <li><i class="fas fa-check"></i> Genetic analysis</li>
+                    </ul>
+                </div>
+                <div class="research-focus-card">
+                    <div class="research-focus-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Research</h3>
+                    <p>Monitoring and sustainability studies addressing environmental challenges and conservation.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Environmental monitoring</li>
+                        <li><i class="fas fa-check"></i> Sustainability studies</li>
+                        <li><i class="fas fa-check"></i> Biodiversity research</li>
+                    </ul>
+                </div>
+                <div class="research-focus-card">
+                    <div class="research-focus-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Bioinformatics & Data Analysis</h3>
+                    <p>Data-driven biological analysis using computational tools and bioinformatics approaches.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Computational biology</li>
+                        <li><i class="fas fa-check"></i> Sequence analysis</li>
+                        <li><i class="fas fa-check"></i> Data-driven insights</li>
+                    </ul>
+                </div>
+                <div class="research-focus-card">
+                    <div class="research-focus-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3>Research Project Support</h3>
+                    <p>Comprehensive support for research project design, dissertation work, and academic guidance.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Project design</li>
+                        <li><i class="fas fa-check"></i> Dissertation support</li>
+                        <li><i class="fas fa-check"></i> Methodology consultation</li>
+                    </ul>
+                </div>
+                <div class="research-focus-card">
+                    <div class="research-focus-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Impact-Oriented Studies</h3>
+                    <p>Translational and impact-oriented scientific studies that address real-world challenges.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Translational research</li>
+                        <li><i class="fas fa-check"></i> Publication-oriented outcomes</li>
+                        <li><i class="fas fa-check"></i> Evidence-based solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training & Skill Development Section -->
+    <section class="section section-dark" id="training">
+        <div class="container">
+            <div class="training-grid">
+                <div class="training-content">
+                    <div class="section-badge">
+                        <i class="fas fa-graduation-cap"></i> Training & Development
+                    </div>
+                    <h2>Training & Skill Development</h2>
+                    <p>
+                        We provide hands-on, research-oriented training programs that bridge the gap between theoretical
+                        knowledge and practical laboratory skills. Our training is delivered through laboratory-based
+                        learning, workshops, hybrid modules, and guided mentorship.
+                    </p>
+                    <p>
+                        Our programs are designed to equip students, researchers, and professionals with the
+                        competencies needed for academic research, industry applications, and career advancement in the
+                        life sciences.
+                    </p>
+                    <div class="training-programs">
+                        <div class="training-program-item">
+                            <i class="fas fa-dna"></i>
+                            <span>Molecular Biology & Genetic Techniques</span>
+                        </div>
+                        <div class="training-program-item">
+                            <i class="fas fa-bacteria"></i>
+                            <span>Microbiology & Applied Sciences</span>
+                        </div>
+                        <div class="training-program-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Bioinformatics & Computational Analysis</span>
+                        </div>
+                        <div class="training-program-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Biostatistics & Data Interpretation</span>
+                        </div>
+                        <div class="training-program-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Environmental Research Techniques</span>
+                        </div>
+                        <div class="training-program-item">
+                            <i class="fas fa-flask"></i>
+                            <span>Good Laboratory Practices (GLP)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="training-image">
+                    <img src="images/laboratory.jpg" alt="Laboratory Training">
+                    <div class="training-badge">
+                        <i class="fas fa-certificate"></i> Certified Programs
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="section" id="collaboration">
+        <div class="container">
+            <div class="collaboration-grid">
+                <div class="collaboration-image">
+                    <img src="images/collaboration.avif" alt="Research Collaboration">
+                </div>
+                <div class="collaboration-content">
+                    <div class="section-badge">
+                        <i class="fas fa-handshake"></i> Academic Partnerships
+                    </div>
+                    <h2>Collaboration & Academic Partnerships</h2>
+                    <p>
+                        We actively collaborate with academic institutions, research laboratories, NGOs, and independent
+                        researchers to promote interdisciplinary innovation. Our goal is to build a strong, cooperative
+                        research ecosystem that fosters innovation and shared growth.
+                    </p>
+                    <div class="collaboration-initiatives">
+                        <div class="collaboration-item">
+                            <div class="collaboration-item-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="collaboration-item-content">
+                                <h4>Joint Research Projects</h4>
+                                <p>Collaborative research initiatives with partner institutions addressing complex
+                                    scientific challenges.</p>
+                            </div>
+                        </div>
+                        <div class="collaboration-item">
+                            <div class="collaboration-item-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="collaboration-item-content">
+                                <h4>Institutional Partnerships</h4>
+                                <p>Strategic partnerships with universities, research centers, and academic
+                                    organizations.</p>
+                            </div>
+                        </div>
+                        <div class="collaboration-item">
+                            <div class="collaboration-item-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="collaboration-item-content">
+                                <h4>Laboratory Access & Infrastructure</h4>
+                                <p>Shared laboratory facilities and research infrastructure for collaborative projects.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="collaboration-item">
+                            <div class="collaboration-item-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="collaboration-item-content">
+                                <h4>Co-supervised Dissertation Programs</h4>
+                                <p>Joint supervision of student dissertations with partner faculty and researchers.</p>
+                            </div>
+                        </div>
+                        <div class="collaboration-item">
+                            <div class="collaboration-item-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="collaboration-item-content">
+                                <h4>Research Networking & Knowledge Exchange</h4>
+                                <p>Platforms for researchers to connect, share knowledge, and explore collaborative
+                                    opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Testing Section -->
+    <section class="section testing-section" id="testing">
+        <div class="container">
+            <div class="testing-grid">
+                <div class="testing-content">
+                    <div class="section-badge">
+                        <i class="fas fa-vials"></i> Research Support
+                    </div>
+                    <h2>Scientific Testing & Research Support</h2>
+                    <p>
+                        Through advanced laboratory infrastructure and technical collaboration, we provide
+                        research-focused scientific testing and analytical support tailored for students and scholars.
+                    </p>
+                    <p>
+                        We assist in experimental execution, data validation, methodological consultation, and advanced
+                        analytical techniques across molecular, microbiological, environmental, and computational
+                        domains.
+                    </p>
+                    <p>
+                        Our approach integrates <strong>laboratory precision, quality assurance, and research
+                            consultation</strong> to ensure reliable and academically robust outcomes.
+                    </p>
+                    <div class="testing-features">
+                        <div class="testing-feature">
+                            <div class="testing-feature-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div>
+                                <h4>Experimental Execution</h4>
+                                <p>Hands-on support for laboratory experiments</p>
+                            </div>
+                        </div>
+                        <div class="testing-feature">
+                            <div class="testing-feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4>Data Validation</h4>
+                                <p>Rigorous verification of research data</p>
+                            </div>
+                        </div>
+                        <div class="testing-feature">
+                            <div class="testing-feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4>Methodology Consultation</h4>
+                                <p>Expert guidance on research methods</p>
+                            </div>
+                        </div>
+                        <div class="testing-feature">
+                            <div class="testing-feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <h4>Advanced Analytics</h4>
+                                <p>Sophisticated analytical techniques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testing-image">
+                    <img src="images/testing.avif" alt="Scientific Testing">
+                    <div class="testing-certification">
+                        <i class="fas fa-award"></i>
+                        <p>ISO 9001:2015<br>Certified Lab</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops Section -->
+    <section class="section section-dark" id="workshops">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-chalkboard-teacher"></i> Professional Development
+                </div>
+                <h2 class="section-title">Workshops & Professional Development</h2>
+                <p class="section-subtitle">
+                    We organize workshops, seminars, and academic enrichment programs that enhance research competence
+                    and career readiness.
+                </p>
+            </div>
+            <div class="workshops-grid">
+                <div class="workshop-card">
+                    <div class="workshop-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Research Foundation Courses</h3>
+                    <p>Foundational courses covering research methodology, experimental design, and scientific
+                        documentation for aspiring researchers.</p>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Laboratory Skill Enhancement</h3>
+                    <p>Hands-on programs to improve practical laboratory techniques, instrumentation handling, and
+                        experimental accuracy.</p>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Bioinformatics & Biostatistics Bootcamps</h3>
+                    <p>Intensive training in computational biology, data analysis, statistical tools, and software
+                        applications.</p>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Scientific Writing Workshops</h3>
+                    <p>Guidance on academic writing, thesis development, manuscript preparation, and publication
+                        strategies.</p>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Career Counseling Sessions</h3>
+                    <p>Personalized guidance on research career pathways, industry opportunities, and professional
+                        development.</p>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Research Orientation Programs</h3>
+                    <p>Introductory programs for students exploring research as a career option, including lab visits
+                        and mentorship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Emphasis Section -->
+    <section class="section emphasis-section">
+        <div class="container">
+            <div class="emphasis-content">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i> Our Emphasis
+                </div>
+                <h2 class="section-title">What Sets Us Apart</h2>
+                <p class="section-subtitle">
+                    At SARG Research Biolabs, we combine research excellence, practical training, collaboration, and
+                    scientific mentorship to build a future-ready research community.
+                </p>
+                <div class="emphasis-cards">
+                    <div class="emphasis-card">
+                        <div class="emphasis-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Ethical Standards</h3>
+                        <p>We maintain the highest ethical standards in all research activities, ensuring integrity,
+                            transparency, and responsible conduct.</p>
+                    </div>
+                    <div class="emphasis-card">
+                        <div class="emphasis-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Methodological Rigor</h3>
+                        <p>Our research follows rigorous methodological frameworks, ensuring validity, reliability, and
+                            reproducibility of results.</p>
+                    </div>
+                    <div class="emphasis-card">
+                        <div class="emphasis-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Publication-Oriented Outcomes</h3>
+                        <p>We focus on generating research outcomes suitable for peer-reviewed publication and academic
+                            recognition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Research Journey?</h2>
+                <p>
+                    Join SARG Research Biolabs and access world-class research facilities, expert mentorship, and
+                    collaborative opportunities.
+                </p>
+                <div class="cta-buttons">
+                    <a href="membership.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Become a Member
+                    </a>
+                    <a href="programs.html" class="btn btn-outline">
+                        <i class="fas fa-book-open"></i> Explore Programs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                        <!-- <div>
+                            <div class="logo-text">SARG Research</div>
+                            <div class="logo-sub">Biolabs</div>
+                        </div> -->
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="programs.html">Research Foundation</a></li>
+                        <li><a href="programs.html">Molecular Biology</a></li>
+                        <li><a href="programs.html">Microbiology</a></li>
+                        <li><a href="programs.html">Biostatistics</a></li>
+                        <li><a href="programs.html">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <!-- <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button> -->
+
+    <script src="js/navbar.js"></script>
+    <script>
+        // ========================================
+        // RESEARCH PAGE JAVASCRIPT
+        // ========================================
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // ========================================
+            // SCROLL TO TOP BUTTON
+            // ========================================
+            const scrollTopBtn = document.getElementById('scrollTop');
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 500) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // ========================================
+            // SMOOTH SCROLL FOR ANCHOR LINKS
+            // ========================================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const navbar = document.getElementById('navbar');
+                            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // ========================================
+            // SCROLL ANIMATIONS (INTERSECTION OBSERVER)
+            // ========================================
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Elements to animate
+            const animateElements = document.querySelectorAll(`
+        .research-focus-card, 
+        .workshop-card, 
+        .emphasis-card, 
+        .collaboration-item, 
+        .training-program-item, 
+        .testing-feature,
+        .research-intro-content,
+        .research-intro-image,
+        .training-content,
+        .training-image,
+        .collaboration-image,
+        .collaboration-content,
+        .testing-content,
+        .testing-image,
+        .section-header
+    `);
+
+            animateElements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                
+                observer.observe(el);
+            });
+
+            // ========================================
+            // STAGGERED ANIMATION FOR GRID ITEMS
+            // ========================================
+            const staggerContainers = document.querySelectorAll('.research-focus-grid, .workshops-grid, .emphasis-cards, .training-programs, .collaboration-initiatives');
+
+            staggerContainers.forEach(container => {
+                const items = container.children;
+                Array.from(items).forEach((item, index) => {
+                    item.style.transitionDelay = `${index * 0.1}s`;
+                });
+            });
+
+            // ========================================
+            // COUNTER ANIMATION FOR STATS
+            // ========================================
+            function animateCounter(element, target, duration = 2000) {
+                let start = 0;
+                const increment = target / (duration / 16);
+                const suffix = element.textContent.replace(/[0-9]/g, '');
+
+                const timer = setInterval(() => {
+                    start += increment;
+                    if (start >= target) {
+                        element.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(start) + suffix;
+                    }
+                }, 16);
+            }
+
+            // Observe stats badges for counter animation
+            const statsBadges = document.querySelectorAll('.research-stats-badge h3');
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.textContent);
+                        if (!isNaN(target)) {
+                            animateCounter(entry.target, target);
+                        }
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statsBadges.forEach(badge => {
+                statsObserver.observe(badge);
+            });
+
+            // ========================================
+            // PARALLAX EFFECT FOR PAGE HEADER
+            // ========================================
+            const pageHeader = document.querySelector('.page-header');
+            const pageHeaderBg = document.querySelector('.page-header-bg img');
+
+            if (pageHeader && pageHeaderBg) {
+                window.addEventListener('scroll', function () {
+                    const scrolled = window.scrollY;
+                    const headerHeight = pageHeader.offsetHeight;
+
+                    if (scrolled < headerHeight) {
+                        pageHeaderBg.style.transform = `translateY(${scrolled * 0.4}px)`;
+                    }
+                });
+            }
+
+            // ========================================
+            // HOVER EFFECTS FOR CARDS
+            // ========================================
+            const cards = document.querySelectorAll('.research-focus-card, .workshop-card, .emphasis-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-10px)';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // ========================================
+            // COLLABORATION ITEMS HOVER EFFECT
+            // ========================================
+            const collaborationItems = document.querySelectorAll('.collaboration-item');
+
+            collaborationItems.forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateX(10px)';
+                    this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateX(0)';
+                    this.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+                });
+            });
+
+            // ========================================
+            // TRAINING PROGRAM ITEMS ANIMATION
+            // ========================================
+            const trainingItems = document.querySelectorAll('.training-program-item');
+
+            trainingItems.forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateX(10px)';
+                    this.style.background = 'rgba(255, 255, 255, 0.15)';
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateX(0)';
+                    this.style.background = 'rgba(255, 255, 255, 0.05)';
+                });
+            });
+
+            // ========================================
+            // ICON ROTATION ON HOVER
+            // ========================================
+            const iconContainers = document.querySelectorAll('.research-focus-icon, .workshop-icon, .emphasis-icon');
+
+            iconContainers.forEach(container => {
+                const parentCard = container.closest('.research-focus-card, .workshop-card, .emphasis-card');
+
+                if (parentCard) {
+                    parentCard.addEventListener('mouseenter', function () {
+                        container.style.transform = 'scale(1.1) rotate(5deg)';
+                    });
+
+                    parentCard.addEventListener('mouseleave', function () {
+                        container.style.transform = 'scale(1) rotate(0deg)';
+                    });
+                }
+            });
+
+            // ========================================
+            // LAZY LOADING IMAGES
+            // ========================================
+            const lazyImages = document.querySelectorAll('img[data-src]');
+
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, { rootMargin: '50px' });
+
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+
+            window.addEventListener('scroll', highlightNavOnScroll);
+
+            // ========================================
+            // TYPING EFFECT FOR HEADER (Optional)
+            // ========================================
+            function typeWriter(element, text, speed = 50) {
+                let i = 0;
+                element.textContent = '';
+
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                }
+
+                type();
+            }
+
+            // ========================================
+            // BACK TO SECTION NAVIGATION
+            // ========================================
+            // Handle hash changes for direct section links
+            function scrollToHash() {
+                if (window.location.hash) {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) {
+                        setTimeout(() => {
+                            const navbar = document.getElementById('navbar');
+                            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }, 100);
+                    }
+                }
+            }
+
+            scrollToHash();
+            window.addEventListener('hashchange', scrollToHash);
+
+            // ========================================
+            // TOOLTIP INITIALIZATION (Optional)
+            // ========================================
+            const tooltipElements = document.querySelectorAll('[data-tooltip]');
+
+            tooltipElements.forEach(el => {
+                el.addEventListener('mouseenter', function (e) {
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'tooltip';
+                    tooltip.textContent = this.dataset.tooltip;
+                    document.body.appendChild(tooltip);
+
+                    const rect = this.getBoundingClientRect();
+                    tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
+                    tooltip.style.left = `${rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2)}px`;
+                });
+
+                el.addEventListener('mouseleave', function () {
+                    const tooltip = document.querySelector('.tooltip');
+                    if (tooltip) {
+                        tooltip.remove();
+                    }
+                });
+            });
+
+            // ========================================
+            // FORM VALIDATION (If forms exist)
+            // ========================================
+            const forms = document.querySelectorAll('form');
+
+            forms.forEach(form => {
+                form.addEventListener('submit', function (e) {
+                    let isValid = true;
+                    const requiredFields = form.querySelectorAll('[required]');
+
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.classList.add('error');
+                        } else {
+                            field.classList.remove('error');
+                        }
+                    });
+
+                    if (!isValid) {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            // ========================================
+            // KEYBOARD NAVIGATION SUPPORT
+            // ========================================
+            document.addEventListener('keydown', function (e) {
+                // Press 'Home' to scroll to top
+                if (e.key === 'Home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Press 'End' to scroll to bottom
+                if (e.key === 'End') {
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }
+
+                // Press 'Escape' to close modals/menus
+                if (e.key === 'Escape') {
+                    const mobileMenu = document.getElementById('navMenu');
+                    const menuOverlay = document.getElementById('menuOverlay');
+                    const mobileToggle = document.getElementById('mobileToggle');
+
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                        menuOverlay.classList.remove('active');
+                        mobileToggle.classList.remove('active');
+                    }
+                }
+            });
+
+            // ========================================
+            // CONSOLE LOG FOR DEVELOPMENT
+            // ========================================
+            console.log('Research page JavaScript loaded successfully!');
+            console.log('SARG Research Biolabs - Research & Training Page');
+
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/site-effects.js"></script>
+</body>
+
+</html>

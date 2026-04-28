@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced rDNA Technology & Animal Cell Culture Training | SARG Research Biolabs</title>
+    <meta name="description"
+        content="Advanced rDNA Technology & Animal Cell Culture training program at SARG Research Biolabs. 30-day intensive program covering cancer cell culture, molecular cloning, and advanced biotechnology techniques.">
+    <link rel="icon" href="../images/logo1.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #0a5c36 100%);
+            --gradient-advanced: linear-gradient(135deg, #e91e63 0%, #9c27b0 50%, #673ab7 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        img {
+            
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========================================
+           PAGE HEADER / HERO BANNER
+           ======================================== */
+        .page-header {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(38, 30, 33, 0.85) 0%, rgba(38, 28, 39, 0.85) 50%, rgba(47, 62, 47, 0.9) 100%);
+            z-index: -2;
+        }
+
+        .page-header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-header-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header-content .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: #ffeb3b;
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page-header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-header-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Advanced Badge */
+        .advanced-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .advanced-badge i {
+            color: #ffeb3b;
+        }
+
+        /* Module Tags */
+        .module-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .module-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .module-tag i {
+            font-size: 0.85rem;
+        }
+
+        /* ========================================
+           SECTION STYLES
+           ======================================== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(156, 39, 176, 0.1);
+            color: #9c27b0;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(233, 30, 99, 0.15);
+            color: #f48fb1;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========================================
+           PROGRAM OVERVIEW SECTION
+           ======================================== */
+        .program-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .program-overview-image {
+            position: relative;
+        }
+
+        .program-overview-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .program-overview-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #9c27b0;
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .program-badge i {
+            font-size: 2rem;
+            color: #9c27b0;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-badge h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .program-badge p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        .program-overview-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .program-overview-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .program-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(156, 39, 176, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9c27b0;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .highlight-item p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           TWO DISCIPLINES SECTION
+           ======================================== */
+        .disciplines-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .discipline-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discipline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+
+        .discipline-card.cell-culture::before {
+            background: linear-gradient(90deg, #e91e63, #f48fb1);
+        }
+
+        .discipline-card.rdna::before {
+            background: linear-gradient(90deg, #9c27b0, #ce93d8);
+        }
+
+        .discipline-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .discipline-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .discipline-card.cell-culture .discipline-icon {
+            background: linear-gradient(135deg, #e91e63, #f48fb1);
+        }
+
+        .discipline-card.rdna .discipline-icon {
+            background: linear-gradient(135deg, #9c27b0, #ce93d8);
+        }
+
+        .discipline-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .discipline-card > p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .discipline-topics {
+            margin-top: 1.5rem;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+
+        .topic-item i {
+            font-size: 0.85rem;
+        }
+
+        .discipline-card.cell-culture .topic-item i {
+            color: #e91e63;
+        }
+
+        .discipline-card.rdna .topic-item i {
+            color: #9c27b0;
+        }
+
+        /* ========================================
+           CURRICULUM SECTION
+           ======================================== */
+        .curriculum-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .curriculum-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #e91e63, #9c27b0, #673ab7);
+        }
+
+        .curriculum-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .curriculum-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .curriculum-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .curriculum-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        /* Curriculum Categories */
+        .curriculum-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .curriculum-category {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category-header i {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        .category-header.cell-culture i {
+            background: linear-gradient(135deg, #e91e63, #f48fb1);
+        }
+
+        .category-header.rdna i {
+            background: linear-gradient(135deg, #9c27b0, #ce93d8);
+        }
+
+        .category-header.analysis i {
+            background: linear-gradient(135deg, #673ab7, #b39ddb);
+        }
+
+        .category-header h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .curriculum-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.8rem;
+            padding: 0.6rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .curriculum-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(3px);
+        }
+
+        .curriculum-item i {
+            color: #f48fb1;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+
+        .curriculum-item span {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           TECHNIQUES GRID
+           ======================================== */
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .technique-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .technique-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #e91e63, #9c27b0);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .technique-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .technique-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .technique-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(156, 39, 176, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: #9c27b0;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .technique-card:hover .technique-icon {
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            color: var(--white);
+        }
+
+        .technique-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .technique-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           KEY FEATURES GRID
+           ======================================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           LEARNING OUTCOMES
+           ======================================== */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .outcome-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 16px;
+            border-left: 4px solid #9c27b0;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .outcome-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+
+        .outcome-number {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .outcome-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .outcome-content p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           WHO SHOULD ATTEND
+           ======================================== */
+        .audience-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .audience-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .audience-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .audience-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+        }
+
+        .audience-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .audience-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 50%, #673ab7 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: #9c27b0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: #ffeb3b;
+            color: var(--dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: #9c27b0;
+            border-color: var(--white);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .disciplines-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .techniques-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .audience-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .curriculum-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .program-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .program-overview-image {
+                order: -1;
+            }
+
+            .program-badge {
+                right: 20px;
+                top: 20px;
+            }
+
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .curriculum-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 150px 0 80px;
+                min-height: 350px;
+            }
+
+            .page-header-content h1 {
+                font-size: 2.25rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .program-overview-content h2 {
+                font-size: 2rem;
+            }
+
+            .techniques-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .program-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .module-tags {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header-content h1 {
+                font-size: 1.85rem;
+            }
+
+            .curriculum-container {
+                padding: 2rem;
+            }
+
+            .discipline-card {
+                padding: 2rem;
+            }
+
+            .technique-card {
+                padding: 1.5rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .program-badge {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin-top: 1.5rem;
+                display: inline-block;
+            }
+
+            .program-overview-image::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include your navbar here -->
+      <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="../images/logo.png" alt="logo">
+                </div>
+                <!-- <div>
+                    <div class="logo-text">SARG Research</div>
+                    <div class="logo-sub">Biolabs</div>
+                </div> -->
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>about our organization</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown active">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3"
+                alt="Cancer Cell Culture Laboratory">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-pattern"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="../programs.html">Programs</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Advanced rDNA Tech & Animal Cell Culture</span>
+                </div>
+                <div class="advanced-badge">
+                    <i class="fas fa-star"></i> Advanced Level Program
+                </div>
+                <h1>Advanced rDNA Technology & Animal Cell Culture</h1>
+                <p>Master cutting-edge cancer cell culture techniques and recombinant DNA technology. Empower yourself to unravel the complexities of cancer and contribute to novel treatment development.</p>
+                <div class="module-tags">
+                    <span class="module-tag"><i class="fas fa-disease"></i> Cancer Cell Lines</span>
+                    <span class="module-tag"><i class="fas fa-dna"></i> rDNA Technology</span>
+                    <span class="module-tag"><i class="fas fa-microscope"></i> Molecular Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="program-overview">
+                <div class="program-overview-image">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3"
+                        alt="Cell Culture Laboratory">
+                    <div class="program-badge">
+                        <i class="fas fa-flask-vial"></i>
+                        <h3>Advanced</h3>
+                        <p>Research Training</p>
+                    </div>
+                </div>
+                <div class="program-overview-content">
+                    <div class="section-badge">
+                        <i class="fas fa-rocket"></i> Advanced Research Module
+                    </div>
+                    <h2>Master Cancer Research & Molecular Cloning</h2>
+                    <p>
+                        This module includes hands-on laboratory sessions where participants learn cell culture techniques, such as subculturing, passaging, and cryopreservation of cancer cells. You'll also learn about quality control measures, cell viability assays, and monitoring cell growth and behavior.
+                    </p>
+                    <p>
+                        Additionally, participants receive training on experimental techniques and assays used in cancer research, such as drug screening, genetic manipulation, and molecular analysis of cancer cells.
+                    </p>
+                    <p>
+                        Cancer cell culture and molecular biology techniques empower researchers to unravel the complexities of cancer, facilitating the development of novel treatments and improved understanding of the disease.
+                    </p>
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-disease"></i>
+                            </div>
+                            <div>
+                                <h4>Cancer Cell Lines</h4>
+                                <p>Human cancer cell maintenance</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <div>
+                                <h4>rDNA Technology</h4>
+                                <p>Cloning & transformation</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div>
+                                <h4>Drug Screening</h4>
+                                <p>MTT cytotoxicity assays</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4>Gene Expression</h4>
+                                <p>RT-PCR & protein analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Disciplines Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-cubes"></i> Two Advanced Disciplines
+                </div>
+                <h2 class="section-title">Comprehensive Advanced Training</h2>
+                <p class="section-subtitle">
+                    Our program uniquely combines animal cell culture with advanced recombinant DNA technology for comprehensive cancer research training.
+                </p>
+            </div>
+            <div class="disciplines-grid">
+                <!-- Animal Cell Culture -->
+                <div class="discipline-card cell-culture">
+                    <div class="discipline-icon">
+                        <i class="fas fa-disease"></i>
+                    </div>
+                    <h3>Animal Cell Culture & Cancer Cell Lines</h3>
+                    <p>Master the art of culturing and maintaining human cancer cell lines with industry-standard techniques and sterile practices.</p>
+                    <div class="discipline-topics">
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Safety & sterility maintenance</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Media preparation & cell line revival</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Subculturing & passaging techniques</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Cryopreservation & thawing</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Proliferation & differentiation induction</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>MTT assay for cytotoxicity</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Inverted microscopy techniques</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- rDNA Technology -->
+                <div class="discipline-card rdna">
+                    <div class="discipline-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Advanced rDNA Technology & Molecular Cloning</h3>
+                    <p>Gain expertise in recombinant DNA techniques, cloning, transformation, and gene expression analysis.</p>
+                    <div class="discipline-topics">
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Genomic & plasmid DNA isolation</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Restriction digestion & ligation</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Competent cell preparation</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Transformation & plating</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>RNA extraction & cDNA synthesis</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>RT-PCR & gene expression</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Primer designing & promoter analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="section section-dark" id="curriculum">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-book-open"></i> Program Curriculum
+                </div>
+                <h2 class="section-title">30 Days Advanced Training</h2>
+                <p class="section-subtitle">
+                    A 4-week intensive program covering advanced cell culture techniques and recombinant DNA technology for cancer research.
+                </p>
+            </div>
+            <div class="curriculum-container">
+                <div class="curriculum-header">
+                    <div class="curriculum-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="curriculum-info">
+                        <h3>Advanced Research Module</h3>
+                        <p>Cancer cell culture meets molecular cloning</p>
+                    </div>
+                </div>
+                <div class="curriculum-categories">
+                    <!-- Cell Culture Module -->
+                    <div class="curriculum-category">
+                        <div class="category-header cell-culture">
+                            <i class="fas fa-disease"></i>
+                            <h4>Cell Culture Module</h4>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Safety Information & Sterility Maintenance</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Do's & Don'ts in Tissue Culture Lab</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Facility Equipment Exposure</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Medium & Solutions Preparation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cell Lines Revival (Recovery)</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cancer Cell Line Maintenance</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Subculturing (Passaging) & Freezing</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Freezing & Thawing Techniques</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Inverted Microscopy</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>MTT Assay for Cytotoxicity</span>
+                        </div>
+                    </div>
+
+                    <!-- rDNA Technology Module -->
+                    <div class="curriculum-category">
+                        <div class="category-header rdna">
+                            <i class="fas fa-dna"></i>
+                            <h4>rDNA Technology Module</h4>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Restriction Digestion</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ligation Techniques</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>DNA Gel Electrophoresis</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>DNA Gel Extraction</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Competent Cell Preparation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Transformation & Plating</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plasmid DNA Isolation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Genomic DNA Isolation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Polymerase Chain Reaction (PCR)</span>
+                        </div>
+                    </div>
+
+                    <!-- Molecular Analysis Module -->
+                    <div class="curriculum-category">
+                        <div class="category-header analysis">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Molecular Analysis Module</h4>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>RNA Extraction from Cancer Cells</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>cDNA Synthesis</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Reverse Transcription PCR (RT-PCR)</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Proliferation & Differentiation Induction</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Protein Extraction from Cancer Cells</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>SDS-PAGE & Coomassie Blue Staining</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Protein & DNA Sequence Analysis</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Primer Designing & Promoter Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Techniques Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-tools"></i> Advanced Techniques
+                </div>
+                <h2 class="section-title">Cutting-Edge Research Methods</h2>
+                <p class="section-subtitle">
+                    Master state-of-the-art techniques used in cancer research and molecular biology laboratories worldwide.
+                </p>
+            </div>
+            <div class="techniques-grid">
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-disease"></i>
+                    </div>
+                    <h3>Cancer Cell Culture</h3>
+                    <p>Maintain and propagate human cancer cell lines with precision</p>
+                </div>
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Cryopreservation</h3>
+                    <p>Long-term storage and recovery of viable cell lines</p>
+                </div>
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>MTT Assay</h3>
+                    <p>Cell viability and drug cytotoxicity assessment</p>
+                </div>
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Inverted Microscopy</h3>
+                    <p>Live cell imaging and morphology analysis</p>
+                </div>
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Restriction Cloning</h3>
+                    <p>Precise DNA cutting and molecular assembly</p>
+                </div>
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-bacteria"></i>
+                    </div>
+                    <h3>Transformation</h3>
+                    <p>Introduction of recombinant DNA into host cells</p>
+                </div>
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>RT-PCR</h3>
+                    <p>Gene expression analysis from RNA samples</p>
+                </div>
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>SDS-PAGE</h3>
+                    <p>Protein separation and characterization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i> Program Features
+                </div>
+                <h2 class="section-title">Why Choose This Advanced Program</h2>
+                <p class="section-subtitle">
+                    Our advanced training offers unique advantages for aspiring cancer researchers and molecular biologists.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-disease"></i>
+                    </div>
+                    <h3>Live Cancer Cell Lines</h3>
+                    <p>Work with actual human cancer cell lines in a professional tissue culture environment with industry-standard practices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask-vial"></i>
+                    </div>
+                    <h3>Advanced Facilities</h3>
+                    <p>Access to state-of-the-art tissue culture labs, biosafety cabinets, CO2 incubators, and molecular biology equipment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Research Experts</h3>
+                    <p>Learn from experienced cancer researchers and molecular biologists with extensive publication records.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Complete rDNA Workflow</h3>
+                    <p>Master the entire molecular cloning pipeline from restriction digestion to transformation and screening.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Drug Screening Skills</h3>
+                    <p>Learn cytotoxicity assays and experimental techniques for pharmaceutical research applications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Research Certification</h3>
+                    <p>Receive advanced-level certification recognized by research institutions and pharmaceutical companies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Outcomes Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-graduation-cap"></i> Learning Outcomes
+                </div>
+                <h2 class="section-title">Skills You Will Master</h2>
+                <p class="section-subtitle">
+                    Upon completion, you will possess advanced research skills in cancer cell culture and molecular biology.
+                </p>
+            </div>
+            <div class="outcomes-grid">
+                <div class="outcome-item">
+                    <div class="outcome-number">01</div>
+                    <div class="outcome-content">
+                        <h4>Cancer Cell Line Management</h4>
+                        <p>Independently maintain, passage, freeze, and revive human cancer cell lines following strict sterile protocols.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">02</div>
+                    <div class="outcome-content">
+                        <h4>Molecular Cloning Expertise</h4>
+                        <p>Perform complete cloning workflows including restriction digestion, ligation, transformation, and clone screening.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">03</div>
+                    <div class="outcome-content">
+                        <h4>Gene Expression Analysis</h4>
+                        <p>Extract RNA, synthesize cDNA, and perform RT-PCR to analyze gene expression in cancer cells.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">04</div>
+                    <div class="outcome-content">
+                        <h4>Protein Characterization</h4>
+                        <p>Extract proteins from cancer cells and analyze using SDS-PAGE and Coomassie blue staining techniques.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">05</div>
+                    <div class="outcome-content">
+                        <h4>Drug Cytotoxicity Testing</h4>
+                        <p>Design and execute MTT assays to evaluate drug effects on cancer cell proliferation and viability.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">06</div>
+                    <div class="outcome-content">
+                        <h4>Bioinformatics Applications</h4>
+                        <p>Perform primer designing, promoter analysis, and protein/DNA sequence analysis using computational tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Attend Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-user-friends"></i> Target Audience
+                </div>
+                <h2 class="section-title">Who Should Attend</h2>
+                <p class="section-subtitle">
+                    This advanced program is ideal for individuals pursuing research careers in cancer biology and molecular biotechnology.
+                </p>
+            </div>
+            <div class="audience-cards">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Research Scholars</h3>
+                    <p>M.Sc., Ph.D. students in Cancer Biology, Biotechnology, and Life Sciences.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Pharma Professionals</h3>
+                    <p>R&D scientists in pharmaceutical and biotech companies working on drug discovery.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Lab Scientists</h3>
+                    <p>Research associates and laboratory technicians seeking advanced cell culture skills.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Academic Faculty</h3>
+                    <p>Faculty members establishing cell culture facilities at their institutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Launch Your Cancer Research Career</h2>
+                <p>
+                    Join our advanced rDNA Technology & Animal Cell Culture training program and gain expertise in cutting-edge cancer research techniques.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Enroll Now
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        <i class="fas fa-info-circle"></i> Request Information
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Include your footer here -->
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="../images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                        <!-- <div>
+                            <div class="logo-text">SARG Research</div>
+                            <div class="logo-sub">Biolabs</div>
+                        </div> -->
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../programs.html">Programs</a></li>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="../programs.html">Research Foundation</a></li>
+                        <li><a href="../programs.html">Molecular Biology</a></li>
+                        <li><a href="../programs.html">Microbiology</a></li>
+                        <li><a href="../programs.html">Biostatistics</a></li>
+                        <li><a href="../programs.html">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to Top Functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script src="../js/navbar.js"></script>
+</body>
+
+</html>

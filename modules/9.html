@@ -1,0 +1,2194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Oriented Training Program | SARG Research Biolabs</title>
+    <meta name="description"
+        content="3-month Job Oriented Biotechnology Training Program at SARG Research Biolabs. Bridge the gap between education and industry with hands-on training, industry exposure, and enhanced employability.">
+    <link rel="icon" href="../images/logo1.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #0a5c36 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        img {
+            
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========================================
+           PAGE HEADER / HERO BANNER
+           ======================================== */
+        .page-header {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.92) 0%, rgba(26, 26, 46, 0.95) 100%);
+            z-index: -2;
+        }
+
+        .page-header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-header-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header-content .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--accent);
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Job Badge */
+        .job-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
+        }
+
+        .job-badge i {
+            font-size: 1rem;
+        }
+
+        .page-header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-header-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.25rem;
+        }
+
+        /* ========================================
+           SECTION STYLES
+           ======================================== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========================================
+           PROGRAM OVERVIEW SECTION
+           ======================================== */
+        .program-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .program-overview-image {
+            position: relative;
+        }
+
+        .program-overview-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .program-overview-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .program-badge i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .program-badge h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .program-badge p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        .program-overview-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .program-overview-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .program-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .highlight-item p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           KEY COMPONENTS GRID
+           ======================================== */
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .component-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .component-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .component-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .component-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .component-card:hover .component-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .component-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .component-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           PROGRAM STRUCTURE SECTION
+           ======================================== */
+        .structure-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .structure-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .structure-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .structure-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .structure-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .structure-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .structure-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .structure-month {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .structure-month span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .structure-card h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .structure-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Structure Features */
+        .structure-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .structure-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .structure-feature i {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 200, 83, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .structure-feature span {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           AVAILABLE MODULES GRID
+           ======================================== */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(10, 92, 54, 0.2);
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .module-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .module-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .module-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .module-info .module-duration {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .module-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           TRAINING APPROACH SECTION
+           ======================================== */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .approach-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .approach-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .approach-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .approach-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.25rem;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+        }
+
+        .approach-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .approach-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        .approach-list {
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .approach-list-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+        }
+
+        .approach-list-item i {
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        /* ========================================
+           CAREER OUTCOMES SECTION
+           ======================================== */
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .career-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .career-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .career-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .career-card:hover .career-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .career-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .career-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           BENEFITS SECTION
+           ======================================== */
+        .benefits-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .benefits-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .benefits-content > p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--light);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .benefit-item:hover {
+            background: rgba(10, 92, 54, 0.05);
+            transform: translateX(5px);
+        }
+
+        .benefit-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-item-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .benefit-item-content p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .benefits-image {
+            position: relative;
+        }
+
+        .benefits-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .benefits-stats {
+            position: absolute;
+            bottom: -30px;
+            left: 30px;
+            right: 30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-xl);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .benefits-stat h4 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .benefits-stat p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        /* ========================================
+           PROCESS STEPS
+           ======================================== */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .process-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-number {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-number i {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .process-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: var(--gradient-primary);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .components-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .modules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .careers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .process-grid::before {
+                display: none;
+            }
+
+            .structure-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .structure-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .program-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .program-overview-image {
+                order: -1;
+            }
+
+            .program-badge {
+                right: 20px;
+                top: 20px;
+            }
+
+            .benefits-container {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-image {
+                order: -1;
+            }
+
+            .benefits-stats {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                right: auto;
+                margin-top: 2rem;
+            }
+
+            .structure-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .structure-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 150px 0 80px;
+                min-height: 400px;
+            }
+
+            .page-header-content h1 {
+                font-size: 2.25rem;
+            }
+
+            .stats-bar {
+                gap: 2rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .program-overview-content h2,
+            .benefits-content h2 {
+                font-size: 2rem;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .careers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header-content h1 {
+                font-size: 1.85rem;
+            }
+
+            .structure-container {
+                padding: 2rem;
+            }
+
+            .component-card {
+                padding: 1.5rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .program-badge {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin-top: 1.5rem;
+                display: inline-block;
+            }
+
+            .program-overview-image::before {
+                display: none;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include your navbar here -->
+     <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="../images/logo.png" alt="logo">
+                </div>
+                <!-- <div>
+                    <div class="logo-text">SARG Research</div>
+                    <div class="logo-sub">Biolabs</div>
+                </div> -->
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>about our organization</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown active">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3"
+                alt="Job Oriented Training">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-pattern"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="../programs.html">Programs</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Job Oriented Training</span>
+                </div>
+                <div class="job-badge">
+                    <i class="fas fa-briefcase"></i> Career-Focused Training
+                </div>
+                <h1>Job Oriented Training Program</h1>
+                <p>Bridge the gap between theoretical education and practical industry requirements. Equip yourself with specialized skills, hands-on experience, and industry-relevant knowledge for a successful biotechnology career.</p>
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <p>Months Duration</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <p>Modules of Choice</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Hands-On Training</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Industry</h3>
+                        <p>Ready Skills</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="program-overview">
+                <div class="program-overview-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3"
+                        alt="Career Development Training">
+                    <div class="program-badge">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Career</h3>
+                        <p>Launchpad</p>
+                    </div>
+                </div>
+                <div class="program-overview-content">
+                    <div class="section-badge">
+                        <i class="fas fa-graduation-cap"></i> Employment Ready Training
+                    </div>
+                    <h2>Launch Your Career in Biotechnology</h2>
+                    <p>
+                        The field of biotechnology offers exciting career opportunities, blending scientific knowledge with innovative research and development. Our job-oriented training programs have been developed to equip students with specialized skills, hands-on experience, and industry-relevant knowledge.
+                    </p>
+                    <p>
+                        Job-oriented training programs in biotechnology play a pivotal role in preparing students for successful careers in this rapidly evolving field by combining theoretical knowledge with practical experience and industry exposure.
+                    </p>
+                    <p>
+                        Participants can choose any three modules of one month each, creating a customized 3-month training program that aligns with their career aspirations and industry demands.
+                    </p>
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div>
+                                <h4>Technical Skills</h4>
+                                <p>Industry-standard techniques</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <h4>Practical Training</h4>
+                                <p>Hands-on laboratory work</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <div>
+                                <h4>Industry Curriculum</h4>
+                                <p>Expert-designed content</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h4>Soft Skills</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Components Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-cubes"></i> Key Components
+                </div>
+                <h2 class="section-title">What Makes Our Program Effective</h2>
+                <p class="section-subtitle">
+                    Our job-oriented training program combines essential elements to prepare you for a successful biotechnology career.
+                </p>
+            </div>
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Technical Skills Development</h3>
+                    <p>Master industry-standard laboratory techniques and methodologies essential for biotechnology careers.</p>
+                </div>
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Practical Training</h3>
+                    <p>Extensive hands-on laboratory experience that enhances understanding and competence in real-world scenarios.</p>
+                </div>
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Industry-Driven Curriculum</h3>
+                    <p>Training programs designed in collaboration with industry experts to ensure alignment with current trends.</p>
+                </div>
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Workshops and Seminars</h3>
+                    <p>Interactive sessions with industry professionals providing insights into latest developments and best practices.</p>
+                </div>
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Soft Skills & Professional Development</h3>
+                    <p>Communication, teamwork, and leadership training essential for workplace success.</p>
+                </div>
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Enhanced Employability</h3>
+                    <p>Comprehensive training that makes you job-ready with skills employers are actively seeking.</p>
+                </div>
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Industry Exposure</h3>
+                    <p>Direct interaction with biotechnology industry practices, protocols, and professional standards.</p>
+                </div>
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Networking Opportunities</h3>
+                    <p>Build connections with instructors, peers, and industry professionals for career advancement.</p>
+                </div>
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Professional Growth</h3>
+                    <p>Continuous learning mindset and career development strategies for long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Structure Section -->
+    <section class="section section-dark" id="structure">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-sitemap"></i> Program Structure
+                </div>
+                <h2 class="section-title">3 Months Comprehensive Training</h2>
+                <p class="section-subtitle">
+                    Choose any three 30-day modules to create your customized job-oriented training program.
+                </p>
+            </div>
+            <div class="structure-container">
+                <div class="structure-header">
+                    <h3>Your 3-Month Training Journey</h3>
+                    <p>Customize your learning path by selecting modules that align with your career goals</p>
+                </div>
+                <div class="structure-grid">
+                    <div class="structure-card">
+                        <div class="structure-month">
+                            <span>M1</span>
+                        </div>
+                        <h4>Month 1 - Module A</h4>
+                        <p>Select your first 30-day module to begin building your foundational skills in your chosen specialization.</p>
+                    </div>
+                    <div class="structure-card">
+                        <div class="structure-month">
+                            <span>M2</span>
+                        </div>
+                        <h4>Month 2 - Module B</h4>
+                        <p>Choose a complementary module to expand your expertise and develop cross-functional capabilities.</p>
+                    </div>
+                    <div class="structure-card">
+                        <div class="structure-month">
+                            <span>M3</span>
+                        </div>
+                        <h4>Month 3 - Module C</h4>
+                        <p>Complete your training with a third module that rounds out your comprehensive skill set.</p>
+                    </div>
+                </div>
+                <div class="structure-features">
+                    <div class="structure-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Both theoretical and practical hands-on sessions</span>
+                    </div>
+                    <div class="structure-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Designed with industry experts</span>
+                    </div>
+                    <div class="structure-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Aligned with current biotech sector demands</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Modules Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-th-large"></i> Available Modules
+                </div>
+                <h2 class="section-title">Choose Your Three Modules</h2>
+                <p class="section-subtitle">
+                    Select any three 30-day modules to create your personalized job-oriented training program.
+                </p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-bacteria"></i>
+                        </div>
+                        <div class="module-info">
+                            <h4>Industrial Microbiology</h4>
+                            <span class="module-duration">30 Days</span>
+                        </div>
+                    </div>
+                    <p>Advanced microbial techniques, growth optimization, and industrial applications.</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <div class="module-info">
+                            <h4>Molecular Biology & rDNA</h4>
+                            <span class="module-duration">30 Days</span>
+                        </div>
+                    </div>
+                    <p>DNA/RNA techniques, PCR, cloning, and gene expression analysis.</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <div class="module-info">
+                            <h4>Food Biotechnology</h4>
+                            <span class="module-duration">30 Days</span>
+                        </div>
+                    </div>
+                    <p>Food safety, quality control, microbial analysis, and preservation techniques.</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div class="module-info">
+                            <h4>Medical Biotechnology</h4>
+                            <span class="module-duration">30 Days</span>
+                        </div>
+                    </div>
+                    <p>Clinical diagnostics, immunology, serology, and medical testing.</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <div class="module-info">
+                            <h4>Forensic Science</h4>
+                            <span class="module-duration">30 Days</span>
+                        </div>
+                    </div>
+                    <p>Crime scene analysis, DNA fingerprinting, and evidence examination.</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="module-info">
+                            <h4>Mix Module</h4>
+                            <span class="module-duration">30 Days</span>
+                        </div>
+                    </div>
+                    <p>Integrated Microbiology, Molecular Biology & Biochemistry training.</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="module-info">
+                            <h4>Medical Microbiology</h4>
+                            <span class="module-duration">21 Days</span>
+                        </div>
+                    </div>
+                    <p>Clinical sample analysis, pathogen identification, and diagnostic testing.</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-disease"></i>
+                        </div>
+                        <div class="module-info">
+                            <h4>Advanced rDNA & Cell Culture</h4>
+                            <span class="module-duration">30 Days</span>
+                        </div>
+                    </div>
+                    <p>Cancer cell lines, molecular cloning, and advanced research techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Approach Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-lightbulb"></i> Our Approach
+                </div>
+                <h2 class="section-title">Comprehensive Training Methodology</h2>
+                <p class="section-subtitle">
+                    Our job-oriented training combines three essential pillars to ensure career success.
+                </p>
+            </div>
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Theoretical Foundation</h3>
+                    <p>Comprehensive theoretical knowledge covering core concepts, principles, and latest developments in biotechnology.</p>
+                    <div class="approach-list">
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Core concept lectures</span>
+                        </div>
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Industry case studies</span>
+                        </div>
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Latest research insights</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Practical Experience</h3>
+                    <p>Extensive hands-on laboratory sessions that build real-world competence and confidence.</p>
+                    <div class="approach-list">
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Laboratory experiments</span>
+                        </div>
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Equipment operation</span>
+                        </div>
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Project-based learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Industry Alignment</h3>
+                    <p>Curriculum designed with industry experts ensuring relevance to current market demands.</p>
+                    <div class="approach-list">
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Industry expert input</span>
+                        </div>
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Current trend alignment</span>
+                        </div>
+                        <div class="approach-list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Professional standards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="container">
+            <div class="benefits-container">
+                <div class="benefits-content">
+                    <div class="section-badge">
+                        <i class="fas fa-star"></i> Program Benefits
+                    </div>
+                    <h2>Why Choose Job-Oriented Training</h2>
+                    <p>
+                        Our program bridges the gap between academic learning and industry requirements, preparing you for immediate employment in the biotechnology sector.
+                    </p>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="benefit-item-content">
+                                <h4>Enhanced Employability</h4>
+                                <p>Skills that employers actively seek in biotechnology professionals</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-certificate"></i>
+                            <div class="benefit-item-content">
+                                <h4>Industry-Recognized Certification</h4>
+                                <p>Credentials valued by pharmaceutical and biotech companies</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-users"></i>
+                            <div class="benefit-item-content">
+                                <h4>Professional Network</h4>
+                                <p>Connections with instructors, peers, and industry professionals</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-laptop"></i>
+                            <div class="benefit-item-content">
+                                <h4>Modern Equipment Experience</h4>
+                                <p>Hands-on training with industry-standard laboratory equipment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefits-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3"
+                        alt="Career Success">
+                    <div class="benefits-stats">
+                        <div class="benefits-stat">
+                            <h4>500+</h4>
+                            <p>Students Trained</p>
+                        </div>
+                        <div class="benefits-stat">
+                            <h4>90%</h4>
+                            <p>Placement Rate</p>
+                        </div>
+                        <div class="benefits-stat">
+                            <h4>50+</h4>
+                            <p>Industry Partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Outcomes Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-briefcase"></i> Career Outcomes
+                </div>
+                <h2 class="section-title">Launch Your Biotechnology Career</h2>
+                <p class="section-subtitle">
+                    Our job-oriented training opens doors to diverse career opportunities across the biotechnology industry.
+                </p>
+            </div>
+            <div class="careers-grid">
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Research Associate</h3>
+                    <p>Work in academic or industry research labs conducting biotechnology research and experiments.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Quality Control Analyst</h3>
+                    <p>Ensure product quality in pharmaceutical, food, and biotechnology manufacturing facilities.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Laboratory Technician</h3>
+                    <p>Perform laboratory tests and procedures in clinical, research, or industrial settings.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Clinical Lab Technologist</h3>
+                    <p>Conduct diagnostic tests in hospitals, clinics, and healthcare facilities.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Pharma Production Executive</h3>
+                    <p>Oversee manufacturing processes in pharmaceutical and biotech production facilities.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Food Quality Analyst</h3>
+                    <p>Test and ensure food safety and quality standards in food processing industries.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Forensic Lab Technician</h3>
+                    <p>Analyze evidence and conduct forensic tests in crime laboratories.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Biotech Sales Executive</h3>
+                    <p>Market biotechnology products and solutions to research institutions and industries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Process Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-route"></i> Enrollment Process
+                </div>
+                <h2 class="section-title">How to Get Started</h2>
+                <p class="section-subtitle">
+                    Follow these simple steps to begin your job-oriented training journey.
+                </p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Contact Us</h4>
+                    <p>Reach out to our team to discuss your career goals and interests.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h4>Select Modules</h4>
+                    <p>Choose three 30-day modules that align with your career aspirations.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h4>Schedule Training</h4>
+                    <p>Finalize your start date and training schedule with our coordinators.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h4>Complete Registration</h4>
+                    <p>Submit required documents and complete the enrollment process.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Begin Training</h4>
+                    <p>Start your 3-month journey to becoming an industry-ready professional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Launch Your Biotechnology Career?</h2>
+                <p>
+                    Join our job-oriented training program and gain the skills, experience, and credentials you need for a successful career in biotechnology.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Enroll Now
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        <i class="fas fa-phone"></i> Schedule Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Include your footer here -->
+         
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="../images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                        <!-- <div>
+                            <div class="logo-text">SARG Research</div>
+                            <div class="logo-sub">Biolabs</div>
+                        </div> -->
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../programs.html">Programs</a></li>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="../programs.html">Research Foundation</a></li>
+                        <li><a href="../programs.html">Molecular Biology</a></li>
+                        <li><a href="../programs.html">Microbiology</a></li>
+                        <li><a href="../programs.html">Biostatistics</a></li>
+                        <li><a href="../programs.html">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to Top Functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script src="../js/navbar.js"></script>
+</body>
+
+</html>

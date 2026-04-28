@@ -1,0 +1,3663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARG Research Biolabs | Excellence in Life Sciences Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo1.png">
+    <link rel="stylesheet" href="css/effects.css">
+
+    <!-- GSAP + Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #00e676 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* =================== PRELOADER =================== */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--darker);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .preloader-logo {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+
+        .preloader-spinner {
+            width: 120px;
+            height: 120px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--accent);
+            border-right: 3px solid var(--primary-light);
+            border-radius: 50%;
+            animation: preloaderSpin 1s linear infinite;
+        }
+
+        .preloader-dna {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        .preloader-text {
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .preloader-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .preloader-bar-fill {
+            width: 0%;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+
+        @keyframes preloaderSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* =================== CUSTOM CURSOR =================== */
+        .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99998;
+            mix-blend-mode: difference;
+            transition: width 0.3s, height 0.3s, background 0.3s;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(0, 200, 83, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99997;
+            mix-blend-mode: difference;
+            transition: width 0.3s, height 0.3s, border-color 0.3s;
+        }
+
+        .cursor-dot.hover {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 200, 83, 0.15);
+        }
+
+        .cursor-ring.hover {
+            width: 80px;
+            height: 80px;
+            border-color: var(--accent);
+        }
+
+        /* =================== SMOOTH SCROLL PROGRESS =================== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--gradient-accent);
+            z-index: 10000;
+            transition: none;
+        }
+
+        /* =================== PARTICLE CANVAS =================== */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        /* =================== NAVBAR =================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 0.75rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.6rem 1.1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            position: relative;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--dark);
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .navbar.scrolled .nav-link:hover {
+            background: rgba(10, 92, 54, 0.08);
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--gradient-primary) !important;
+            color: var(--white) !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 50px !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(10, 92, 54, 0.3);
+        }
+
+        /* Dropdown */
+        .nav-item {
+            position: relative;
+        }
+
+        .has-dropdown .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 280px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 0.75rem;
+            box-shadow: var(--shadow-xl);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: var(--transition);
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(5px);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(10, 92, 54, 0.06);
+        }
+
+        .dropdown-item i {
+            width: 40px;
+            height: 40px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .dropdown-item-content h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .dropdown-item-content p {
+            font-size: 0.78rem;
+            color: var(--gray);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .mobile-toggle span {
+            background: var(--dark);
+        }
+
+        /* =================== HERO SECTION =================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110%;
+            height: 110%;
+            z-index: -3;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.7) 0%, rgba(26, 26, 46, 0.8) 100%);
+            z-index: -2;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        /* Animated DNA Helix Background */
+        .hero-dna-bg {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 800px;
+            opacity: 0.08;
+            z-index: -1;
+        }
+
+        .dna-strand {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            to { left: 200%; }
+        }
+
+        .hero-badge i {
+            color: var(--accent);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: rgb(251, 251, 253);
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--accent) 0%, #00e676 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .char {
+            display: inline-block;
+            transform-origin: bottom center;
+        }
+
+        .word {
+            display: inline-block;
+            overflow: hidden;
+            margin-right: 0.3em;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 540px;
+            color: rgb(252, 248, 248);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: none;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 200%;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        .btn-green {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: 0 8px 30px rgba(10, 92, 54, 0.3);
+        }
+
+        .btn-green:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(10, 92, 54, 0.4);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, var(--primary) 0%, transparent 60%);
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .floating-card-1 {
+            top: 10%;
+            right: -30px;
+        }
+
+        .floating-card-2 {
+            bottom: 15%;
+            left: -30px;
+        }
+
+        .floating-card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+
+        .floating-card-content h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .floating-card-content p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* =================== MARQUEE SECTION =================== */
+        .marquee-section {
+            background: var(--gradient-primary);
+            padding: 1rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 3rem;
+            animation: marqueeScroll 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .marquee-item i {
+            color: var(--accent);
+        }
+
+        @keyframes marqueeScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* =================== SECTIONS =================== */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animated background shapes */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .bg-shape-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            right: -100px;
+        }
+
+        .bg-shape-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            bottom: -50px;
+            left: -50px;
+        }
+
+        /* =================== ABOUT SECTION =================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .about-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .about-image:hover .about-image-overlay {
+            opacity: 0.2;
+        }
+
+        /* Reveal animation wrapper */
+        .reveal-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reveal-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--primary);
+            transform-origin: left;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .about-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .about-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .about-feature:hover .about-feature-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .about-feature h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .about-feature p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Experience badge floating */
+        .experience-badge {
+            position: absolute;
+            bottom: 30px;
+            right: -30px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            z-index: 5;
+        }
+
+        .experience-badge h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .experience-badge p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* =================== VIDEO SECTION =================== */
+        .video-section {
+            padding: 6rem 0;
+            background: var(--darker);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .play-btn {
+            width: 90px;
+            height: 90px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.15),
+                        0 0 0 40px rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+            animation: playPulse 2s ease-in-out infinite;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 25px rgba(255, 255, 255, 0.2),
+                        0 0 0 50px rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes playPulse {
+            0%, 100% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.15), 0 0 0 40px rgba(255, 255, 255, 0.08); }
+            50% { box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 55px rgba(255, 255, 255, 0.05); }
+        }
+
+        .video-section .section-header {
+            margin-bottom: 3rem;
+        }
+
+        /* =================== SERVICES SECTION =================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(10, 92, 54, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgb(10 92 54 / 0.25);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover::after {
+            top: -30%;
+            right: -30%;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-link:hover {
+            gap: 0.75rem;
+            color: var(--primary-light);
+        }
+
+        /* =================== STATS COUNTER SECTION =================== */
+        .stats-section {
+            padding: 5rem 0;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            color: var(--white);
+            position: relative;
+        }
+
+        .stats-card::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stats-card:last-child::after {
+            display: none;
+        }
+
+        .stats-card-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+        }
+
+        .stats-card h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .stats-card p {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        /* =================== PROGRAMS / INTERNSHIPS =================== */
+        .internship-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .internship-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: none;
+        }
+
+        .internship-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .internship-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .internship-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .internship-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 35px;
+            height: 35px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .internship-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .internship-card:hover .internship-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .internship-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .internship-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .internship-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .internship-link:hover {
+            gap: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        .internship-card a {
+            text-decoration: none;
+        }
+
+        .internship-card.featured {
+            background: var(--gradient-primary);
+            color: var(--white);
+            grid-column: span 2;
+        }
+
+        .internship-card.featured .internship-number {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .internship-card.featured .internship-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .internship-card.featured:hover .internship-icon {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .internship-card.featured h3 {
+            color: var(--white);
+            font-size: 1.35rem;
+        }
+
+        .internship-card.featured p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .internship-card.featured .internship-link {
+            color: var(--accent);
+        }
+
+        .internship-card.featured::before {
+            background: var(--accent);
+        }
+
+        /* =================== TESTIMONIALS =================== */
+        .testimonials-section {
+            padding: 6rem 0;
+            background: var(--light);
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 2rem;
+            animation: testimonialScroll 40s linear infinite;
+        }
+
+        .testimonial-card {
+            min-width: 400px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            color: rgba(10, 92, 54, 0.08);
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 0.25rem;
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-info p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        @keyframes testimonialScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* =================== CTA SECTION =================== */
+        .cta-section {
+            background: var(--gradient-primary);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(0, 200, 83, 0.15);
+            filter: blur(100px);
+            top: -200px;
+            right: -100px;
+        }
+
+        .cta-glow-2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(26, 115, 232, 0.1);
+            filter: blur(80px);
+            bottom: -200px;
+            left: -100px;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* =================== FOOTER =================== */
+        .footer {
+            background: var(--darker);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact li i {
+            color: var(--accent);
+            margin-top: 0.25rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--accent);
+        }
+
+        /* =================== SCROLL TO TOP =================== */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* =================== CHATBOT =================== */
+        .chatbot-fab {
+            position: fixed;
+            right: 24px;
+            bottom: 90px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.95rem 1.15rem;
+            border: 0;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #0a5c36 0%, #0d7a48 100%);
+            color: var(--white);
+            box-shadow: 0 14px 36px rgba(10, 92, 54, 0.28);
+            cursor: pointer;
+            z-index: 1997;
+            transition: var(--transition);
+        }
+
+        .chatbot-fab:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 18px 44px rgba(10, 92, 54, 0.36);
+        }
+
+        .chatbot-fab-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.14);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .chatbot-fab-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.1;
+        }
+
+        .chatbot-fab-text strong {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .chatbot-panel-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(6px);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1998;
+        }
+
+        .chatbot-panel-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .chatbot-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(480px, 100%);
+            height: 100vh;
+            background: #f4fbf6;
+            box-shadow: -20px 0 60px rgba(15, 23, 42, 0.25);
+            transform: translateX(100%);
+            transition: transform 0.35s ease;
+            z-index: 1999;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-panel.active {
+            transform: translateX(0);
+        }
+
+        .chatbot-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            color: var(--white);
+            background: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+        }
+
+        .chatbot-panel-title {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .chatbot-panel-title i {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.18);
+            font-size: 1.1rem;
+        }
+
+        .chatbot-panel-title h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .chatbot-panel-close {
+            width: 42px;
+            height: 42px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chatbot-panel-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: rotate(90deg);
+        }
+
+        .chatbot-panel-frame {
+            flex: 1;
+            width: 100%;
+            border: 0;
+            background: #f4fbf6;
+        }
+
+        /* =================== MENU OVERLAY =================== */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =================== HORIZONTAL LINE ANIMATION =================== */
+        .animated-line {
+            width: 100%;
+            height: 2px;
+            background: var(--gray-light);
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .animated-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: var(--gradient-primary);
+            animation: lineMove 3s ease-in-out infinite;
+        }
+
+        @keyframes lineMove {
+            0% { left: -60%; }
+            100% { left: 100%; }
+        }
+
+        /* =================== RESPONSIVE =================== */
+        @media (max-width: 1200px) {
+            .hero-title { font-size: 3rem; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .internship-grid { grid-template-columns: repeat(3, 1fr); }
+            .internship-card.featured { grid-column: span 3; }
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 320px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 5rem 2rem 2rem;
+                box-shadow: var(--shadow-xl);
+                transition: var(--transition);
+                gap: 0;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active { right: 0; }
+
+            .nav-item { width: 100%; }
+
+            .nav-link {
+                color: var(--dark);
+                width: 100%;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--gray-light);
+                justify-content: space-between;
+            }
+
+            .has-dropdown .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-item.dropdown-open .dropdown-menu {
+                max-height: 500px;
+                padding: 1rem 0;
+            }
+
+            .nav-cta {
+                margin: 1rem 0 0;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .mobile-toggle { display: flex; }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-description { margin: 0 auto 2rem; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .about-grid { grid-template-columns: 1fr; }
+            .internship-grid { grid-template-columns: repeat(2, 1fr); }
+            .internship-card.featured { grid-column: span 2; }
+
+            .cursor-dot, .cursor-ring { display: none; }
+            body { cursor: auto; }
+            .btn, .service-card, .internship-card { cursor: pointer; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.25rem; }
+            .section { padding: 4rem 0; }
+            .section-title { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .internship-grid { grid-template-columns: 1fr; }
+            .internship-card.featured { grid-column: span 1; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .cta-content h2 { font-size: 2rem; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; }
+            .about-features { grid-template-columns: 1fr; }
+            .floating-card { display: none; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .stats-card::after { display: none; }
+            .testimonial-card { min-width: 300px; }
+            .video-thumbnail { height: 300px; }
+            .marquee-section { display: none; }
+            .experience-badge { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.85rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .container { padding: 0 1rem; }
+            .hero-description { text-align: left; }
+            .chatbot-fab { right: 16px; bottom: 80px; padding: 0.85rem 1rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+
+        /* =================== GLITCH TEXT EFFECT =================== */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        .glitch:hover::before {
+            animation: glitch1 0.3s infinite;
+            color: var(--accent);
+            opacity: 0.8;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+        .glitch:hover::after {
+            animation: glitch2 0.3s infinite;
+            color: var(--secondary);
+            opacity: 0.8;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch1 {
+            0% { transform: translate(2px, 0); }
+            25% { transform: translate(-2px, 0); }
+            50% { transform: translate(1px, 0); }
+            100% { transform: translate(-1px, 0); }
+        }
+
+        @keyframes glitch2 {
+            0% { transform: translate(-2px, 0); }
+            25% { transform: translate(2px, 0); }
+            50% { transform: translate(-1px, 0); }
+            100% { transform: translate(1px, 0); }
+        }
+
+        /* Text gradient animation */
+        .gradient-text-animated {
+            background: linear-gradient(270deg, var(--accent), var(--secondary), var(--primary), var(--accent));
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Morph blob */
+        .morph-blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(0, 200, 83, 0.08), rgba(26, 115, 232, 0.08));
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morphBlob 10s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes morphBlob {
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+            75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">
+            <div class="preloader-spinner"></div>
+            <div class="preloader-dna"><i class="fas fa-dna"></i></div>
+        </div>
+        <div class="preloader-text">SARG BIOLABS</div>
+        <div class="preloader-bar">
+            <div class="preloader-bar-fill" id="preloaderBar"></div>
+        </div>
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- PARTICLE CANVAS -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>About our organization</p>
+                            </div>
+                        </a>
+                        <a href="about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Chatbot FAB -->
+    <button class="chatbot-fab" type="button" data-chatbot-open aria-label="Open registration chatbot">
+        <span class="chatbot-fab-icon"><i class="fas fa-book-open"></i></span>
+        <span class="chatbot-fab-text"><strong>Registration</strong></span>
+    </button>
+
+    <div class="chatbot-panel-overlay" id="chatbotPanelOverlay"></div>
+    <aside class="chatbot-panel" id="chatbotPanel" aria-hidden="true">
+        <div class="chatbot-panel-header">
+            <div class="chatbot-panel-title">
+                <i class="fas fa-robot"></i>
+                <div>
+                    <h3>SARG Registration</h3>
+                </div>
+            </div>
+            <button class="chatbot-panel-close" id="chatbotPanelClose" aria-label="Close chatbot">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <iframe id="chatbotFrame" class="chatbot-panel-frame" title="SARG Chatbot"
+            data-src="chatbot.html?embed=1"></iframe>
+    </aside>
+
+    <!-- =================== HERO SECTION =================== -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="images/background.png" alt="Laboratory Background" id="heroBgImg">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-dna-bg" id="dnaBg"></div>
+
+        <div class="hero-container" style="padding-top: 140px; padding-bottom: 40px;">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-certificate"></i>
+                    ISO 9001:2015 Certified Research Laboratory
+                </div>
+                <h1 class="hero-title" id="heroTitle">
+                    Advancing Excellence in <span>Life Sciences</span> & Research
+                </h1>
+                <p class="hero-description">
+                    SARG Research Biolabs is a non-government, autonomous research organization dedicated to research,
+                    training, collaboration, and innovation-driven initiatives in Life Sciences, Biotechnology, and
+                    Environmental Studies.
+                </p>
+                <div class="hero-buttons">
+                    <a href="programs.html" class="btn btn-primary magnetic-btn">
+                        <i class="fas fa-rocket"></i> Explore Programs
+                    </a>
+                    <a href="about.html" class="btn btn-outline magnetic-btn">
+                        <i class="fas fa-play-circle"></i> Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3 data-count="50">0</h3>
+                        <p>Research Projects</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 data-count="500">0</h3>
+                        <p>Trained Scholars</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 data-count="20">0</h3>
+                        <p>Partner Institutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Visual handled by background -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== MARQUEE =================== -->
+    <section class="marquee-section">
+        <div class="marquee-track" id="marqueeTrack">
+            <div class="marquee-item"><i class="fas fa-flask"></i> Molecular Biology</div>
+            <div class="marquee-item"><i class="fas fa-dna"></i> rDNA Technology</div>
+            <div class="marquee-item"><i class="fas fa-microscope"></i> Microbiology</div>
+            <div class="marquee-item"><i class="fas fa-heartbeat"></i> Medical Biotech</div>
+            <div class="marquee-item"><i class="fas fa-fingerprint"></i> Forensic Science</div>
+            <div class="marquee-item"><i class="fas fa-apple-alt"></i> Food Biotech</div>
+            <div class="marquee-item"><i class="fas fa-vials"></i> Biochemistry</div>
+            <div class="marquee-item"><i class="fas fa-laptop-code"></i> Bioinformatics</div>
+            <div class="marquee-item"><i class="fas fa-leaf"></i> Environmental Studies</div>
+            <div class="marquee-item"><i class="fas fa-atom"></i> Biotechnology</div>
+            <!-- Duplicated for seamless loop -->
+            <div class="marquee-item"><i class="fas fa-flask"></i> Molecular Biology</div>
+            <div class="marquee-item"><i class="fas fa-dna"></i> rDNA Technology</div>
+            <div class="marquee-item"><i class="fas fa-microscope"></i> Microbiology</div>
+            <div class="marquee-item"><i class="fas fa-heartbeat"></i> Medical Biotech</div>
+            <div class="marquee-item"><i class="fas fa-fingerprint"></i> Forensic Science</div>
+            <div class="marquee-item"><i class="fas fa-apple-alt"></i> Food Biotech</div>
+            <div class="marquee-item"><i class="fas fa-vials"></i> Biochemistry</div>
+            <div class="marquee-item"><i class="fas fa-laptop-code"></i> Bioinformatics</div>
+            <div class="marquee-item"><i class="fas fa-leaf"></i> Environmental Studies</div>
+            <div class="marquee-item"><i class="fas fa-atom"></i> Biotechnology</div>
+        </div>
+    </section>
+
+    <!-- =================== ABOUT SECTION =================== -->
+    <section class="section" id="about">
+        <div class="morph-blob" style="top: -200px; right: -200px;"></div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" id="aboutImage">
+                    <div class="reveal-wrap">
+                        <img src="images/about.avif" alt="Research Team">
+                    </div>
+                    <div class="about-image-overlay"></div>
+                    <div class="experience-badge">
+                        <h3 data-count="2024" class="year-counter">2024</h3>
+                        <p>Year Founded</p>
+                    </div>
+                </div>
+                <div class="about-content" id="aboutContent">
+                    <div class="section-badge">
+                        <i class="fas fa-building"></i> About Us
+                    </div>
+                    <h2 class="glitch" data-text="Empowering Research Excellence Since 2024">Empowering Research Excellence Since 2024</h2>
+                    <p>
+                        Founded in 2024, SARG Research Biolabs functions as a research division of the Institute for
+                        Applied Research and Training, in collaboration with GANESH Scientific Research Foundation (ISO
+                        9001:2015 Certified Research and Testing Laboratory).
+                    </p>
+                    <p>
+                        We foster a dynamic ecosystem that empowers scholars, institutions, and research organizations
+                        through research, training, collaboration, and innovation-driven initiatives.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <h4>Advanced Research</h4>
+                                <p>Cutting-edge scientific investigations</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4>Expert Mentorship</h4>
+                                <p>Guidance from industry leaders</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4>Certified Programs</h4>
+                                <p>Industry-recognized certifications</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <h4>Global Network</h4>
+                                <p>International collaborations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="animated-line"></div>
+
+    <!-- =================== STATS SECTION =================== -->
+    <section class="stats-section" id="statsSection">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <div class="stats-card-icon"><i class="fas fa-flask"></i></div>
+                    <h3 data-count="50">0</h3>
+                    <p>Research Projects</p>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-card-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3 data-count="500">0</h3>
+                    <p>Trained Scholars</p>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-card-icon"><i class="fas fa-university"></i></div>
+                    <h3 data-count="20">0</h3>
+                    <p>Partner Institutions</p>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-card-icon"><i class="fas fa-award"></i></div>
+                    <h3 data-count="15">0</h3>
+                    <p>Awards & Recognitions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== VIDEO SECTION =================== -->
+    <section class="video-section" id="videoSection">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge" style="background: rgba(0,200,83,0.1); color: var(--accent);">
+                    <i class="fas fa-play"></i> Watch Our Story
+                </div>
+                <h2 class="section-title" style="color: var(--white);">Discover Our Research Journey</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">
+                    Take a virtual tour of our state-of-the-art laboratories and meet our research team
+                </p>
+            </div>
+            <div class="video-container" id="videoContainer">
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="Laboratory" class="video-thumbnail">
+                <div class="video-overlay" id="videoOverlay">
+                    <div class="play-btn">
+                        <i class="fas fa-play" style="margin-left: 4px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="animated-line"></div>
+
+    <!-- =================== SERVICES SECTION =================== -->
+    <section class="section section-light" id="services">
+        <div class="bg-shape bg-shape-1"></div>
+        <div class="bg-shape bg-shape-2"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-cogs"></i> What We Do
+                </div>
+                <h2 class="section-title gradient-text-animated">Our Services</h2>
+                <p class="section-subtitle">
+                    Comprehensive research and training solutions designed to empower scholars and institutions
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                    <div class="service-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Research</h3>
+                    <p>We conduct multidisciplinary research in Life Sciences, Biotechnology, Environmental Sciences including molecular investigations and bioinformatics analysis.</p>
+                    <a href="research.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Training & Skill Development</h3>
+                    <p>Hands-on, research-oriented training programs that bridge the gap between theoretical knowledge and practical laboratory skills.</p>
+                    <a href="programs.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Collaboration & Partnerships</h3>
+                    <p>Active collaboration with academic institutions, research laboratories, NGOs, and independent researchers to promote interdisciplinary innovation.</p>
+                    <a href="programs.html#partnerships" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                    <div class="service-icon"><i class="fas fa-vial"></i></div>
+                    <h3>Scientific Testing</h3>
+                    <p>Research-focused scientific testing and analytical support through advanced laboratory infrastructure and technical collaboration.</p>
+                    <a href="research.html#testing" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                    <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Workshops & Professional Development</h3>
+                    <p>Workshops, seminars, and academic enrichment programs that enhance research competence and career readiness.</p>
+                    <a href="programs.html#workshops" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovation & Mentorship</h3>
+                    <p>Academic recognition platforms, networking opportunities, knowledge-sharing forums, and strategic research partnerships.</p>
+                    <a href="membership.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="animated-line"></div>
+
+    <!-- =================== PROGRAMS SECTION =================== -->
+    <section class="section" id="internships">
+        <div class="morph-blob" style="bottom: -300px; left: -200px;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-graduation-cap"></i> Internship Programs
+                </div>
+                <h2 class="section-title">SARG Research Biolabs <span class="gradient-text-animated">Training Modules</span></h2>
+                <p class="section-subtitle">
+                    Choose from our diverse range of specialized training programs designed to build expertise in
+                    various domains of Biotechnology and Life Sciences.
+                </p>
+            </div>
+            <div class="internship-grid">
+                <div class="internship-card">
+                    <span class="internship-number">01</span>
+                    <div class="internship-icon"><i class="fas fa-bacteria"></i></div>
+                    <h3>Industrial Microbiology</h3>
+                    <p>Learn microbial cultivation, fermentation technology, and industrial applications of microorganisms.</p>
+                    <a href="modules/1.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">02</span>
+                    <div class="internship-icon"><i class="fas fa-dna"></i></div>
+                    <h3>Molecular Biology & rDNA Technology</h3>
+                    <p>Master DNA/RNA techniques, PCR, cloning, gene expression, and recombinant DNA technology.</p>
+                    <a href="modules/2.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">03</span>
+                    <div class="internship-icon"><i class="fas fa-apple-alt"></i></div>
+                    <h3>Food Biotechnology</h3>
+                    <p>Explore food processing, quality control, fermentation, and food safety analysis techniques.</p>
+                    <a href="modules/3.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">04</span>
+                    <div class="internship-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Medical Biotechnology</h3>
+                    <p>Study diagnostics, immunology, drug development, and biomedical research techniques.</p>
+                    <a href="modules/4.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">05</span>
+                    <div class="internship-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Forensic Science</h3>
+                    <p>Learn DNA profiling, forensic biology, evidence analysis, and molecular forensics.</p>
+                    <a href="modules/5.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">06</span>
+                    <div class="internship-icon"><i class="fas fa-vials"></i></div>
+                    <h3>Mix Module (Micro, Mol Bio & Biochem)</h3>
+                    <p>Comprehensive training combining microbiology, molecular biology, and biochemistry fundamentals.</p>
+                    <a href="modules/6.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card featured">
+                    <span class="internship-number">07</span>
+                    <div class="internship-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Advanced rDNA Technology & Animal Cell Culture</h3>
+                    <p>Advanced techniques in recombinant DNA technology, mammalian cell culture, transfection, protein expression, and downstream processing. Ideal for those pursuing research careers in biotechnology and pharmaceutical industries.</p>
+                    <a href="modules/7.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">08</span>
+                    <div class="internship-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Short Duration Programs</h3>
+                    <p>Flexible 45 days, 2 months & 3 months programs for focused skill development.</p>
+                    <a href="modules/8.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">09</span>
+                    <div class="internship-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Job Oriented Training</h3>
+                    <p>Industry-focused training with 100% placement assistance in biotech companies.</p>
+                    <a href="modules/9.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">10</span>
+                    <div class="internship-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Project & Dissertation</h3>
+                    <p>Research project support for M.Sc., M.Tech., and B.Tech. dissertation requirements.</p>
+                    <a href="modules/10.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">11</span>
+                    <div class="internship-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Ph.D. Assistance</h3>
+                    <p>Comprehensive support for doctoral research including experimental design and thesis guidance.</p>
+                    <a href="modules/11.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="internship-card">
+                    <span class="internship-number">12</span>
+                    <div class="internship-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Online Courses</h3>
+                    <p>Flexible online learning modules for theoretical foundations and computational biology.</p>
+                    <a href="modules/12.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== TESTIMONIALS =================== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fas fa-quote-left"></i> Testimonials</div>
+                <h2 class="section-title">What Our <span class="gradient-text-animated">Scholars Say</span></h2>
+                <p class="section-subtitle">Hear from our community of researchers and students</p>
+            </div>
+        </div>
+        <div class="testimonials-track" id="testimonialTrack">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The molecular biology training at SARG was exceptional. The hands-on experience with PCR and gene cloning techniques prepared me for my PhD research."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AS</div>
+                    <div class="testimonial-info">
+                        <h4>Ananya Sharma</h4>
+                        <p>PhD Scholar, JNU</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"SARG Research Biolabs provided me with industry-ready skills. Within months of completing the program, I secured a position at a leading biotech firm."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">RK</div>
+                    <div class="testimonial-info">
+                        <h4>Rahul Kumar</h4>
+                        <p>Research Analyst, Biocon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"The forensic science module was incredibly detailed. The practical exposure to DNA profiling techniques was unmatched by any other training program."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">PM</div>
+                    <div class="testimonial-info">
+                        <h4>Priya Mishra</h4>
+                        <p>MSc Forensic Science</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Outstanding mentorship and research support. The team at SARG genuinely cares about student development and scientific excellence."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">VG</div>
+                    <div class="testimonial-info">
+                        <h4>Vikram Gupta</h4>
+                        <p>BTech Biotechnology</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicated for seamless scroll -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The molecular biology training at SARG was exceptional. The hands-on experience with PCR and gene cloning techniques prepared me for my PhD research."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AS</div>
+                    <div class="testimonial-info">
+                        <h4>Ananya Sharma</h4>
+                        <p>PhD Scholar, JNU</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"SARG Research Biolabs provided me with industry-ready skills. Within months of completing the program, I secured a position at a leading biotech firm."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">RK</div>
+                    <div class="testimonial-info">
+                        <h4>Rahul Kumar</h4>
+                        <p>Research Analyst, Biocon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"The forensic science module was incredibly detailed. The practical exposure to DNA profiling techniques was unmatched by any other training program."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">PM</div>
+                    <div class="testimonial-info">
+                        <h4>Priya Mishra</h4>
+                        <p>MSc Forensic Science</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Outstanding mentorship and research support. The team at SARG genuinely cares about student development and scientific excellence."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">VG</div>
+                    <div class="testimonial-info">
+                        <h4>Vikram Gupta</h4>
+                        <p>BTech Biotechnology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== CTA SECTION =================== -->
+    <section class="cta-section" id="ctaSection">
+        <div class="cta-glow"></div>
+        <div class="cta-glow-2"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Begin Your Research Journey?</h2>
+                <p>
+                    Join our community of scholars, researchers, and innovators. Transform your research potential into
+                    excellence.
+                </p>
+                <div class="cta-buttons">
+                    <a href="membership.html" class="btn btn-primary magnetic-btn">
+                        <i class="fas fa-user-plus"></i> Become a Member
+                    </a>
+                    <a href="contact.html" class="btn btn-outline magnetic-btn">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="programs.html">Research Foundation</a></li>
+                        <li><a href="programs.html">Molecular Biology</a></li>
+                        <li><a href="programs.html">Microbiology</a></li>
+                        <li><a href="programs.html">Biostatistics</a></li>
+                        <li><a href="programs.html">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- =================== MAIN SCRIPT =================== -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        // ===================== PRELOADER =====================
+        function initPreloader() {
+            const bar = document.getElementById('preloaderBar');
+            const preloader = document.getElementById('preloader');
+
+            gsap.to(bar, {
+                width: '100%',
+                duration: 2.5,
+                ease: 'power2.inOut',
+                onComplete: () => {
+                    gsap.to(preloader, {
+                        yPercent: -100,
+                        duration: 0.8,
+                        ease: 'power4.inOut',
+                        onComplete: () => {
+                            preloader.style.display = 'none';
+                            document.body.style.overflow = '';
+                            initAllAnimations();
+                        }
+                    });
+                }
+            });
+
+            // Pulsate DNA icon
+            gsap.to('.preloader-dna', {
+                scale: 1.2,
+                rotation: 360,
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+
+            // Text flicker
+            gsap.fromTo('.preloader-text', {
+                opacity: 0.3
+            }, {
+                opacity: 1,
+                duration: 0.8,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+        }
+
+        // ===================== CUSTOM CURSOR =====================
+        function initCursor() {
+            const dot = document.getElementById('cursorDot');
+            const ring = document.getElementById('cursorRing');
+
+            if (window.innerWidth <= 992) return;
+
+            let mouseX = 0, mouseY = 0;
+            let dotX = 0, dotY = 0;
+            let ringX = 0, ringY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animateCursor() {
+                dotX += (mouseX - dotX) * 0.2;
+                dotY += (mouseY - dotY) * 0.2;
+                ringX += (mouseX - ringX) * 0.08;
+                ringY += (mouseY - ringY) * 0.08;
+
+                dot.style.left = dotX - 4 + 'px';
+                dot.style.top = dotY - 4 + 'px';
+                ring.style.left = ringX - 20 + 'px';
+                ring.style.top = ringY - 20 + 'px';
+
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+
+            // Hover effects
+            const hoverEls = document.querySelectorAll('a, button, .btn, .service-card, .internship-card, .nav-link');
+            hoverEls.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    dot.classList.add('hover');
+                    ring.classList.add('hover');
+                });
+                el.addEventListener('mouseleave', () => {
+                    dot.classList.remove('hover');
+                    ring.classList.remove('hover');
+                });
+            });
+        }
+
+        // ===================== SCROLL PROGRESS =====================
+        function initScrollProgress() {
+            const progressBar = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrolled = (window.scrollY / scrollHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        }
+
+        // ===================== PARTICLES =====================
+        function initParticles() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const particleCount = 60;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            class Particle {
+                constructor() {
+                    this.reset();
+                }
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.5;
+                    this.speedY = (Math.random() - 0.5) * 0.5;
+                    this.opacity = Math.random() * 0.5 + 0.1;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(0, 200, 83, ${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            function connectParticles() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 150) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(0, 200, 83, ${0.08 * (1 - dist / 150)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                connectParticles();
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // ===================== DNA HELIX BACKGROUND =====================
+        function initDNAHelix() {
+            const container = document.getElementById('dnaBg');
+            if (!container) return;
+
+            for (let i = 0; i < 30; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dna-strand';
+                const yPos = (i / 30) * 100;
+                dot.style.top = yPos + '%';
+                container.appendChild(dot);
+
+                gsap.to(dot, {
+                    x: () => Math.sin(i * 0.4) * 150,
+                    left: '50%',
+                    duration: 3,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut',
+                    delay: i * 0.1
+                });
+
+                gsap.to(dot, {
+                    opacity: () => 0.3 + Math.random() * 0.7,
+                    scale: () => 0.5 + Math.random() * 2,
+                    duration: 2,
+                    repeat: -1,
+                    yoyo: true,
+                    delay: i * 0.08
+                });
+            }
+        }
+
+        // ===================== HERO ANIMATIONS =====================
+        function initHero() {
+            const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+            tl.from('.hero-badge', { opacity: 0, y: 40, scale: 0.8, duration: 1, delay: 0.2 })
+              .from('.hero-title', { opacity: 0, y: 100, duration: 1.4 }, '-=0.6')
+              .from('.hero-description', { opacity: 0, y: 60, duration: 1 }, '-=0.8')
+              .from('.hero-buttons .btn', {
+                  opacity: 0,
+                  y: 50,
+                  scale: 0.8,
+                  stagger: 0.2,
+                  duration: 1
+              }, '-=0.6')
+              .from('.hero-stats .stat-item', {
+                  opacity: 0,
+                  y: 40,
+                  stagger: 0.15,
+                  duration: 1
+              }, '-=0.4');
+
+            // Parallax on hero background
+            const heroBg = document.getElementById('heroBgImg');
+            if (heroBg) {
+                document.addEventListener('mousemove', (e) => {
+                    const x = (e.clientX / window.innerWidth - 0.5) * 30;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 30;
+                    gsap.to(heroBg, {
+                        x: x,
+                        y: y,
+                        duration: 2,
+                        ease: 'power2.out'
+                    });
+                });
+
+                // Scroll parallax
+                gsap.to(heroBg, {
+                    yPercent: 20,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: 1
+                    }
+                });
+            }
+
+            // Hero content parallax on scroll
+            gsap.to('.hero-content', {
+                y: -80,
+                opacity: 0,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: '60% top',
+                    end: 'bottom top',
+                    scrub: 1
+                }
+            });
+        }
+
+        // ===================== COUNTER ANIMATION =====================
+        function animateCounters(selector) {
+            document.querySelectorAll(selector).forEach(el => {
+                const target = parseInt(el.getAttribute('data-count'));
+                if (!target || el.dataset.animated === 'true') return;
+                el.dataset.animated = 'true';
+
+                gsap.to(el, {
+                    innerText: target,
+                    duration: 2.5,
+                    snap: { innerText: 1 },
+                    ease: 'power2.out',
+                    onUpdate: function() {
+                        el.textContent = Math.round(parseFloat(el.textContent)) + '+';
+                    }
+                });
+            });
+        }
+
+        // ===================== ABOUT SECTION =====================
+        function initAbout() {
+            // Image reveal
+            const aboutImg = document.querySelector('#aboutImage .reveal-wrap');
+            if (aboutImg) {
+                const imgRevealTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '#aboutImage',
+                        start: 'top 75%',
+                    }
+                });
+
+                imgRevealTl
+                    .from('#aboutImage .reveal-wrap::after', { scaleX: 1, duration: 0 })
+                    .from('#aboutImage img', {
+                        scale: 1.3,
+                        duration: 1.5,
+                        ease: 'power3.out'
+                    })
+                    .from('#aboutImage .experience-badge', {
+                        scale: 0,
+                        opacity: 0,
+                        rotation: -20,
+                        duration: 0.8,
+                        ease: 'back.out(2)'
+                    }, '-=0.5');
+            }
+
+            // Content animations
+            const contentTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '#aboutContent',
+                    start: 'top 75%',
+                }
+            });
+
+            contentTl
+                .from('#aboutContent .section-badge', { opacity: 0, x: -50, duration: 0.8 })
+                .from('#aboutContent h2', { opacity: 0, y: 50, duration: 1 }, '-=0.4')
+                .from('#aboutContent p', {
+                    opacity: 0,
+                    y: 30,
+                    stagger: 0.2,
+                    duration: 0.8
+                }, '-=0.4')
+                .from('.about-feature', {
+                    opacity: 0,
+                    x: -40,
+                    stagger: 0.15,
+                    duration: 0.8
+                }, '-=0.3');
+
+            // About image hover parallax
+            const aboutImage = document.querySelector('#aboutImage');
+            if (aboutImage && window.innerWidth > 768) {
+                aboutImage.addEventListener('mousemove', (e) => {
+                    const rect = aboutImage.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                    gsap.to('#aboutImage img', {
+                        rotationY: x * 10,
+                        rotationX: -y * 10,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
+                });
+
+                aboutImage.addEventListener('mouseleave', () => {
+                    gsap.to('#aboutImage img', {
+                        rotationY: 0,
+                        rotationX: 0,
+                        duration: 0.8,
+                        ease: 'elastic.out(1, 0.4)'
+                    });
+                });
+            }
+        }
+
+        // ===================== STATS SECTION =====================
+        function initStats() {
+            ScrollTrigger.create({
+                trigger: '#statsSection',
+                start: 'top 70%',
+                onEnter: () => animateCounters('#statsSection .stats-card h3'),
+                once: true
+            });
+
+            // Animate stats cards
+            gsap.from('.stats-card', {
+                opacity: 0,
+                y: 60,
+                stagger: 0.2,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '#statsSection',
+                    start: 'top 75%'
+                }
+            });
+
+            // Floating animation on icons
+            gsap.utils.toArray('.stats-card-icon').forEach((icon, i) => {
+                gsap.to(icon, {
+                    y: -8,
+                    duration: 2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut',
+                    delay: i * 0.3
+                });
+            });
+        }
+
+        // ===================== VIDEO SECTION =====================
+        function initVideo() {
+            const videoContainer = document.getElementById('videoContainer');
+            if (!videoContainer) return;
+
+            gsap.from(videoContainer, {
+                scale: 0.8,
+                opacity: 0,
+                y: 80,
+                duration: 1.2,
+                scrollTrigger: {
+                    trigger: '#videoSection',
+                    start: 'top 70%'
+                }
+            });
+
+            // Play button pulse
+            gsap.to('.play-btn', {
+                scale: 1.05,
+                duration: 1.5,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+
+            // Click to play (would open modal or video in real implementation)
+            document.getElementById('videoOverlay')?.addEventListener('click', () => {
+                gsap.to('.play-btn', {
+                    scale: 2,
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: 'power2.in'
+                });
+                gsap.to('#videoOverlay', {
+                    opacity: 0,
+                    duration: 0.8,
+                    delay: 0.3,
+                    onComplete: () => {
+                        document.getElementById('videoOverlay').style.pointerEvents = 'none';
+                    }
+                });
+            });
+        }
+
+        // ===================== SERVICES CARDS =====================
+        function initServices() {
+            gsap.utils.toArray('.service-card').forEach((card, i) => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 80,
+                    rotationX: 15,
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            });
+
+            // Initialize VanillaTilt for service cards
+            if (window.innerWidth > 768) {
+                VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
+                    max: 8,
+                    speed: 400,
+                    glare: true,
+                    'max-glare': 0.15
+                });
+            }
+        }
+
+        // ===================== INTERNSHIP CARDS =====================
+        function initInternships() {
+            gsap.from('.internship-card', {
+                opacity: 0,
+                y: 100,
+                scale: 0.9,
+                stagger: {
+                    each: 0.08,
+                    from: 'start'
+                },
+                duration: 0.9,
+                scrollTrigger: {
+                    trigger: '.internship-grid',
+                    start: 'top 75%',
+                }
+            });
+
+            // Hover animations
+            document.querySelectorAll('.internship-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        y: -12,
+                        scale: 1.02,
+                        duration: 0.4,
+                        ease: 'power3.out'
+                    });
+                    gsap.to(card.querySelector('.internship-number'), {
+                        scale: 1.3,
+                        rotation: 360,
+                        duration: 0.6,
+                        ease: 'back.out(2)'
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        y: 0,
+                        scale: 1,
+                        duration: 0.6,
+                        ease: 'elastic.out(1, 0.5)'
+                    });
+                    gsap.to(card.querySelector('.internship-number'), {
+                        scale: 1,
+                        rotation: 0,
+                        duration: 0.6
+                    });
+                });
+            });
+        }
+
+        // ===================== SECTION HEADERS =====================
+        function initSectionHeaders() {
+            gsap.utils.toArray('.section-header').forEach(header => {
+                const badge = header.querySelector('.section-badge');
+                const title = header.querySelector('.section-title');
+                const subtitle = header.querySelector('.section-subtitle');
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: header,
+                        start: 'top 80%'
+                    }
+                });
+
+                if (badge) tl.from(badge, { opacity: 0, y: -30, scale: 0.8, duration: 0.6 });
+                if (title) tl.from(title, { opacity: 0, y: 50, duration: 0.8 }, '-=0.3');
+                if (subtitle) tl.from(subtitle, { opacity: 0, y: 30, duration: 0.6 }, '-=0.3');
+            });
+        }
+
+        // ===================== CTA SECTION =====================
+        function initCTA() {
+            const ctaTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '#ctaSection',
+                    start: 'top 70%'
+                }
+            });
+
+            ctaTl
+                .from('.cta-content h2', { opacity: 0, y: 60, scale: 0.9, duration: 1 })
+                .from('.cta-content p', { opacity: 0, y: 40, duration: 0.8 }, '-=0.5')
+                .from('.cta-buttons .btn', {
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.8,
+                    stagger: 0.2,
+                    duration: 0.8
+                }, '-=0.4');
+
+            // Animate glow blobs
+            gsap.to('.cta-glow', {
+                x: 50,
+                y: 30,
+                scale: 1.2,
+                duration: 6,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+
+            gsap.to('.cta-glow-2', {
+                x: -40,
+                y: -20,
+                scale: 1.3,
+                duration: 8,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+        }
+
+        // ===================== FOOTER =====================
+        function initFooter() {
+            const footerTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '#footer',
+                    start: 'top 85%'
+                }
+            });
+
+            footerTl
+                .from('.footer-brand', { opacity: 0, x: -60, duration: 0.8 })
+                .from('.footer-column', {
+                    opacity: 0,
+                    y: 40,
+                    stagger: 0.15,
+                    duration: 0.8
+                }, '-=0.5')
+                .from('.footer-social a', {
+                    opacity: 0,
+                    scale: 0,
+                    stagger: 0.1,
+                    duration: 0.5,
+                    ease: 'back.out(2)'
+                }, '-=0.3')
+                .from('.footer-bottom', { opacity: 0, y: 20, duration: 0.6 }, '-=0.2');
+        }
+
+        // ===================== MAGNETIC BUTTONS =====================
+        function initMagneticButtons() {
+            if (window.innerWidth <= 768) return;
+
+            document.querySelectorAll('.magnetic-btn').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    gsap.to(btn, {
+                        x: x * 0.35,
+                        y: y * 0.35,
+                        duration: 0.4,
+                        ease: 'power3.out'
+                    });
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    gsap.to(btn, {
+                        x: 0,
+                        y: 0,
+                        duration: 0.7,
+                        ease: 'elastic.out(1, 0.4)'
+                    });
+                });
+            });
+        }
+
+        // ===================== NAVBAR =====================
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+
+            // Scroll behavior
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.scrollY;
+                if (currentScroll > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Show/hide navbar on scroll direction
+                if (currentScroll > lastScroll && currentScroll > 500) {
+                    gsap.to(navbar, { y: -100, duration: 0.3 });
+                } else {
+                    gsap.to(navbar, { y: 0, duration: 0.3 });
+                }
+                lastScroll = currentScroll;
+            });
+
+            // Mobile toggle
+            mobileToggle?.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+
+                const spans = mobileToggle.querySelectorAll('span');
+                if (navMenu.classList.contains('active')) {
+                    gsap.to(spans[0], { rotation: 45, y: 7, duration: 0.3 });
+                    gsap.to(spans[1], { opacity: 0, duration: 0.3 });
+                    gsap.to(spans[2], { rotation: -45, y: -7, duration: 0.3 });
+                } else {
+                    gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.3 });
+                    gsap.to(spans[1], { opacity: 1, duration: 0.3 });
+                    gsap.to(spans[2], { rotation: 0, y: 0, duration: 0.3 });
+                }
+            });
+
+            menuOverlay?.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                const spans = mobileToggle.querySelectorAll('span');
+                gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.3 });
+                gsap.to(spans[1], { opacity: 1, duration: 0.3 });
+                gsap.to(spans[2], { rotation: 0, y: 0, duration: 0.3 });
+            });
+
+            // Mobile dropdown toggle
+            document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        link.parentElement.classList.toggle('dropdown-open');
+                    }
+                });
+            });
+        }
+
+        // ===================== SCROLL TO TOP =====================
+        function initScrollTop() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn?.addEventListener('click', () => {
+                gsap.to(window, {
+                    scrollTo: { y: 0 },
+                    duration: 1.5,
+                    ease: 'power4.inOut'
+                });
+            });
+        }
+
+        // ===================== CHATBOT =====================
+        function initChatbot() {
+            const fab = document.querySelector('[data-chatbot-open]');
+            const panel = document.getElementById('chatbotPanel');
+            const overlay = document.getElementById('chatbotPanelOverlay');
+            const closeBtn = document.getElementById('chatbotPanelClose');
+            const frame = document.getElementById('chatbotFrame');
+
+            function openPanel() {
+                if (frame && !frame.src && frame.dataset.src) {
+                    frame.src = frame.dataset.src;
+                }
+                panel.classList.add('active');
+                overlay.classList.add('active');
+                panel.setAttribute('aria-hidden', 'false');
+            }
+
+            function closePanel() {
+                panel.classList.remove('active');
+                overlay.classList.remove('active');
+                panel.setAttribute('aria-hidden', 'true');
+            }
+
+            fab?.addEventListener('click', openPanel);
+            closeBtn?.addEventListener('click', closePanel);
+            overlay?.addEventListener('click', closePanel);
+
+            // Pulsate FAB
+            gsap.to('.chatbot-fab', {
+                scale: 1.05,
+                duration: 1.5,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+        }
+
+        // ===================== MORPH BLOB ANIMATION =====================
+        function initMorphBlobs() {
+            gsap.utils.toArray('.morph-blob').forEach(blob => {
+                gsap.to(blob, {
+                    x: () => gsap.utils.random(-100, 100),
+                    y: () => gsap.utils.random(-50, 50),
+                    scale: () => gsap.utils.random(0.8, 1.3),
+                    duration: () => gsap.utils.random(8, 15),
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut'
+                });
+            });
+        }
+
+        // ===================== PARALLAX BACKGROUNDS =====================
+        function initParallaxBgs() {
+            gsap.utils.toArray('.bg-shape').forEach(shape => {
+                gsap.to(shape, {
+                    y: () => gsap.utils.random(-100, 100),
+                    x: () => gsap.utils.random(-50, 50),
+                    scrollTrigger: {
+                        trigger: shape.parentElement,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 2
+                    }
+                });
+            });
+        }
+
+        // ===================== SMOOTH REVEAL ON SCROLL =====================
+        function initScrollReveals() {
+            // Generic reveal for elements with data-reveal attribute
+            gsap.utils.toArray('[data-reveal]').forEach(el => {
+                gsap.from(el, {
+                    opacity: 0,
+                    y: 60,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 85%'
+                    }
+                });
+            });
+
+            // Animated line reveals
+            gsap.utils.toArray('.animated-line').forEach(line => {
+                gsap.from(line, {
+                    scaleX: 0,
+                    duration: 1.5,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: line,
+                        start: 'top 90%'
+                    }
+                });
+            });
+        }
+
+        // ===================== HERO STAT COUNTERS =====================
+        function initHeroCounters() {
+            ScrollTrigger.create({
+                trigger: '.hero-stats',
+                start: 'top 80%',
+                onEnter: () => animateCounters('.hero-stats .stat-item h3'),
+                once: true
+            });
+        }
+
+        // ===================== INITIALIZE EVERYTHING =====================
+        function initAllAnimations() {
+            initCursor();
+            initScrollProgress();
+            initParticles();
+            initDNAHelix();
+            initHero();
+            initHeroCounters();
+            initAbout();
+            initStats();
+            initVideo();
+            initServices();
+            initInternships();
+            initSectionHeaders();
+            initCTA();
+            initFooter();
+            initMagneticButtons();
+            initNavbar();
+            initScrollTop();
+            initChatbot();
+            initMorphBlobs();
+            initParallaxBgs();
+            initScrollReveals();
+
+            // Refresh ScrollTrigger after all animations set up
+            setTimeout(() => ScrollTrigger.refresh(), 500);
+        }
+
+        // Start with preloader
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.overflow = 'hidden';
+            initPreloader();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/site-effects.js"></script>
+
+</body>
+
+</html>

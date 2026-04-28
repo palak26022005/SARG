@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-light: #d1fae5;
+      --primary-dark: #059669;
+      --bg: #f0fdf4;
+      --card: #ffffff;
+      --text: #064e3b;
+      --text-light: #64748b;
+      --border: #d1fae5;
+      --shadow: rgba(16, 185, 129, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, #ecfdf5 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Decorative background elements */
+    .bg-circle {
+      position: fixed;
+      border-radius: 50%;
+      background: var(--primary-light);
+      opacity: 0.5;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .circle-1 {
+      width: clamp(200px, 30vw, 300px);
+      height: clamp(200px, 30vw, 300px);
+      top: -10%;
+      left: -10%;
+      filter: blur(60px);
+    }
+
+    .circle-2 {
+      width: clamp(180px, 25vw, 250px);
+      height: clamp(180px, 25vw, 250px);
+      bottom: -10%;
+      right: -10%;
+      filter: blur(50px);
+    }
+
+    .login-card {
+      background: var(--card);
+      width: 100%;
+      max-width: 28rem; /* 448px */
+      margin: auto;
+      border-radius: clamp(1.5rem, 4vw, 2rem);
+      overflow: hidden;
+      box-shadow: 
+        0 25px 50px rgba(16, 185, 129, 0.12),
+        0 0 0 1px rgba(16, 185, 129, 0.08);
+      position: relative;
+      z-index: 1;
+      animation: slideUpFade 0.8s ease-out;
+    }
+
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header with Square Logo */
+    .header {
+      background: linear-gradient(135deg, var(--primary-light) 0%, #ecfdf5 100%);
+      padding: clamp(2rem, 5vw, 3.125rem) clamp(1.25rem, 4vw, 1.875rem) clamp(2rem, 4vw, 2.5rem);
+      text-align: center;
+      position: relative;
+      border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+    }
+
+    .logo-container {
+      width: clamp(140px, 40vw, 180px);
+      height: clamp(75px, 20vw, 100px);
+      max-width: 100%;
+      margin: 0 auto clamp(1rem, 3vw, 1.5rem);
+      background: white;
+      border-radius: clamp(0.75rem, 2vw, 1rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 
+        0 10px 30px rgba(16, 185, 129, 0.15),
+        inset 0 0 0 clamp(2px, 0.5vw, 4px) var(--primary-light);
+      position: relative;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      padding: clamp(0.5rem, 2vw, 0.75rem);
+    }
+
+    .logo-container:hover {
+      transform: scale(1.02);
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header h1 {
+      font-size: clamp(1.375rem, 5vw, 1.75rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: clamp(0.5rem, 2vw, 0.625rem);
+      letter-spacing: -0.02em;
+    }
+
+    .header p {
+      color: var(--text-light);
+      font-size: clamp(0.875rem, 3vw, 0.9375rem);
+      line-height: 1.5;
+      padding: 0 1rem;
+    }
+
+    /* Chat bubble decoration */
+    .chat-bubble {
+      position: absolute;
+      bottom: -0.9375rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: white;
+      padding: clamp(0.5rem, 2vw, 0.5rem) clamp(1rem, 3vw, 1.25rem);
+      border-radius: 1.25rem;
+      font-size: clamp(0.75rem, 2.5vw, 0.8125rem);
+      font-weight: 600;
+      box-shadow: 0 4px 15px var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    .chat-bubble i {
+      font-size: clamp(0.7rem, 2vw, 0.75rem);
+    }
+
+    /* Form Container */
+    .form-container {
+      padding: clamp(2.5rem, 6vw, 3.125rem) clamp(1.5rem, 5vw, 2.5rem) clamp(2rem, 5vw, 2.8125rem);
+      background: var(--card);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.25rem, 4vw, 1.75rem);
+    }
+
+    .input-group {
+      position: relative;
+      width: 100%;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: clamp(0.875rem, 3vw, 1.125rem) clamp(1rem, 3vw, 1.25rem);
+      font-size: clamp(0.9375rem, 3vw, 1rem);
+      border: 2px solid var(--border);
+      border-radius: clamp(0.875rem, 3vw, 1rem);
+      background: var(--primary-light);
+      transition: all 0.3s ease;
+      outline: none;
+      color: var(--text);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .input-group input:focus {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 clamp(3px, 1vw, 5px) rgba(16, 185, 129, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .input-group input::placeholder {
+      color: transparent;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: clamp(1rem, 3vw, 1.25rem);
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(0.875rem, 3vw, 0.9375rem);
+      color: var(--text-light);
+      pointer-events: none;
+      transition: 0.3s ease;
+      background: var(--primary-light);
+      padding: 0 0.5rem;
+      font-weight: 500;
+    }
+
+    .input-group input:focus ~ label,
+    .input-group input:not(:placeholder-shown) ~ label {
+      top: 0;
+      transform: translateY(-50%);
+      font-size: clamp(0.7rem, 2.5vw, 0.75rem);
+      font-weight: 600;
+      color: var(--primary);
+      background: white;
+    }
+
+    /* Password toggle */
+    .password-toggle {
+      position: absolute;
+      right: clamp(1rem, 3vw, 1.25rem);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary);
+      cursor: pointer;
+      font-size: clamp(1rem, 3vw, 1.125rem);
+      transition: color 0.3s;
+      padding: 0.5rem;
+      touch-action: manipulation;
+    }
+
+    .password-toggle:hover {
+      color: var(--primary-dark);
+    }
+
+    button {
+      margin-top: clamp(0.5rem, 2vw, 0.625rem);
+      padding: clamp(1rem, 3vw, 1.125rem);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border: none;
+      border-radius: clamp(0.875rem, 3vw, 1rem);
+      font-size: clamp(0.9375rem, 3vw, 1.0625rem);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(16, 185, 129, 0.25);
+    }
+
+    button:active {
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: clamp(1rem, 3vw, 1.25rem);
+      color: var(--text-light);
+      font-size: clamp(0.8125rem, 2.5vw, 0.875rem);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Extra Small Mobile (320px - 374px) */
+    @media (max-width: 374px) {
+      html {
+        font-size: 14px;
+      }
+
+      .login-card {
+        border-radius: 1.25rem;
+      }
+
+      .logo-container {
+        width: 130px;
+        height: 70px;
+        padding: 0.5rem;
+      }
+
+      .chat-bubble {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.9rem;
+      }
+
+      .input-group input {
+        padding: 0.75rem 0.875rem;
+      }
+
+      button {
+        padding: 0.875rem;
+      }
+    }
+
+    /* Small Mobile (375px - 480px) */
+    @media (min-width: 375px) and (max-width: 480px) {
+      .logo-container {
+        width: 150px;
+        height: 80px;
+      }
+    }
+
+    /* Medium Mobile (481px - 640px) */
+    @media (min-width: 481px) and (max-width: 640px) {
+      .logo-container {
+        width: 160px;
+        height: 90px;
+      }
+    }
+
+    /* Tablet Portrait (641px - 768px) */
+    @media (min-width: 641px) and (max-width: 768px) {
+      .login-card {
+        max-width: 85%;
+      }
+
+      .logo-container {
+        width: 170px;
+        height: 95px;
+      }
+    }
+
+    /* Tablet Landscape (769px - 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .login-card {
+        max-width: 75%;
+      }
+
+      .logo-container {
+        width: 180px;
+        height: 100px;
+      }
+    }
+
+    /* Desktop (1025px+) */
+    @media (min-width: 1025px) {
+      .login-card {
+        max-width: 28rem;
+      }
+    }
+
+    /* Landscape Mobile Orientation */
+    @media (max-height: 600px) and (orientation: landscape) {
+      body {
+        padding: 0.5rem;
+      }
+
+      .header {
+        padding: 1.5rem 1.25rem 1.75rem;
+      }
+
+      .logo-container {
+        width: 120px;
+        height: 65px;
+        margin-bottom: 0.75rem;
+      }
+
+      .form-container {
+        padding: 2rem 1.5rem 1.5rem;
+      }
+
+      form {
+        gap: 1rem;
+      }
+
+      .chat-bubble {
+        font-size: 0.7rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+
+    /* High DPI / Retina Displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Decorative background circles -->
+  <div class="bg-circle circle-1"></div>
+  <div class="bg-circle circle-2"></div>
+
+  <div class="login-card">
+    <!-- Header with Square Logo -->
+    <div class="header">
+      <div class="logo-container">
+        <img src="images/logo.png" alt="Your Logo" class="logo">
+      </div>
+      <h1>Welcome Back</h1>
+      <p>Sign in to continue to your AI assistant</p>
+      <div class="chat-bubble">
+        <i class="fas fa-robot"></i> AI Chatbot v2.0
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container">
+      <form action="login.php" method="POST">
+        <div class="input-group">
+          <input type="email" name="email" placeholder=" " required autocomplete="email">
+          <label>Email Address</label>
+        </div>
+
+        <div class="input-group">
+          <input type="password" name="password" placeholder=" " id="password" required autocomplete="current-password">
+          <label>Password</label>
+          <span class="password-toggle" onclick="togglePassword()" role="button" aria-label="Toggle password visibility">
+            <i class="far fa-eye" id="eye-icon"></i>
+          </span>
+        </div>
+
+        <button type="submit">
+          <i class="fas fa-sign-in-alt"></i> Sign In
+        </button>
+      </form>
+
+      <div class="footer">
+        <p>Don't have an account? <a href="chatbot.html">Create one</a></p>
+        <p style="margin-top: 0.5rem; font-size: clamp(0.75rem, 2vw, 0.8125rem); opacity: 0.8;">
+          <i class="fas fa-lock"></i> Your information is secure
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eye-icon');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+      }
+    }
+
+    // Prevent zoom on input focus for iOS
+    if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      const inputs = document.querySelectorAll('input');
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.style.fontSize = '16px';
+        });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ph.D. Assistance | SARG Research Biolabs</title>
+    <meta name="description"
+        content="Comprehensive Ph.D. research assistance in biotechnology. Expert guidance for topic selection, literature review, methodology, data analysis, manuscript writing, and thesis defense preparation at SARG Research Biolabs.">
+    <link rel="icon" href="../images/logo1.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #0a5c36 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========================================
+           PAGE HEADER / HERO BANNER
+           ======================================== */
+        .page-header {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.9) 0%, rgba(26, 26, 46, 0.95) 100%);
+            z-index: -2;
+        }
+
+        .page-header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-header-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header-content .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--accent);
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page-header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-header-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .header-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header-badge i {
+            color: var(--accent);
+        }
+
+        /* ========================================
+           SECTION STYLES
+           ======================================== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========================================
+           PHD OVERVIEW SECTION
+           ======================================== */
+        .phd-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .phd-overview-image {
+            position: relative;
+        }
+
+        .phd-overview-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .phd-overview-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .phd-badge {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .phd-badge i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .phd-badge h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .phd-badge p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        .phd-overview-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .phd-overview-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* ========================================
+           ASSISTANCE AREAS GRID
+           ======================================== */
+        .assistance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .assistance-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .assistance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .assistance-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-10px);
+        }
+
+        .assistance-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .assistance-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .assistance-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .assistance-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .assistance-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+
+        .assistance-list i {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        /* ========================================
+           RESEARCH AREAS GALLERY
+           ======================================== */
+        .research-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 250px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 92, 54, 0.3), rgba(10, 92, 54, 0.9));
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            background: linear-gradient(to bottom, rgba(10, 92, 54, 0.5), rgba(10, 92, 54, 0.95));
+        }
+
+        .gallery-content h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           PROCESS STEPS
+           ======================================== */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .process-step {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 20px 20px 0 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .process-step:hover::before {
+            transform: scaleX(1);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .process-step:hover .step-number {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .process-step h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .process-step p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           WHY CHOOSE US
+           ======================================== */
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--white);
+            margin: 0 auto 1.25rem;
+        }
+
+        .why-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .why-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           TESTIMONIALS
+           ======================================== */
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: rgba(0, 0, 0, 0.9);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+        }
+
+        .author-info h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: var(--gradient-primary);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .assistance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .why-choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .phd-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .phd-overview-image {
+                order: -1;
+            }
+
+            .phd-badge {
+                right: 20px;
+                top: 20px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 150px 0 80px;
+                min-height: 400px;
+            }
+
+            .page-header-content h1 {
+                font-size: 2.25rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .phd-overview-content h2 {
+                font-size: 2rem;
+            }
+
+            .assistance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .research-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header-content h1 {
+                font-size: 1.85rem;
+            }
+
+            .assistance-card,
+            .process-step {
+                padding: 2rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .phd-badge {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin-top: 1.5rem;
+                display: inline-block;
+            }
+
+            .phd-overview-image::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="../images/logo.png" alt="logo">
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>about our organization</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown active">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3"
+                alt="Ph.D. Research">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-pattern"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="../programs.html">Programs</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Ph.D. Assistance</span>
+                </div>
+                <h1>Ph.D. Research Assistance</h1>
+                <p>Comprehensive research support for your doctoral journey in biotechnology. Expert mentorship, state-of-the-art facilities, and guidance from topic selection to thesis defense.</p>
+                <div class="header-badges">
+                    <span class="header-badge"><i class="fas fa-user-graduate"></i> Expert Mentorship</span>
+                    <span class="header-badge"><i class="fas fa-microscope"></i> Advanced Facilities</span>
+                    <span class="header-badge"><i class="fas fa-certificate"></i> Complete Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ph.D. Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="phd-overview">
+                <div class="phd-overview-image">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3"
+                        alt="Ph.D. Research Work">
+                    <div class="phd-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Doctoral</h3>
+                        <p>Excellence</p>
+                    </div>
+                </div>
+                <div class="phd-overview-content">
+                    <div class="section-badge">
+                        <i class="fas fa-flask"></i> Research Support
+                    </div>
+                    <h2>Navigate Your Doctoral Journey With Expert Guidance</h2>
+                    <p>
+                        Biotechnology Ph.D. research work assistance is a crucial aspect of the doctoral journey, providing invaluable support and guidance to students as they navigate the complexities of their research projects.
+                    </p>
+                    <p>
+                        This assistance encompasses various aspects, aimed at ensuring the success and effectiveness of the research work. We play a critical role in mentoring students on research ethics, scientific integrity, and professional development.
+                    </p>
+                    <p>
+                        We offer guidance on presenting research at conferences, networking with experts, and preparing for thesis defenses. At SARG, we can conduct the research or provide specific experimental details tailored to your doctoral requirements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assistance Areas Section -->
+    <section class="section section-dark" id="assistance">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-hands-helping"></i> How We Help
+                </div>
+                <h2 class="section-title">Comprehensive Ph.D. Assistance</h2>
+                <p class="section-subtitle">
+                    Complete support across all stages of your doctoral research journey.
+                </p>
+            </div>
+            <div class="assistance-grid">
+                <!-- Topic Selection -->
+                <div class="assistance-card">
+                    <div class="assistance-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Topic Selection</h3>
+                    <p>We help you brainstorm and narrow down potential research topics within biotechnology based on your interests and current field trends.</p>
+                    <ul class="assistance-list">
+                        <li><i class="fas fa-check-circle"></i> Interest-based topic exploration</li>
+                        <li><i class="fas fa-check-circle"></i> Current trends analysis</li>
+                        <li><i class="fas fa-check-circle"></i> Feasibility assessment</li>
+                        <li><i class="fas fa-check-circle"></i> Research gap identification</li>
+                    </ul>
+                </div>
+
+                <!-- Literature Review -->
+                <div class="assistance-card">
+                    <div class="assistance-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Literature Review</h3>
+                    <p>Comprehensive assistance in conducting thorough literature reviews with strategic guidance and key findings summarization.</p>
+                    <ul class="assistance-list">
+                        <li><i class="fas fa-check-circle"></i> Search strategy development</li>
+                        <li><i class="fas fa-check-circle"></i> Relevant paper suggestions</li>
+                        <li><i class="fas fa-check-circle"></i> Key findings summary</li>
+                        <li><i class="fas fa-check-circle"></i> Critical analysis support</li>
+                    </ul>
+                </div>
+
+                <!-- Methodology -->
+                <div class="assistance-card">
+                    <div class="assistance-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Methodology</h3>
+                    <p>Expert advice on experimental design and methodology selection executed in our state-of-the-art laboratory facilities.</p>
+                    <ul class="assistance-list">
+                        <li><i class="fas fa-check-circle"></i> Experimental design planning</li>
+                        <li><i class="fas fa-check-circle"></i> Protocol development</li>
+                        <li><i class="fas fa-check-circle"></i> Lab execution support</li>
+                        <li><i class="fas fa-check-circle"></i> Quality control measures</li>
+                    </ul>
+                </div>
+
+                <!-- Data Analysis -->
+                <div class="assistance-card">
+                    <div class="assistance-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>Complete assistance with statistical analysis, bioinformatics tools, data visualization, and results interpretation.</p>
+                    <ul class="assistance-list">
+                        <li><i class="fas fa-check-circle"></i> Statistical analysis</li>
+                        <li><i class="fas fa-check-circle"></i> Bioinformatics support</li>
+                        <li><i class="fas fa-check-circle"></i> Data visualization</li>
+                        <li><i class="fas fa-check-circle"></i> Results interpretation</li>
+                    </ul>
+                </div>
+
+                <!-- Manuscript Writing -->
+                <div class="assistance-card">
+                    <div class="assistance-icon">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <h3>Manuscript Writing</h3>
+                    <p>Guidance on structuring manuscripts, scientific writing style, and effective presentation of research findings.</p>
+                    <ul class="assistance-list">
+                        <li><i class="fas fa-check-circle"></i> Manuscript structuring</li>
+                        <li><i class="fas fa-check-circle"></i> Scientific writing tips</li>
+                        <li><i class="fas fa-check-circle"></i> Clarity & organization</li>
+                        <li><i class="fas fa-check-circle"></i> Publication preparation</li>
+                    </ul>
+                </div>
+
+                <!-- Presentation & Defense -->
+                <div class="assistance-card">
+                    <div class="assistance-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Presentation & Defense</h3>
+                    <p>Comprehensive preparation for research presentations and thesis defense with effective communication strategies.</p>
+                    <ul class="assistance-list">
+                        <li><i class="fas fa-check-circle"></i> Slide creation guidance</li>
+                        <li><i class="fas fa-check-circle"></i> Presentation delivery</li>
+                        <li><i class="fas fa-check-circle"></i> Q&A preparation</li>
+                        <li><i class="fas fa-check-circle"></i> Defense strategies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas Gallery Section -->
+    <!-- <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-dna"></i> Research Domains
+                </div>
+                <h2 class="section-title">Specialized Research Areas</h2>
+                <p class="section-subtitle">
+                    Explore our diverse research expertise across cutting-edge biotechnology fields.
+                </p>
+            </div>
+            <div class="research-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3" alt="Industrial Microbiology" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Industrial Microbiology</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-4.0.3" alt="Forensic Science" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Crime Scene Investigation</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3" alt="Immunology" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Immunology</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3" alt="DNA Fingerprinting" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>DNA Fingerprinting</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3" alt="Cosmetics" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Cosmetics Biotech</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?ixlib=rb-4.0.3" alt="Food Biotechnology" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Food Biotechnology</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3" alt="Metabolomics" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Metabolomics</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3" alt="Enzymology" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Enzymology</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1612535663373-fef5621488d0?ixlib=rb-4.0.3" alt="Fermentation" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Fermentation Tech</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3" alt="Wine Production" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Wine Production</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3" alt="Medical Microbiology" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Medical Microbiology</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582719366962-6e77c6eb8933?ixlib=rb-4.0.3" alt="Toxicology" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Toxicology</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3" alt="Probiotics" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Probiotics</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3" alt="Antibiotics" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Antibiotics Production</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3" alt="Proteomics" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Proteomics</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-4.0.3" alt="Molecular Biology" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Molecular Biology</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3" alt="Nanotechnology" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Nano-Technology</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3" alt="Environmental" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Environmental Biotech</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?ixlib=rb-4.0.3" alt="Herbal Medicine" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Herbal Drug</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3" alt="Cancer Research" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Cancer Cell Lines</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Process Steps Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-route"></i> Our Process
+                </div>
+                <h2 class="section-title">Step-by-Step Research Support</h2>
+                <p class="section-subtitle">
+                    A systematic approach to ensure your doctoral research success.
+                </p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Initial Consultation</h3>
+                    <p>Meet with our experts to discuss your research interests, academic goals, and project requirements. We assess your needs and create a customized support plan.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Research Planning</h3>
+                    <p>Develop comprehensive research plan including topic finalization, literature review strategy, methodology design, and timeline creation for your doctoral work.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Laboratory Execution</h3>
+                    <p>Conduct experiments in our state-of-the-art facilities with expert supervision. Access advanced equipment and receive hands-on guidance throughout the process.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Data Analysis</h3>
+                    <p>Analyze experimental results using appropriate statistical and bioinformatics tools. Interpret findings and develop meaningful conclusions for your research.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Manuscript Preparation</h3>
+                    <p>Structure and write your thesis with expert guidance. Prepare research papers for publication in peer-reviewed journals with complete editorial support.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Defense Preparation</h3>
+                    <p>Prepare for thesis defense through mock presentations, anticipated question sessions, and communication skills development for confident presentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i> Why Choose Us
+                </div>
+                <h2 class="section-title">Excellence in Doctoral Support</h2>
+                <p class="section-subtitle">
+                    Comprehensive resources and expert guidance for your Ph.D. success.
+                </p>
+            </div>
+            <div class="why-choose-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Expert Mentors</h4>
+                    <p>Guidance from experienced researchers and subject matter experts</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h4>Advanced Labs</h4>
+                    <p>State-of-the-art facilities and cutting-edge equipment</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4>Publication Support</h4>
+                    <p>Assistance in preparing papers for international journals</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>Research Ethics</h4>
+                    <p>Mentoring on scientific integrity and professional development</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Networking</h4>
+                    <p>Connect with experts and present at conferences</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Career Growth</h4>
+                    <p>Professional development and career guidance</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4>Bioinformatics</h4>
+                    <p>Computational tools and data analysis support</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Complete Support</h4>
+                    <p>End-to-end assistance from start to defense</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-quote-left"></i> Success Stories
+                </div>
+                <h2 class="section-title">What Our Scholars Say</h2>
+                <p class="section-subtitle">
+                    Hear from successful Ph.D. candidates who achieved their research goals with us.
+                </p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        The expert guidance I received throughout my Ph.D. journey was invaluable. From topic selection to thesis defense, the team provided comprehensive support that helped me publish three research papers and successfully complete my doctorate.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3" alt="Dr. Priya Sharma" class="author-image">
+                        <div class="author-info">
+                            <h5>Dr. Priya Sharma</h5>
+                            <p>Ph.D. in Molecular Biology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Begin Your Doctoral Journey Today</h2>
+                <p>
+                    Join our comprehensive Ph.D. assistance program and achieve research excellence with expert guidance, state-of-the-art facilities, and complete support throughout your doctoral journey.
+                </p>
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Start Your Research
+                    </a>
+                    <a href="../contact.html" class="btn btn-outline">
+                        <i class="fas fa-info-circle"></i> Request Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="../images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../programs.html">Programs</a></li>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="../programs.html">Research Foundation</a></li>
+                        <li><a href="../programs.html">Molecular Biology</a></li>
+                        <li><a href="../programs.html">Microbiology</a></li>
+                        <li><a href="../programs.html">Biostatistics</a></li>
+                        <li><a href="../programs.html">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to Top Functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script src="../js/navbar.js"></script>
+</body>
+
+</html>

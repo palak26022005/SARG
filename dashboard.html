@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARG Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --accent: #1a73e8;
+            --card: #ffffff;
+            --text: #163126;
+            --muted: #587062;
+            --shadow: 0 18px 48px rgba(10, 92, 54, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, rgba(13, 122, 72, 0.16), transparent 30%), linear-gradient(180deg, #eef9f1 0%, #f8fcfa 100%);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .dashboard-shell {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .dashboard-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .dashboard-hero p {
+            max-width: 680px;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .dashboard-card {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .dashboard-card h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .dashboard-card p,
+        .dashboard-card li {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .dashboard-card ul {
+            padding-left: 1rem;
+        }
+
+        .dashboard-card.wide {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 860px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-card.wide {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="dashboard-shell">
+        <section class="dashboard-hero">
+            <h1>SARG Member Dashboard</h1>
+            <p>Your account is active. From here you can continue your research journey, manage program details, and access upcoming member resources.</p>
+        </section>
+
+        <section class="dashboard-grid">
+            <article class="dashboard-card wide">
+                <h2>Account Status</h2>
+                <p>Registration and login were completed successfully. This dashboard page is ready for future member data, program tracking, and research tools.</p>
+            </article>
+
+            <article class="dashboard-card">
+                <h2>Next Steps</h2>
+                <ul>
+                    <li>Complete your profile details</li>
+                    <li>Review membership benefits</li>
+                    <li>Explore research programs</li>
+                </ul>
+            </article>
+
+            <article class="dashboard-card">
+                <h2>Support</h2>
+                <p>Need help with onboarding, programs, or access? Reach out to the SARG team for assistance.</p>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

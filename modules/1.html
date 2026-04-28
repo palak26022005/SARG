@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Microbiology Training | SARG Research Biolabs</title>
+    <meta name="description"
+        content="Comprehensive hands-on Industrial Microbiology training programs at SARG Research Biolabs. 15 and 30-day intensive programs covering microbial techniques, culture methods, and industrial applications.">
+    <link rel="icon" href="../images/logo1.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #0a5c36 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        img {
+
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========================================
+           PAGE HEADER / HERO BANNER
+           ======================================== */
+        .page-header {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.85) 0%, rgba(26, 26, 46, 0.95) 100%);
+            z-index: -2;
+        }
+
+        .page-header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-header-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header-content .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--accent);
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page-header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-header-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           SECTION STYLES
+           ======================================== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========================================
+           PROGRAM OVERVIEW SECTION
+           ======================================== */
+        .program-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .program-overview-image {
+            position: relative;
+        }
+
+        .program-overview-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .program-overview-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .program-badge i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .program-badge h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .program-badge p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        .program-overview-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .program-overview-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .program-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .highlight-item p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           PROGRAM DURATION CARDS
+           ======================================== */
+        .duration-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .duration-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .duration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .duration-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .duration-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .duration-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .duration-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .duration-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           CURRICULUM LIST
+           ======================================== */
+        .curriculum-list {
+            margin-top: 2rem;
+        }
+
+        .curriculum-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .curriculum-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(5px);
+        }
+
+        .curriculum-item i {
+            color: var(--accent);
+            margin-top: 0.3rem;
+            flex-shrink: 0;
+        }
+
+        .curriculum-item span {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           KEY FEATURES GRID
+           ======================================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .feature-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           LEARNING OUTCOMES
+           ======================================== */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .outcome-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .outcome-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .outcome-number {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .outcome-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .outcome-content p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           WHO SHOULD ATTEND
+           ======================================== */
+        .audience-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .audience-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .audience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .audience-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .audience-card:hover .audience-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .audience-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .audience-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: var(--gradient-primary);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .audience-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .program-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .program-overview-image {
+                order: -1;
+            }
+
+            .program-badge {
+                right: 20px;
+                top: 20px;
+            }
+
+            .duration-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 150px 0 80px;
+                min-height: 350px;
+            }
+
+            .page-header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .program-overview-content h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .program-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header-content h1 {
+                font-size: 2rem;
+            }
+
+            .duration-card {
+                padding: 2rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .program-badge {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin-top: 1.5rem;
+                display: inline-block;
+            }
+
+            .program-overview-image::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include your navbar here -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="../images/logo.png" alt="logo">
+                </div>
+                <!-- <div>
+                    <div class="logo-text">SARG Research</div>
+                    <div class="logo-sub">Biolabs</div>
+                </div> -->
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>about our organization</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown active">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3"
+                alt="Industrial Microbiology Laboratory">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-pattern"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="../programs.html">Programs</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Industrial Microbiology</span>
+                </div>
+                <h1>Industrial Microbiology Training</h1>
+                <p>Experience the fascinating world of microbiology through our immersive hands-on training program.
+                    Engage in practical laboratory exercises and cultivate valuable skills for your scientific journey.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="program-overview">
+                <div class="program-overview-image">
+                    <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?ixlib=rb-4.0.3"
+                        alt="Microbiology Laboratory Work">
+                    <div class="program-badge">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Certified</h3>
+                        <p>Training Program</p>
+                    </div>
+                </div>
+                <div class="program-overview-content">
+                    <div class="section-badge">
+                        <i class="fas fa-microscope"></i> Hands-On Training
+                    </div>
+                    <h2>Comprehensive Industrial Microbiology Program</h2>
+                    <p>
+                        Our Industrial Microbiology training program offers an immersive, hands-on learning experience
+                        designed to equip you with essential laboratory skills and practical knowledge in microbiology
+                        research.
+                    </p>
+                    <p>
+                        Work closely with experienced instructors who will guide you through experiments, fostering a
+                        deep understanding of microbial identification, culture techniques, and safety protocols.
+                    </p>
+                    <p>
+                        Immerse yourself in a dynamic learning environment that encourages critical thinking,
+                        problem-solving, and teamwork, equipping you with the confidence and proficiency to excel in the
+                        field of microbiology.
+                    </p>
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <h4>Practical Laboratory Work</h4>
+                                <p>Extensive hands-on experiments</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h4>Expert Instructors</h4>
+                                <p>Learn from experienced professionals</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Flexible Duration</h4>
+                                <p>15 or 30-day programs available</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4>Certification</h4>
+                                <p>Recognized upon completion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Duration Section -->
+    <section class="section section-dark" id="programs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-calendar-alt"></i> Program Options
+                </div>
+                <h2 class="section-title">Choose Your Training Duration</h2>
+                <p class="section-subtitle">
+                    Select from our comprehensive 15-day or intensive 30-day programs, both designed to provide
+                    thorough training in industrial microbiology techniques and applications.
+                </p>
+            </div>
+            <div class="duration-cards">
+                <!-- 15 Days Program -->
+                <div class="duration-card">
+                    <div class="duration-header">
+                        <div class="duration-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="duration-info">
+                            <h3>15 Days Program</h3>
+                            <p>2 Weeks Intensive Training</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-list">
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Introduction to Good Laboratory Practices and General Safety Instructions</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Instrumentation: Autoclave, Laminar Air Flow, Incubator/Shaker, Hot Air Oven,
+                                Microscope</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Various Media (Solid/Liquid) Preparation and Sterilization</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Isolation and Screening of Microorganisms</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Serial Dilution Method</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Pure Culture Techniques (Streaking, Pouring & Plating)</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Culturing & Sub Culturing Methods of Microbes</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Isolation and Culturing from Soil and Water Samples</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Staining Techniques: Gram Staining, Endospore Staining</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>IMViC Test: Indole, Methyl Red, Voges-Proskauer, Citrate Utilization</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bacterial Growth Curve Analysis/Growth Kinetics</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Antibiotics Sensitivity Test</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Culturing Techniques for E. coli or Industrially Important Microorganisms</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Isolation and Identification of Enzyme Producing Microbe</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Isolation of Antibiotic Producing Microbe by Crowded Plate Method</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Isolation of Antibiotic Resistance (MDR) Microbe from Soil Sample</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 30 Days Program -->
+                <div class="duration-card">
+                    <div class="duration-header">
+                        <div class="duration-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="duration-info">
+                            <h3>30 Days Program</h3>
+                            <p>4 Weeks Comprehensive Training</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-list">
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>All 15-day program modules included</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Isolation and Culturing of Microbes from Air Samples</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Components, Use and Care of Compound Microscope</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Advanced Staining: Capsular Staining, Flagellar Staining</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Enzymatic Tests: Catalase Activity, Oxidase Activity</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Optimization of Growth Conditions for Industrial Microorganisms</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fungal Staining & Actinomycetes Staining</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Chemical Control of Microbes</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Effect of Temperature on Growth of Bacteria</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Effect of pH on Growth of Bacteria</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Isolation of Lipolytic Microbes from Butter</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Effect of pH, Temperature, Pressure, Inhibitors on Growth</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Effect of Physical & Chemical Mutagens on Growth of Microbes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i> Program Features
+                </div>
+                <h2 class="section-title">What Makes Our Program Unique</h2>
+                <p class="section-subtitle">
+                    Our Industrial Microbiology training stands out with comprehensive features designed for optimal
+                    learning and skill development.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Hands-On Experience</h3>
+                    <p>Direct practical experience with laboratory equipment and real-world microbiology techniques
+                        under expert supervision.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from experienced microbiologists with years of industry and academic research experience.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-vials"></i>
+                    </div>
+                    <h3>State-of-the-Art Lab</h3>
+                    <p>Access to modern laboratory facilities equipped with the latest instruments and safety protocols.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety Training</h3>
+                    <p>Comprehensive training in laboratory safety practices and Good Laboratory Practices (GLP).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3>Study Materials</h3>
+                    <p>Complete course materials, protocols, and reference guides for all laboratory procedures.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certification</h3>
+                    <p>Receive a recognized certificate upon successful completion of the training program.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Outcomes Section -->
+    <section class="section section-dark" id="outcomes">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-graduation-cap"></i> Learning Outcomes
+                </div>
+                <h2 class="section-title">What You Will Achieve</h2>
+                <p class="section-subtitle">
+                    Upon completion of this program, you will have developed comprehensive skills in industrial
+                    microbiology and laboratory techniques.
+                </p>
+            </div>
+            <div class="outcomes-grid">
+                <div class="outcome-item">
+                    <div class="outcome-number">01</div>
+                    <div class="outcome-content">
+                        <h4>Laboratory Proficiency</h4>
+                        <p>Master essential laboratory techniques including media preparation, sterilization, and
+                            aseptic
+                            handling procedures.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">02</div>
+                    <div class="outcome-content">
+                        <h4>Microbial Isolation</h4>
+                        <p>Gain expertise in isolating and culturing microorganisms from various environmental samples.
+                        </p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">03</div>
+                    <div class="outcome-content">
+                        <h4>Identification Techniques</h4>
+                        <p>Learn multiple staining methods and biochemical tests for accurate microbial identification.
+                        </p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">04</div>
+                    <div class="outcome-content">
+                        <h4>Instrumentation Skills</h4>
+                        <p>Become proficient in operating and maintaining essential microbiology laboratory equipment.
+                        </p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">05</div>
+                    <div class="outcome-content">
+                        <h4>Research Methodology</h4>
+                        <p>Understand research design, experimental procedures, and data analysis in microbiology.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">06</div>
+                    <div class="outcome-content">
+                        <h4>Safety Compliance</h4>
+                        <p>Implement proper safety protocols and maintain ethical standards in laboratory work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Attend Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-user-friends"></i> Target Audience
+                </div>
+                <h2 class="section-title">Who Should Attend</h2>
+                <p class="section-subtitle">
+                    This program is designed for individuals seeking to enhance their practical skills in industrial
+                    microbiology and laboratory techniques.
+                </p>
+            </div>
+            <div class="audience-cards">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Students</h3>
+                    <p>Undergraduate and postgraduate students in Life Sciences, Biotechnology, and Microbiology.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Researchers</h3>
+                    <p>Early-career researchers looking to strengthen their laboratory and technical skills.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Faculty</h3>
+                    <p>Academic faculty seeking to update their practical knowledge and teaching methodologies.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Professionals</h3>
+                    <p>Industry professionals working in pharmaceutical, food, or biotechnology sectors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Begin Your Microbiology Journey?</h2>
+                <p>
+                    Join our comprehensive Industrial Microbiology training program and gain the hands-on experience
+                    needed to excel in your scientific career.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Register Now
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Get More Information
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Include your footer here -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="../images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                        <!-- <div>
+                            <div class="logo-text">SARG Research</div>
+                            <div class="logo-sub">Biolabs</div>
+                        </div> -->
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../programs.html">Programs</a></li>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="../programs.html">Research Foundation</a></li>
+                        <li><a href="../programs.html">Molecular Biology</a></li>
+                        <li><a href="../programs.html">Microbiology</a></li>
+                        <li><a href="../programs.html">Biostatistics</a></li>
+                        <li><a href="../programs.html">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to Top Functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script src="../js/navbar.js"></script>
+
+</body>
+
+</html>

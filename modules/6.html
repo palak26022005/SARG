@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix Module Training - Microbiology, Molecular Biology & Biochemistry | SARG Research Biolabs</title>
+    <meta name="description"
+        content="Comprehensive Mix Module training program combining Microbiology, Molecular Biology & Biochemistry at SARG Research Biolabs. 30-day intensive program for aspiring biotechnology professionals.">
+    <link rel="icon" href="../images/logo1.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #0a5c36 100%);
+            --gradient-multi: linear-gradient(135deg, #0a5c36 0%, #1a73e8 50%, #6b21a8 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        img {
+            
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========================================
+           PAGE HEADER / HERO BANNER
+           ======================================== */
+        .page-header {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.85) 0%, rgba(26, 115, 232, 0.8) 50%, rgba(107, 33, 168, 0.85) 100%);
+            z-index: -2;
+        }
+
+        .page-header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-header-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header-content .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--accent);
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page-header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-header-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Module Tags */
+        .module-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .module-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .module-tag i {
+            font-size: 0.85rem;
+        }
+
+        /* ========================================
+           SECTION STYLES
+           ======================================== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========================================
+           PROGRAM OVERVIEW SECTION
+           ======================================== */
+        .program-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .program-overview-image {
+            position: relative;
+        }
+
+        .program-overview-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .program-overview-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .program-badge i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .program-badge h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .program-badge p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        .program-overview-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .program-overview-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .program-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .highlight-item p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           THREE DISCIPLINES SECTION
+           ======================================== */
+        .disciplines-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .discipline-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discipline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+
+        .discipline-card.micro::before {
+            background: linear-gradient(90deg, #0a5c36, #00c853);
+        }
+
+        .discipline-card.molbio::before {
+            background: linear-gradient(90deg, #1a73e8, #64b5f6);
+        }
+
+        .discipline-card.biochem::before {
+            background: linear-gradient(90deg, #6b21a8, #a855f7);
+        }
+
+        .discipline-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .discipline-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .discipline-card.micro .discipline-icon {
+            background: linear-gradient(135deg, #0a5c36, #00c853);
+        }
+
+        .discipline-card.molbio .discipline-icon {
+            background: linear-gradient(135deg, #1a73e8, #64b5f6);
+        }
+
+        .discipline-card.biochem .discipline-icon {
+            background: linear-gradient(135deg, #6b21a8, #a855f7);
+        }
+
+        .discipline-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .discipline-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .discipline-topics {
+            margin-top: 1.5rem;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+
+        .topic-item i {
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        /* ========================================
+           CURRICULUM SECTION
+           ======================================== */
+        .curriculum-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .curriculum-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #0a5c36, #1a73e8, #6b21a8);
+        }
+
+        .curriculum-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .curriculum-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .curriculum-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .curriculum-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        /* Curriculum Categories */
+        .curriculum-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .curriculum-category {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category-header i {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        .category-header.micro i {
+            background: linear-gradient(135deg, #0a5c36, #00c853);
+        }
+
+        .category-header.molbio i {
+            background: linear-gradient(135deg, #1a73e8, #64b5f6);
+        }
+
+        .category-header.biochem i {
+            background: linear-gradient(135deg, #6b21a8, #a855f7);
+        }
+
+        .category-header h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .curriculum-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.8rem;
+            padding: 0.6rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .curriculum-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(3px);
+        }
+
+        .curriculum-item i {
+            color: var(--accent);
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+
+        .curriculum-item span {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           INTEGRATED APPROACH SECTION
+           ======================================== */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .approach-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .approach-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .approach-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+        }
+
+        .approach-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .approach-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           KEY FEATURES GRID
+           ======================================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           LEARNING OUTCOMES
+           ======================================== */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .outcome-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 16px;
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .outcome-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+
+        .outcome-number {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .outcome-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .outcome-content p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           CAREER PATHS
+           ======================================== */
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .career-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .career-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .career-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+        }
+
+        .career-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .career-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: linear-gradient(135deg, #0a5c36 0%, #1a73e8 50%, #6b21a8 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .disciplines-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .careers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .curriculum-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .program-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .program-overview-image {
+                order: -1;
+            }
+
+            .program-badge {
+                right: 20px;
+                top: 20px;
+            }
+
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .curriculum-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 150px 0 80px;
+                min-height: 350px;
+            }
+
+            .page-header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .program-overview-content h2 {
+                font-size: 2rem;
+            }
+
+            .disciplines-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .careers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .module-tags {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header-content h1 {
+                font-size: 2rem;
+            }
+
+            .curriculum-container {
+                padding: 2rem;
+            }
+
+            .discipline-card {
+                padding: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .program-badge {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin-top: 1.5rem;
+                display: inline-block;
+            }
+
+            .program-overview-image::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include your navbar here -->
+     <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="../images/logo.png" alt="logo">
+                </div>
+                <!-- <div>
+                    <div class="logo-text">SARG Research</div>
+                    <div class="logo-sub">Biolabs</div>
+                </div> -->
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>about our organization</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown active">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3"
+                alt="Biotechnology Laboratory">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-pattern"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="../programs.html">Programs</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Mix Module Training</span>
+                </div>
+                <h1>Mix Module Training</h1>
+                <p>A comprehensive integrated program combining Microbiology, Molecular Biology, and Biochemistry. Master the latest advancements and techniques to excel in the biotech industry.</p>
+                <div class="module-tags">
+                    <span class="module-tag"><i class="fas fa-bacteria"></i> Microbiology</span>
+                    <span class="module-tag"><i class="fas fa-dna"></i> Molecular Biology</span>
+                    <span class="module-tag"><i class="fas fa-flask"></i> Biochemistry</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="program-overview">
+                <div class="program-overview-image">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3"
+                        alt="Integrated Laboratory Training">
+                    <div class="program-badge">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>3-in-1</h3>
+                        <p>Integrated Training</p>
+                    </div>
+                </div>
+                <div class="program-overview-content">
+                    <div class="section-badge">
+                        <i class="fas fa-puzzle-piece"></i> Integrated Training Program
+                    </div>
+                    <h2>Master Three Core Disciplines in One Program</h2>
+                    <p>
+                        Our mix module training program offers comprehensive instruction in the latest advancements and techniques in the field, equipping participants with the knowledge and practical skills needed to excel in the biotech industry.
+                    </p>
+                    <p>
+                        Led by industry experts, our training combines theoretical knowledge with hands-on laboratory experiences, providing a well-rounded understanding of biotechnological principles and applications across microbiology, molecular biology, and biochemistry.
+                    </p>
+                    <p>
+                        Participants will gain valuable insights into genetic engineering, bioprocessing, and the development of innovative biotech products, preparing them for rewarding careers in healthcare, agriculture, and biotechnology research.
+                    </p>
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-bacteria"></i>
+                            </div>
+                            <div>
+                                <h4>Microbiology</h4>
+                                <p>Culture, isolation & identification</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <div>
+                                <h4>Molecular Biology</h4>
+                                <p>DNA analysis & PCR techniques</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <h4>Biochemistry</h4>
+                                <p>Protein analysis & enzyme assays</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4>Certification</h4>
+                                <p>Industry-recognized credential</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Disciplines Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-cubes"></i> Three Core Disciplines
+                </div>
+                <h2 class="section-title">Integrated Training Approach</h2>
+                <p class="section-subtitle">
+                    Our program uniquely combines three fundamental disciplines of biotechnology, providing comprehensive expertise for modern scientific careers.
+                </p>
+            </div>
+            <div class="disciplines-grid">
+                <!-- Microbiology -->
+                <div class="discipline-card micro">
+                    <div class="discipline-icon">
+                        <i class="fas fa-bacteria"></i>
+                    </div>
+                    <h3>Microbiology</h3>
+                    <p>Master the art of culturing, isolating, and identifying microorganisms with industry-standard techniques.</p>
+                    <div class="discipline-topics">
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Media preparation & sterilization</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Microbial isolation & culturing</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Staining techniques</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Biochemical testing (IMViC)</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Antibiotic sensitivity testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Molecular Biology -->
+                <div class="discipline-card molbio">
+                    <div class="discipline-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Molecular Biology</h3>
+                    <p>Gain expertise in DNA extraction, analysis, PCR amplification, and advanced molecular techniques.</p>
+                    <div class="discipline-topics">
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>DNA isolation & purification</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Gel electrophoresis techniques</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>PCR & primer designing</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Restriction digestion</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Southern blotting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biochemistry -->
+                <div class="discipline-card biochem">
+                    <div class="discipline-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Biochemistry</h3>
+                    <p>Develop proficiency in protein analysis, enzyme assays, and immunological techniques.</p>
+                    <div class="discipline-topics">
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Protein isolation & quantification</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Bradford & Lowry methods</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>SDS-PAGE electrophoresis</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>Enzyme assays (Amylase)</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check"></i>
+                            <span>ELISA techniques</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="section section-dark" id="curriculum">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-book-open"></i> Program Curriculum
+                </div>
+                <h2 class="section-title">30 Days Comprehensive Training</h2>
+                <p class="section-subtitle">
+                    A 4-week intensive program covering microbiology, molecular biology, and biochemistry with hands-on laboratory experience.
+                </p>
+            </div>
+            <div class="curriculum-container">
+                <div class="curriculum-header">
+                    <div class="curriculum-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="curriculum-info">
+                        <h3>Integrated Mix Module Program</h3>
+                        <p>Three disciplines, one comprehensive training</p>
+                    </div>
+                </div>
+                <div class="curriculum-categories">
+                    <!-- Microbiology Module -->
+                    <div class="curriculum-category">
+                        <div class="category-header micro">
+                            <i class="fas fa-bacteria"></i>
+                            <h4>Microbiology Module</h4>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Good Laboratory Practices & Safety</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Buffers and Reagent Preparation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Media Preparation & Sterilization</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Serial Dilution Method</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Culturing & Sub Culturing of Microbes</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Isolation from Soil & Air</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Screening (Staining Techniques)</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>IMViC Biochemical Tests</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Growth Kinetics of Microbes</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Antibiotics Sensitivity Test</span>
+                        </div>
+                    </div>
+
+                    <!-- Molecular Biology Module -->
+                    <div class="curriculum-category">
+                        <div class="category-header molbio">
+                            <i class="fas fa-dna"></i>
+                            <h4>Molecular Biology Module</h4>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plasmid DNA Isolation & Purification</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plasmid DNA Gel Electrophoresis</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bacterial Genomic DNA Isolation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Genomic DNA Gel Electrophoresis</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plant Genomic DNA Isolation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Restriction Digestion</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nucleic Acid Quantification (DPA)</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nanodrop/Qubit Analysis</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Southern Blotting Technique</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>PCR & Primer Designing</span>
+                        </div>
+                    </div>
+
+                    <!-- Biochemistry Module -->
+                    <div class="curriculum-category">
+                        <div class="category-header biochem">
+                            <i class="fas fa-flask"></i>
+                            <h4>Biochemistry Module</h4>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Protein Isolation Techniques</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bradford Method Estimation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Lowry's Method Estimation</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>SDS-PAGE Electrophoresis</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Amylase Enzyme Assay</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>ELISA Test</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Gel Electrophoresis of PCR Products</span>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Molecular Markers Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrated Approach Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-sync-alt"></i> Integrated Approach
+                </div>
+                <h2 class="section-title">Why Choose an Integrated Program</h2>
+                <p class="section-subtitle">
+                    Our mix module approach provides unique advantages for comprehensive biotechnology training.
+                </p>
+            </div>
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Interconnected Learning</h3>
+                    <p>Understand how molecular biology, microbiology, and biochemistry work together in real applications.</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>Versatile Skills</h3>
+                    <p>Develop a broad skill set that makes you adaptable across multiple biotechnology sectors.</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Career Flexibility</h3>
+                    <p>Open doors to diverse career paths in research, industry, and healthcare sectors.</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Holistic Understanding</h3>
+                    <p>Gain comprehensive insights into biotechnological processes from organism to molecule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i> Program Features
+                </div>
+                <h2 class="section-title">Why Choose This Program</h2>
+                <p class="section-subtitle">
+                    Our mix module training offers unique advantages for comprehensive biotechnology career preparation.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Three-in-One Training</h3>
+                    <p>Master microbiology, molecular biology, and biochemistry in a single comprehensive program.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Extensive Hands-On</h3>
+                    <p>Practical laboratory sessions across all three disciplines with real samples and advanced equipment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Industry Experts</h3>
+                    <p>Learn from experienced professionals with extensive biotech industry and research backgrounds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Modern Equipment</h3>
+                    <p>Access to state-of-the-art laboratory facilities including PCR, spectrophotometry, and electrophoresis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Integrated Projects</h3>
+                    <p>Complete projects that combine techniques from all three disciplines for comprehensive learning.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Triple Certification</h3>
+                    <p>Receive certification recognizing your expertise across all three core biotechnology disciplines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Outcomes Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-graduation-cap"></i> Learning Outcomes
+                </div>
+                <h2 class="section-title">Skills You Will Master</h2>
+                <p class="section-subtitle">
+                    Upon completion, you will possess comprehensive skills across microbiology, molecular biology, and biochemistry.
+                </p>
+            </div>
+            <div class="outcomes-grid">
+                <div class="outcome-item">
+                    <div class="outcome-number">01</div>
+                    <div class="outcome-content">
+                        <h4>Microbial Culture Techniques</h4>
+                        <p>Master aseptic techniques, media preparation, isolation, and identification of microorganisms from various sources.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">02</div>
+                    <div class="outcome-content">
+                        <h4>DNA Analysis & Manipulation</h4>
+                        <p>Perform DNA extraction, PCR, restriction digestion, gel electrophoresis, and blotting techniques proficiently.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">03</div>
+                    <div class="outcome-content">
+                        <h4>Protein Characterization</h4>
+                        <p>Execute protein isolation, quantification using Bradford/Lowry methods, and SDS-PAGE analysis.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">04</div>
+                    <div class="outcome-content">
+                        <h4>Enzymatic & Immunological Assays</h4>
+                        <p>Conduct enzyme activity assays and ELISA techniques for biochemical and immunological analysis.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">05</div>
+                    <div class="outcome-content">
+                        <h4>Advanced Instrumentation</h4>
+                        <p>Operate Nanodrop/Qubit, PCR machines, electrophoresis systems, and spectrophotometers confidently.</p>
+                    </div>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-number">06</div>
+                    <div class="outcome-content">
+                        <h4>Integrated Problem Solving</h4>
+                        <p>Apply knowledge from multiple disciplines to design experiments and solve complex biotechnology challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Paths Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-briefcase"></i> Career Opportunities
+                </div>
+                <h2 class="section-title">Where This Training Leads</h2>
+                <p class="section-subtitle">
+                    Our integrated program prepares you for diverse career opportunities across the biotechnology industry.
+                </p>
+            </div>
+            <div class="careers-grid">
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Research Scientist</h3>
+                    <p>Work in academic or industrial research labs developing new biotechnological products and solutions.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Biotech Industry</h3>
+                    <p>Join pharmaceutical, agricultural, or biotech companies in R&D, production, or quality control.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Healthcare Diagnostics</h3>
+                    <p>Work in clinical laboratories performing molecular and biochemical diagnostic tests.</p>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Research</h3>
+                    <p>Pursue advanced studies and research careers in universities and research institutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Master Three Disciplines, Unlock Unlimited Possibilities</h2>
+                <p>
+                    Join our comprehensive Mix Module training program and gain expertise in Microbiology, Molecular Biology, and Biochemistry for a successful biotechnology career.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Enroll Now
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        <i class="fas fa-info-circle"></i> Request Information
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Include your footer here -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="../images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                        <!-- <div>
+                            <div class="logo-text">SARG Research</div>
+                            <div class="logo-sub">Biolabs</div>
+                        </div> -->
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../programs.html">Programs</a></li>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="../programs.html">Research Foundation</a></li>
+                        <li><a href="../programs.html">Molecular Biology</a></li>
+                        <li><a href="../programs.html">Microbiology</a></li>
+                        <li><a href="../programs.html">Biostatistics</a></li>
+                        <li><a href="../programs.html">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Scroll to Top Functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script src="../js/navbar.js"></script>
+</body>
+
+</html>

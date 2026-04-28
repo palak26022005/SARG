@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Courses | SARG Research Biolabs</title>
+    <meta name="description"
+        content="Advance Live and Interactive Online Industrial Training with certification in various streams of biotechnology. Live demonstration-based learning with industry experts at SARG Research Biolabs.">
+    <link rel="icon" href="../images/logo1.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #0a5c36 100%);
+            --gradient-blue: linear-gradient(135deg, #1a73e8 0%, #0a5c36 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        img {
+            
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========================================
+           PAGE HEADER / HERO BANNER
+           ======================================== */
+        .page-header {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(41, 43, 47, 0.9) 0%, rgba(10, 92, 54, 0.95) 100%);
+            z-index: -2;
+        }
+
+        .page-header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-header-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header-content .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--accent);
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page-header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-header-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .header-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header-badge i {
+            color: var(--accent);
+        }
+
+        /* ========================================
+           SECTION STYLES
+           ======================================== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-blue {
+            background: var(--gradient-blue);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge,
+        .section-blue .section-badge {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title,
+        .section-blue .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle,
+        .section-blue .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========================================
+           ONLINE COURSE OVERVIEW
+           ======================================== */
+        .course-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .course-overview-image {
+            position: relative;
+        }
+
+        .course-overview-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .course-overview-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: #ff0000;
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .live-badge::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        .platform-badges {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .platform-badge {
+            background: var(--white);
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .platform-badge img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .course-overview-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .course-overview-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .course-overview-content .highlight-text {
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.1) 0%, rgba(26, 115, 232, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--primary);
+            margin: 1.5rem 0;
+        }
+
+        .course-overview-content .highlight-text p {
+            margin: 0;
+            font-style: italic;
+            color: var(--dark);
+        }
+
+        /* ========================================
+           TRAINING HIGHLIGHTS
+           ======================================== */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .highlight-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-10px);
+        }
+
+        .highlight-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           REGISTRATION PROCESS
+           ======================================== */
+        .registration-container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .registration-steps {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .registration-steps h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .registration-steps h3 i {
+            color: var(--primary);
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .step-content code {
+            background: rgba(10, 92, 54, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        /* Payment Info Card */
+        .payment-card {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 2.5rem;
+            color: var(--white);
+            position: sticky;
+            top: 120px;
+        }
+
+        .payment-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .payment-method {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-method h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .payment-method p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .payment-method .phone-number {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 0.5rem;
+        }
+
+        .bank-details {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bank-details h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bank-detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .bank-detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .bank-detail-item span:first-child {
+            opacity: 0.8;
+        }
+
+        .bank-detail-item span:last-child {
+            font-weight: 600;
+        }
+
+        .payment-note {
+            background: rgba(255, 193, 7, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .payment-note i {
+            color: #ffc107;
+            margin-right: 0.5rem;
+        }
+
+        /* ========================================
+           PREREQUISITES SECTION
+           ======================================== */
+        .prerequisites-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .prerequisite-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .prerequisite-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .prerequisite-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .prerequisite-card:hover .prerequisite-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .prerequisite-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .prerequisite-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           CERTIFICATION SECTION
+           ======================================== */
+        .certification-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .certification-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .certification-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .certification-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cert-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cert-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .cert-feature span {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .certification-image {
+            position: relative;
+        }
+
+        .certification-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .certificate-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .certificate-badge i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-badge h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .certificate-badge p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* ========================================
+           COURSES GALLERY
+           ======================================== */
+        .courses-gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.25rem;
+        }
+
+        .course-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .course-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26, 115, 232, 0.3), rgba(10, 92, 54, 0.9));
+            display: flex;
+            align-items: flex-end;
+            padding: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .course-item:hover .course-overlay {
+            background: linear-gradient(to bottom, rgba(26, 115, 232, 0.5), rgba(10, 92, 54, 0.95));
+        }
+
+        .course-info h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .course-info span {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           BENEFITS SECTION
+           ======================================== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--white);
+            margin: 0 auto 1.25rem;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(10, 92, 54, 0.05);
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: var(--gradient-primary);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .courses-gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .course-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .course-overview-image {
+                order: -1;
+            }
+
+            .registration-container {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-card {
+                position: relative;
+                top: 0;
+            }
+
+            .certification-container {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-image {
+                order: -1;
+            }
+
+            .courses-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .prerequisites-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 150px 0 80px;
+                min-height: 450px;
+            }
+
+            .page-header-content h1 {
+                font-size: 2.25rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .course-overview-content h2,
+            .certification-content h2 {
+                font-size: 2rem;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .prerequisites-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-features {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .platform-badges {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header-content h1 {
+                font-size: 1.85rem;
+            }
+
+            .header-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .highlight-card,
+            .prerequisite-card {
+                padding: 2rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .courses-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .course-overview-image::before {
+                display: none;
+            }
+
+            .certificate-badge {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="../images/logo.png" alt="logo">
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>about our organization</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="../about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="../research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown active">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="../programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3"
+                alt="Online Courses">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-pattern"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="../programs.html">Programs</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Online Courses</span>
+                </div>
+                <h1>Online Industrial Training</h1>
+                <p>Advance Live and Interactive Online Industrial Training with certification in various streams of biotechnology. Experience live demonstration-based learning with industry experts from anywhere in the world.</p>
+                <div class="header-badges">
+                    <span class="header-badge"><i class="fas fa-video"></i> Live Classes</span>
+                    <span class="header-badge"><i class="fas fa-chalkboard-teacher"></i> Expert Instructors</span>
+                    <span class="header-badge"><i class="fas fa-certificate"></i> Certificate Included</span>
+                    <span class="header-badge"><i class="fas fa-globe"></i> Learn Anywhere</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="course-overview">
+                <div class="course-overview-content">
+                    <div class="section-badge">
+                        <i class="fas fa-laptop"></i> Online Learning
+                    </div>
+                    <h2>Live & Interactive Online Industrial Training</h2>
+                    <p>
+                        SARG Research Biolabs is offering 'Advance Live and Interactive Online Industrial Training' with an online certificate in various streams of biotechnology so that the participants can have an insight into experimental Biotechnology.
+                    </p>
+                    <div class="highlight-text">
+                        <p>
+                            "We are offering these programs so that students can have live demonstration-based learning and can get an opportunity to interact with the industry experts."
+                        </p>
+                    </div>
+                    <p>
+                        Our online courses are designed to provide the same quality of education and hands-on learning experience as our offline programs. Techniques in any program will remain the same as in case of Offline Program, ensuring you receive comprehensive training regardless of your location.
+                    </p>
+                </div>
+                <div class="course-overview-image">
+                    <span class="live-badge">LIVE</span>
+                    <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-4.0.3"
+                        alt="Online Learning">
+                    <div class="platform-badges">
+                        <span class="platform-badge">
+                            <i class="fas fa-video" style="color: #2D8CFF;"></i> Zoom
+                        </span>
+                        <span class="platform-badge">
+                            <i class="fab fa-google" style="color: #EA4335;"></i> Meet
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Highlights Section -->
+    <section class="section section-dark" id="highlights">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i> Training Highlights
+                </div>
+                <h2 class="section-title">What Makes Our Online Training Special</h2>
+                <p class="section-subtitle">
+                    Experience comprehensive biotechnology training from the comfort of your home.
+                </p>
+            </div>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Live Classes & Demonstrations</h3>
+                    <p>Real-time interactive sessions through Zoom/Google Meet with live demonstration of all techniques for hands-on learning experience.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Detailed Principle Discussion</h3>
+                    <p>In-depth discussion on principles and applications of techniques in industry and academia for comprehensive understanding.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Meticulous Technique Performance</h3>
+                    <p>Watch industry experts perform all techniques meticulously in real-time with detailed explanations at every step.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data & Result Analysis</h3>
+                    <p>Learn data interpretation and result analysis from industry experts to understand real-world applications.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Free Online Certificate</h3>
+                    <p>Receive a free online certificate upon completion. Hard copy will be sent via Speed Post to your registered address.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>University Requirements</h3>
+                    <p>Our certification can be used to fulfill college/university requirements for Industrial Training programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Courses Gallery -->
+    <!-- <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-book-open"></i> Available Courses
+                </div>
+                <h2 class="section-title">Explore Our Online Programs</h2>
+                <p class="section-subtitle">
+                    Choose from a wide range of specialized biotechnology courses available online.
+                </p>
+            </div>
+            <div class="courses-gallery">
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3" alt="Industrial Microbiology" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Industrial Microbiology</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-4.0.3" alt="Forensic Science" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Forensic Science</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3" alt="Immunology" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Immunology</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3" alt="DNA Fingerprinting" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>DNA Fingerprinting</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3" alt="Cosmetics" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Cosmetics Biotech</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?ixlib=rb-4.0.3" alt="Food Biotechnology" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Food Biotechnology</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3" alt="Metabolomics" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Metabolomics</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3" alt="Enzymology" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Enzymology</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1612535663373-fef5621488d0?ixlib=rb-4.0.3" alt="Fermentation" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Fermentation Tech</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3" alt="Wine Production" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Wine Production</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3" alt="Medical Microbiology" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Medical Microbiology</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1582719366962-6e77c6eb8933?ixlib=rb-4.0.3" alt="Toxicology" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Toxicology</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3" alt="Probiotics" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Probiotics</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3" alt="Antibiotics" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Antibiotics Production</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3" alt="Proteomics" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Proteomics</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-4.0.3" alt="Molecular Biology" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Molecular Biology</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3" alt="Nanotechnology" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Nano-Technology</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3" alt="Environmental" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Environmental Biotech</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?ixlib=rb-4.0.3" alt="Herbal Medicine" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Herbal Drug</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3" alt="Cancer Research" class="course-image">
+                    <div class="course-overlay">
+                        <div class="course-info">
+                            <h4>Cancer Cell Lines</h4>
+                            <span>Online Course</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Registration Process Section -->
+    <!-- <section class="section" id="registration">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-clipboard-list"></i> Registration
+                </div>
+                <h2 class="section-title">How to Register</h2>
+                <p class="section-subtitle">
+                    Follow these simple steps to enroll in our online training programs.
+                </p>
+            </div>
+            <div class="registration-container">
+                <div class="registration-steps">
+                    <h3><i class="fas fa-list-ol"></i> Registration Steps</h3>
+                    
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Online Registration</h4>
+                            <p>Registration has to be done through online mode only using the registration link provided on our website.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Make Payment</h4>
+                            <p>Pay the registration/course fee via Paytm/G-Pay or through online bank transfer using the details provided.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Submit Transaction ID</h4>
+                            <p>Please mention the <code>Transaction ID</code> / reference number in the online application form.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Confirmation</h4>
+                            <p>Successfully registered candidates will be intimated through email and/or WhatsApp within 24 hours of registration.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Access Details</h4>
+                            <p>Link and password to attend the workshop will be shared 24 hours before the start of the course with registered participants.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-card">
+                    <h3><i class="fas fa-credit-card"></i> Payment Options</h3>
+                    
+                    <div class="payment-method">
+                        <h4><i class="fas fa-mobile-alt"></i> Paytm / G-Pay</h4>
+                        <p>Quick and easy payment through mobile apps</p>
+                        <div class="phone-number">9717117289</div>
+                    </div>
+
+                    <div class="bank-details">
+                        <h4><i class="fas fa-university"></i> Bank Transfer</h4>
+                        <div class="bank-detail-item">
+                            <span>Payee Name:</span>
+                            <span>SARG Research Biolabs</span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span>Account No:</span>
+                            <span>003105029384</span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span>Account Type:</span>
+                            <span>Current Account</span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span>Bank Name:</span>
+                            <span>ICICI Bank</span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span>IFSC Code:</span>
+                            <span>ICIC0000031</span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span>Branch:</span>
+                            <span>Sector-18, Noida</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-note">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Important:</strong> Always mention your Transaction ID in the registration form for verification.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Prerequisites Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-list-check"></i> Prerequisites
+                </div>
+                <h2 class="section-title">What You Need</h2>
+                <p class="section-subtitle">
+                    Ensure you have the following requirements for a smooth learning experience.
+                </p>
+            </div>
+            <div class="prerequisites-grid">
+                <div class="prerequisite-card">
+                    <div class="prerequisite-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Laptop/Desktop</h3>
+                    <p>Participants must have access to a laptop or desktop computer to attend the live sessions comfortably.</p>
+                </div>
+
+                <div class="prerequisite-card">
+                    <div class="prerequisite-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Stable Internet</h3>
+                    <p>A stable internet connection is required to ensure uninterrupted access to live demonstrations and interactions.</p>
+                </div>
+
+                <div class="prerequisite-card">
+                    <div class="prerequisite-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Google Account</h3>
+                    <p>Participants must possess a Google account (xxxx@gmail.com) for accessing Google Meet sessions.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--gray); font-size: 1rem;">
+                    <i class="fas fa-info-circle" style="color: var(--primary);"></i>
+                    <strong>Note:</strong> Basic knowledge of Biotechnology Laboratory/Molecular biology/Medical Biotechnology will be beneficial.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="section section-blue" id="certification">
+        <div class="container">
+            <div class="certification-container">
+                <div class="certification-content">
+                    <div class="section-badge">
+                        <i class="fas fa-award"></i> Certification
+                    </div>
+                    <h2>Industry-Recognized Certification</h2>
+                    <p>
+                        Participants successfully completing the training program will be provided with a Hard Copy of the certificate through Speed Post to their registered address.
+                    </p>
+                    <p>
+                        Our certificates are recognized by leading academic institutions and can be used to fulfill college/university requirements for Industrial Training programs.
+                    </p>
+                    <div class="certification-features">
+                        <div class="cert-feature">
+                            <div class="cert-feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <span>Free Online Certificate</span>
+                        </div>
+                        <div class="cert-feature">
+                            <div class="cert-feature-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>Hard Copy via Speed Post</span>
+                        </div>
+                        <div class="cert-feature">
+                            <div class="cert-feature-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <span>University Accepted</span>
+                        </div>
+                        <div class="cert-feature">
+                            <div class="cert-feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <span>Verifiable Credentials</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-image">
+                    <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?ixlib=rb-4.0.3" alt="Certificate">
+                    <div class="certificate-badge">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Certified</h4>
+                        <p>Professional Training</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-gift"></i> Benefits
+                </div>
+                <h2 class="section-title">Why Choose Online Training</h2>
+                <p class="section-subtitle">
+                    Experience the advantages of our comprehensive online learning platform.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4>Learn From Home</h4>
+                    <p>No travel required. Access world-class training from anywhere.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Flexible Schedule</h4>
+                    <p>Choose programs that fit your academic schedule.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h4>Cost Effective</h4>
+                    <p>Save on travel, accommodation, and other expenses.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Expert Interaction</h4>
+                    <p>Direct interaction with industry experts during live sessions.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h4>Live Demonstrations</h4>
+                    <p>Watch real-time technique performances and experiments.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h4>Real-Time Q&A</h4>
+                    <p>Get your doubts cleared instantly during sessions.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h4>Study Materials</h4>
+                    <p>Access comprehensive digital learning resources.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h4>Same Curriculum</h4>
+                    <p>Identical techniques as offline programs, ensuring quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-question-circle"></i> FAQs
+                </div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">
+                    Find answers to common questions about our online training programs.
+                </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do I access the live sessions?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            After successful registration, you will receive the meeting link and password via email and WhatsApp 24 hours before the course begins. Sessions are conducted through Zoom or Google Meet.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Are the techniques covered same as offline programs?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, techniques in any online program remain the same as in case of offline programs. You will receive comprehensive training with live demonstrations of all techniques.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How will I receive my certificate?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Upon successful completion, you will receive a free online certificate immediately. A hard copy of the certificate will be sent to your registered address via Speed Post.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I use this certificate for college/university requirements?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, our certification can be used to fulfill college/university requirements for Industrial Training programs. The certificate is recognized by academic institutions.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What if I face technical issues during the session?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Our support team is available to assist you with any technical issues. You can reach out via WhatsApp or email, and we'll help resolve the problem promptly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Start Your Online Learning Journey</h2>
+                <p>
+                    Enroll in our live and interactive online training programs today. Gain industry-relevant skills from expert instructors and earn your certification from anywhere in the world.
+                </p>
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Register Now
+                    </a>
+                    <a href="../contact.html" class="btn btn-outline">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="../images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../programs.html">Programs</a></li>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="../programs.html">Research Foundation</a></li>
+                        <li><a href="../programs.html">Molecular Biology</a></li>
+                        <li><a href="../programs.html">Microbiology</a></li>
+                        <li><a href="../programs.html">Biostatistics</a></li>
+                        <li><a href="../programs.html">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to Top Functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script src="../js/navbar.js"></script>
+</body>
+
+</html>

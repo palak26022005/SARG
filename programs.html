@@ -1,0 +1,2987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs & Training | SARG Research Biolabs</title>
+    <meta name="description"
+        content="Explore SARG Research Biolabs' comprehensive training programs, internships, research courses, and Ph.D. assistance in Biotechnology, Molecular Biology, Microbiology, and more.">
+    <link rel="icon" href="images/logo1.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0d7a48;
+            --primary-dark: #064225;
+            --secondary: #1a73e8;
+            --accent: #00c853;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --warning: #ff9800;
+            --success: #28a745;
+            --gradient-primary: linear-gradient(135deg, #0a5c36 0%, #1a73e8 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-accent: linear-gradient(135deg, #00c853 0%, #0a5c36 100%);
+            --gradient-warm: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-blue: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        img {
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========================================
+           PAGE HEADER / HERO BANNER
+           ======================================== */
+        .page-header {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 92, 54, 0.6) 0%, rgba(26, 26, 46, 0.95) 100%);
+            z-index: -2;
+        }
+
+        .page-header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-header-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header-content .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--accent);
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page-header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* Special Offer Banner */
+        .offer-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 60px;
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+        }
+
+        .offer-badge {
+            background: var(--warning);
+            color: var(--dark);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .offer-text {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .offer-text strong {
+            color: var(--accent);
+        }
+
+        .offer-cta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .offer-cta:hover {
+            background: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* ========================================
+           SECTION STYLES
+           ======================================== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========================================
+           PROGRAMS INTRO SECTION
+           ======================================== */
+        .programs-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .programs-intro-content .section-badge {
+            margin-bottom: 1rem;
+        }
+
+        .programs-intro-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .programs-intro-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .programs-intro-content p strong {
+            color: var(--dark);
+        }
+
+        .intro-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .intro-highlight {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .intro-highlight:hover {
+            background: rgba(10, 92, 54, 0.1);
+            transform: translateX(5px);
+        }
+
+        .intro-highlight i {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .intro-highlight span {
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .programs-intro-image {
+            position: relative;
+        }
+
+        .programs-intro-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .programs-intro-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .programs-intro-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: var(--gradient-accent);
+            border-radius: 24px;
+            z-index: -2;
+            opacity: 0.3;
+        }
+
+        .floating-stats {
+            position: absolute;
+            bottom: 30px;
+            left: -30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .floating-stat {
+            text-align: center;
+        }
+
+        .floating-stat h4 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .floating-stat p {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin: 0.25rem 0 0;
+        }
+
+        /* ========================================
+           INTERNSHIP PROGRAMS GRID
+           ======================================== */
+        .internship-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .internship-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .internship-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .internship-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(10, 92, 54, 0.1);
+        }
+
+        .internship-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .internship-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 35px;
+            height: 35px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .internship-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .internship-card:hover .internship-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .internship-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .internship-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .internship-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .internship-link:hover {
+            gap: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        /* Featured Card */
+        .internship-card.featured {
+            background: var(--gradient-primary);
+            color: var(--white);
+            grid-column: span 2;
+        }
+
+        .internship-card.featured .internship-number {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .internship-card.featured .internship-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .internship-card.featured:hover .internship-icon {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .internship-card.featured h3 {
+            color: var(--white);
+            font-size: 1.35rem;
+        }
+
+        .internship-card.featured p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .internship-card.featured .internship-link {
+            color: var(--accent);
+        }
+
+        .internship-card.featured::before {
+            background: var(--accent);
+        }
+
+        /* ========================================
+           FLAGSHIP PROGRAMS SECTION
+           ======================================== */
+        .flagship-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .flagship-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flagship-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-accent);
+        }
+
+        .flagship-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .flagship-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .flagship-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .flagship-header-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .flagship-header-content .flagship-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(0, 200, 83, 0.2);
+            color: var(--accent);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .flagship-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* ========================================
+           ACADEMIC OPTIONS SECTION
+           ======================================== */
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .academic-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .academic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .academic-card-header {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .academic-card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .academic-card:hover .academic-card-header img {
+            transform: scale(1.1);
+        }
+
+        .academic-card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+        }
+
+        .academic-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .academic-icon {
+            position: absolute;
+            bottom: -30px;
+            right: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            z-index: 3;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 39px;
+        }
+
+        .academic-card-content {
+            padding: 2.5rem 2rem 2rem;
+        }
+
+        .academic-card-content h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .academic-card-content p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .academic-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .academic-feature {
+            background: rgba(10, 92, 54, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .academic-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .academic-link:hover {
+            gap: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        /* ========================================
+           COURSE DETAILS SECTION
+           ======================================== */
+        .course-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .course-tab {
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .course-tab:hover,
+        .course-tab.active {
+            background: var(--accent);
+            color: var(--dark);
+            border-color: var(--accent);
+        }
+
+        .course-content {
+            display: none;
+        }
+
+        .course-content.active {
+            display: block;
+        }
+
+        .course-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .course-info {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .course-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 200, 83, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+
+        .course-meta-item i {
+            color: var(--accent);
+        }
+
+        .course-info > p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-modules h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .course-modules h4 i {
+            color: var(--accent);
+        }
+
+        .module-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .module-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .module-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .module-number {
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .module-item span {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .course-outcomes {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .course-outcomes h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .course-outcomes h4 i {
+            color: var(--accent);
+        }
+
+        .outcome-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .outcome-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .outcome-item i {
+            color: var(--accent);
+            margin-top: 0.25rem;
+        }
+
+        .outcome-item span {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .course-cta {
+            margin-top: 2rem;
+        }
+
+        .course-cta .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Who Should Enroll */
+        .enroll-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .enroll-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .enroll-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .enroll-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ========================================
+           DURATION PROGRAMS SECTION
+           ======================================== */
+        .duration-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .duration-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .duration-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .duration-card.popular {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .duration-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .duration-popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 0.4rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .duration-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(10, 92, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .duration-card:hover .duration-icon,
+        .duration-card.popular .duration-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .duration-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .duration-period {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .duration-features {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .duration-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .duration-features li i {
+            color: var(--accent);
+            margin-top: 0.2rem;
+        }
+
+        .duration-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .duration-btn:hover,
+        .duration-card.popular .duration-btn {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-color: transparent;
+        }
+
+        /* ========================================
+           PARTNERSHIP SECTION
+           ======================================== */
+        .partnership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .partnership-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .partnership-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .partnership-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--white);
+            margin: 0 auto 1.25rem;
+        }
+
+        .partnership-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .partnership-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           SERVICES SECTION
+           ======================================== */
+        .services-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .services-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .services-content > p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--light);
+            border-radius: 16px;
+            transition: var(--transition);
+        }
+
+        .service-item:hover {
+            background: rgba(10, 92, 54, 0.1);
+            transform: translateX(5px);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .service-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .service-item p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .services-image {
+            position: relative;
+        }
+
+        .services-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: var(--gradient-primary);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .internship-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .internship-card.featured {
+                grid-column: span 3;
+            }
+
+            .duration-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .duration-card.popular {
+                transform: none;
+            }
+
+            .duration-card.popular:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .programs-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .programs-intro-image {
+                order: -1;
+            }
+
+            .floating-stats {
+                left: 20px;
+                bottom: 20px;
+            }
+
+            .internship-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .internship-card.featured {
+                grid-column: span 2;
+            }
+
+            .flagship-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .academic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .course-detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .services-image {
+                order: -1;
+            }
+
+            .partnership-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 150px 0 80px;
+                min-height: 400px;
+            }
+
+            .page-header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .offer-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .programs-intro-content h2,
+            .services-content h2 {
+                font-size: 2rem;
+            }
+
+            .internship-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .internship-card.featured {
+                grid-column: span 1;
+            }
+
+            .academic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .duration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .partnership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-tabs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .course-tab {
+                text-align: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header-content h1 {
+                font-size: 2rem;
+            }
+
+            .internship-card {
+                padding: 1.5rem;
+            }
+
+            .floating-stats {
+                position: relative;
+                left: auto;
+                bottom: auto;
+                margin-top: 1.5rem;
+                justify-content: center;
+            }
+
+            .programs-intro-image::before,
+            .programs-intro-image::after {
+                display: none;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .academic-card-content {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="dropdown-item-content">
+                                <h4>About Us</h4>
+                                <p>About our organization</p>
+                            </div>
+                        </a>
+                        <a href="about.html#vision" class="dropdown-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Vision & Mission</h4>
+                                <p>Our goals and objectives</p>
+                            </div>
+                        </a>
+                        <a href="about.html#approach" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Our Approach</h4>
+                                <p>How we work</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Research <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="research.html" class="dropdown-item">
+                            <i class="fas fa-flask"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Research Areas</h4>
+                                <p>Our research domains</p>
+                            </div>
+                        </a>
+                        <a href="research.html#training" class="dropdown-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Programs</h4>
+                                <p>Skill development courses</p>
+                            </div>
+                        </a>
+                        <a href="research.html#collaboration" class="dropdown-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Collaboration</h4>
+                                <p>Partnership opportunities</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown active">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Programs <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="programs.html" class="dropdown-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Programs</h4>
+                                <p>See our programs</p>
+                            </div>
+                        </a>
+                        <a href="programs.html#flagship" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Flagship Programs</h4>
+                                <p>Our key initiatives</p>
+                            </div>
+                        </a>
+                        <a href="programs.html#courses" class="dropdown-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="dropdown-item-content">
+                                <h4>Training Courses</h4>
+                                <p>Professional development</p>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="membership.html" class="nav-link">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="membership.html" class="nav-link nav-cta">
+                        <i class="fas fa-user-plus"></i> Join Now
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Programs Background">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-pattern"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Programs</span>
+                </div>
+                <h1>Training Programs & Internships</h1>
+                <p>Comprehensive research-based training programs in Biotechnology, Molecular Biology, Microbiology, and more. Build practical skills with hands-on laboratory experience.</p>
+                
+                <div class="offer-banner">
+                    <span class="offer-badge"><i class="fas fa-fire"></i> Special Offer</span>
+                    <span class="offer-text">6-Month Program starting at <strong>₹29,499</strong> (All-inclusive)</span>
+                    <a href="tel:+91XXXXXXXXXX" class="offer-cta">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <!-- Programs Introduction Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="programs-intro">
+                <div class="programs-intro-content">
+                    <div class="section-badge">
+                        <i class="fas fa-microscope"></i> Research Excellence
+                    </div>
+                    <h2>Comprehensive Biotechnology Training Programs</h2>
+                    <p>
+                        We offer comprehensive training programs for excellence in research-based biotech training, internships, dissertations, and live research projects. Our expertise spans various core areas, ensuring participants gain both theoretical understanding and practical hands-on experience.
+                    </p>
+                    <p>
+                        Our programs are designed in collaboration with <strong>GANESH Scientific Research Foundation</strong> (ISO 9001:2015 Certified Research & Testing Laboratory), providing access to state-of-the-art research facilities and industry-standard equipment.
+                    </p>
+                    <p>
+                        From <strong>Animal Cell Culture</strong> to <strong>Forensic Science</strong>, from <strong>Medical Biotechnology</strong> to <strong>Molecular Diagnostics</strong> — we provide a nurturing environment not only in skill development but also in the domain of job-oriented programs.
+                    </p>
+                    <div class="intro-highlights">
+                        <div class="intro-highlight">
+                            <i class="fas fa-flask"></i>
+                            <span>Hands-on Lab Training</span>
+                        </div>
+                        <div class="intro-highlight">
+                            <i class="fas fa-certificate"></i>
+                            <span>Industry Certification</span>
+                        </div>
+                        <div class="intro-highlight">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Expert Mentorship</span>
+                        </div>
+                        <div class="intro-highlight">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Placement Support</span>
+                        </div>
+                        <div class="intro-highlight">
+                            <i class="fas fa-laptop"></i>
+                            <span>Hybrid Learning</span>
+                        </div>
+                        <div class="intro-highlight">
+                            <i class="fas fa-award"></i>
+                            <span>ISO Certified Lab</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="programs-intro-image">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                        alt="Laboratory Training">
+                    <div class="floating-stats">
+                        <div class="floating-stat">
+                            <h4>12+</h4>
+                            <p>Programs</p>
+                        </div>
+                        <div class="floating-stat">
+                            <h4>500+</h4>
+                            <p>Trained</p>
+                        </div>
+                        <div class="floating-stat">
+                            <h4>100%</h4>
+                            <p>Practical</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Programs Section -->
+    <section class="section section-light" id="internships">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-graduation-cap"></i> Internship Programs
+                </div>
+                <h2 class="section-title">Biotechnology Training Modules</h2>
+                <p class="section-subtitle">
+                    Choose from our diverse range of specialized training programs designed to build expertise in various domains of Biotechnology and Life Sciences.
+                </p>
+            </div>
+            <div class="internship-grid">
+                <!-- Program 1 -->
+                <div class="internship-card">
+                    <span class="internship-number">01</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-bacteria"></i>
+                    </div>
+                    <h3>Industrial Microbiology</h3>
+                    <p>Learn microbial cultivation, fermentation technology, and industrial applications of microorganisms.</p>
+                    <a href="modules/1.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="internship-card">
+                    <span class="internship-number">02</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Molecular Biology & rDNA Technology</h3>
+                    <p>Master DNA/RNA techniques, PCR, cloning, gene expression, and recombinant DNA technology.</p>
+                    <a href="modules/2.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="internship-card">
+                    <span class="internship-number">03</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Food Biotechnology</h3>
+                    <p>Explore food processing, quality control, fermentation, and food safety analysis techniques.</p>
+                    <a href="modules/3.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 4 -->
+                <div class="internship-card">
+                    <span class="internship-number">04</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Medical Biotechnology</h3>
+                    <p>Study diagnostics, immunology, drug development, and biomedical research techniques.</p>
+                    <a href="modules/4.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 5 -->
+                <div class="internship-card">
+                    <span class="internship-number">05</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Forensic Science</h3>
+                    <p>Learn DNA profiling, forensic biology, evidence analysis, and molecular forensics.</p>
+                    <a href="modules/5.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 6 -->
+                <div class="internship-card">
+                    <span class="internship-number">06</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-vials"></i>
+                    </div>
+                    <h3>Mix Module (Micro, Mol Bio & Biochem)</h3>
+                    <p>Comprehensive training combining microbiology, molecular biology, and biochemistry fundamentals.</p>
+                    <a href="modules/6.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 7 - Featured -->
+                <div class="internship-card featured">
+                    <span class="internship-number">07</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Advanced rDNA Technology & Animal Cell Culture</h3>
+                    <p>Advanced techniques in recombinant DNA technology, mammalian cell culture, transfection, protein expression, and downstream processing. Ideal for those pursuing research careers in biotechnology and pharmaceutical industries.</p>
+                    <a href="modules/7.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 8 -->
+                <div class="internship-card">
+                    <span class="internship-number">08</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Short Duration Programs</h3>
+                    <p>Flexible 45 days, 2 months & 3 months programs for focused skill development.</p>
+                    <a href="modules/8.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 9 -->
+                <div class="internship-card">
+                    <span class="internship-number">09</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Job Oriented Training</h3>
+                    <p>Industry-focused training with 100% placement assistance in biotech companies.</p>
+                    <a href="modules/9.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 10 -->
+                <div class="internship-card">
+                    <span class="internship-number">10</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Project & Dissertation</h3>
+                    <p>Research project support for M.Sc., M.Tech., and B.Tech. dissertation requirements.</p>
+                    <a href="modules/10.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 11 -->
+                <div class="internship-card">
+                    <span class="internship-number">11</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Ph.D. Assistance</h3>
+                    <p>Comprehensive support for doctoral research including experimental design and thesis guidance.</p>
+                    <a href="modules/11.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Program 12 -->
+                <div class="internship-card">
+                    <span class="internship-number">12</span>
+                    <div class="internship-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Online Courses</h3>
+                    <p>Flexible online learning modules for theoretical foundations and computational biology.</p>
+                    <a href="modules/12.html" class="internship-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flagship Programs Section -->
+    <section class="section section-dark" id="flagship">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i> Flagship Initiatives
+                </div>
+                <h2 class="section-title">Flagship Programs</h2>
+                <p class="section-subtitle">
+                    Strategic initiatives designed to support high-impact research, emerging scholars, and collaborative innovation.
+                </p>
+            </div>
+            <div class="flagship-grid">
+                <div class="flagship-card">
+                    <div class="flagship-header">
+                        <div class="flagship-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="flagship-header-content">
+                            <h3>Research Innovation Fund (RIF)</h3>
+                            <span class="flagship-tag"><i class="fas fa-coins"></i> Funding Initiative</span>
+                        </div>
+                    </div>
+                    <p>A strategic funding initiative designed to support high-impact and emerging research projects. RIF encourages innovation-driven proposals in areas such as biotechnology, environmental sustainability, public health, digital transformation, and social innovation.</p>
+                </div>
+
+                <div class="flagship-card">
+                    <div class="flagship-header">
+                        <div class="flagship-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="flagship-header-content">
+                            <h3>Young Scholars Fellowship</h3>
+                            <span class="flagship-tag"><i class="fas fa-user-graduate"></i> Fellowship Program</span>
+                        </div>
+                    </div>
+                    <p>A competitive fellowship program supporting early-career researchers, postgraduate scholars, and innovators—particularly from underrepresented regions or interdisciplinary backgrounds. The fellowship provides mentorship, research guidance, and academic recognition.</p>
+                </div>
+
+                <div class="flagship-card">
+                    <div class="flagship-header">
+                        <div class="flagship-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="flagship-header-content">
+                            <h3>National Research Conclaves</h3>
+                            <span class="flagship-tag"><i class="fas fa-calendar-check"></i> Annual Events</span>
+                        </div>
+                    </div>
+                    <p>Annual and thematic research forums that bring together thought leaders, scientists, academicians, policymakers, and industry experts. These conclaves promote idea exchange, interdisciplinary collaboration, and strategic research partnerships.</p>
+                </div>
+
+                <div class="flagship-card">
+                    <div class="flagship-header">
+                        <div class="flagship-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="flagship-header-content">
+                            <h3>Policy Impact Lab</h3>
+                            <span class="flagship-tag"><i class="fas fa-balance-scale"></i> Policy Research</span>
+                        </div>
+                    </div>
+                    <p>An applied research and dissemination platform supporting think tanks, NGOs, and governance bodies. The lab focuses on evidence-based policy research, data-driven analysis, and strategic recommendations addressing public policy, governance, sustainability, and development challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Options Section -->
+    <section class="section section-light" id="academic">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-book-reader"></i> Academic Options
+                </div>
+                <h2 class="section-title">Our Learning Approaches</h2>
+                <p class="section-subtitle">
+                    Multiple learning pathways designed to accommodate diverse learning preferences and career goals.
+                </p>
+            </div>
+            <div class="academic-grid">
+                <!-- Offline Education -->
+                <div class="academic-card">
+                    <div class="academic-card-header">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Offline Training">
+                        <span class="academic-badge">Hands-On</span>
+                        <div class="academic-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                    </div>
+                    <div class="academic-card-content">
+                        <h3>Offline Laboratory Training</h3>
+                        <p>In-person laboratory training offers researchers the opportunity to meticulously plan and execute experiments with precision and reproducibility. Our state-of-the-art facilities provide hands-on experience with industry-standard equipment.</p>
+                        <div class="academic-features">
+                            <span class="academic-feature">Live Experiments</span>
+                            <span class="academic-feature">Expert Supervision</span>
+                            <span class="academic-feature">Real Equipment</span>
+                        </div>
+                        <a href="contact.html" class="academic-link">Explore Programs <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Online Training -->
+                <div class="academic-card">
+                    <div class="academic-card-header">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Online Training">
+                        <span class="academic-badge">Flexible</span>
+                        <div class="academic-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                    </div>
+                    <div class="academic-card-content">
+                        <h3>Online Training Programs</h3>
+                        <p>Online training revolutionizes how researchers acquire knowledge. Our digital platforms offer flexible learning environments with virtual labs, interactive modules, and expert-led sessions that complement traditional approaches.</p>
+                        <div class="academic-features">
+                            <span class="academic-feature">Self-Paced</span>
+                            <span class="academic-feature">Virtual Labs</span>
+                            <span class="academic-feature">24/7 Access</span>
+                        </div>
+                        <a href="contact.html" class="academic-link">Explore Programs <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Certificates -->
+                <div class="academic-card">
+                    <div class="academic-card-header">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Certificates">
+                        <span class="academic-badge">Recognized</span>
+                        <div class="academic-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                    </div>
+                    <div class="academic-card-content">
+                        <h3>Industry Certifications</h3>
+                        <p>Our certificates serve as tangible evidence of competency completion in biotechnology training. Backed by ISO 9001:2015 certification, these credentials are recognized worldwide and validate your practical laboratory skills.</p>
+                        <div class="academic-features">
+                            <span class="academic-feature">ISO Certified</span>
+                            <span class="academic-feature">Global Recognition</span>
+                            <span class="academic-feature">Verifiable</span>
+                        </div>
+                        <a href="contact.html" class="academic-link">View Certifications <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Ph.D. Assistance -->
+                <div class="academic-card">
+                    <div class="academic-card-header">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="PhD Assistance">
+                        <span class="academic-badge">Doctoral</span>
+                        <div class="academic-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </div>
+                    <div class="academic-card-content">
+                        <h3>Ph.D. Research Assistance</h3>
+                        <p>Comprehensive support system that aids doctoral students in every aspect of their research journey. Our expertise and mentorship contribute significantly to the success and advancement of Ph.D. scholars in biotechnology.</p>
+                        <div class="academic-features">
+                            <span class="academic-feature">Thesis Guidance</span>
+                            <span class="academic-feature">Data Analysis</span>
+                            <span class="academic-feature">Publication Support</span>
+                        </div>
+                        <a href="contact.html" class="academic-link">Get Support <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Job Oriented -->
+                <div class="academic-card">
+                    <div class="academic-card-header">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Job Training">
+                        <span class="academic-badge">Placement</span>
+                        <div class="academic-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                    </div>
+                    <div class="academic-card-content">
+                        <h3>Job Oriented Training</h3>
+                        <p>Programs designed to equip individuals with specific skills required to excel in the biotech industry. Focus on practical, hands-on experience combined with theoretical understanding and 100% placement assistance.</p>
+                        <div class="academic-features">
+                            <span class="academic-feature">Industry Skills</span>
+                            <span class="academic-feature">100% Placement</span>
+                            <span class="academic-feature">Interview Prep</span>
+                        </div>
+                        <a href="contact.html" class="academic-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="academic-card">
+                    <div class="academic-card-header">
+                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Testing Services">
+                        <span class="academic-badge">Services</span>
+                        <div class="academic-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                    </div>
+                    <div class="academic-card-content">
+                        <h3>Scientific Testing Services</h3>
+                        <p>With a dedicated team of dynamic professionals, we offer services in microbial identification using 16S rDNA sequencing, sample testing, quality analysis, and research consultation across multiple domains.</p>
+                        <div class="academic-features">
+                            <span class="academic-feature">16S rDNA</span>
+                            <span class="academic-feature">Sample Testing</span>
+                            <span class="academic-feature">Quality Analysis</span>
+                        </div>
+                        <a href="contact.html" class="academic-link">View Services <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Course Details Section (Tabbed) -->
+    <section class="section section-dark" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-book-open"></i> Course Details
+                </div>
+                <h2 class="section-title">Detailed Course Curriculum</h2>
+                <p class="section-subtitle">
+                    Explore our comprehensive course modules with detailed curriculum, learning outcomes, and certification information.
+                </p>
+            </div>
+
+            <!-- Course Tabs -->
+            <div class="course-tabs">
+                <button class="course-tab active" data-course="foundation">Research Foundation</button>
+                <button class="course-tab" data-course="molecular">Molecular Biology</button>
+                <button class="course-tab" data-course="microbiology">Microbiology</button>
+                <button class="course-tab" data-course="biostatistics">Biostatistics</button>
+                <button class="course-tab" data-course="biodiversity">Biodiversity</button>
+            </div>
+
+            <!-- Research Foundation Course -->
+            <div class="course-content active" id="foundation">
+                <div class="course-detail-grid">
+                    <div class="course-info">
+                        <h3>Research Foundation Course</h3>
+                        <div class="course-meta">
+                            <div class="course-meta-item">
+                                <i class="fas fa-clock"></i> Hybrid Mode
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-calendar"></i> Weekend Lab + Online
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-certificate"></i> Certified
+                            </div>
+                        </div>
+                        <p>A structured introductory programme designed to build strong fundamentals in scientific research, laboratory skills, and analytical thinking. Ideal for students who wish to develop core competencies for academic research and dissertation work.</p>
+                        
+                        <div class="course-modules">
+                            <h4><i class="fas fa-list-ul"></i> Course Modules</h4>
+                            <div class="module-list">
+                                <div class="module-item">
+                                    <span class="module-number">1</span>
+                                    <span>Research Fundamentals & GLP</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">2</span>
+                                    <span>Laboratory Skills & Instrumentation</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">3</span>
+                                    <span>Introduction to Bioinformatics</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">4</span>
+                                    <span>Introduction to Biostatistics</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">5</span>
+                                    <span>Basic Molecular Biology Concepts</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">6</span>
+                                    <span>Lab Exposure & Career Orientation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-outcomes">
+                        <h4><i class="fas fa-check-circle"></i> Learning Outcomes</h4>
+                        <div class="outcome-list">
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Understand the fundamentals of research methodology</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Demonstrate core laboratory handling skills</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Apply basic statistical and bioinformatics tools</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Follow Good Laboratory Practices (GLP)</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Gain confidence for internships and advanced programs</span>
+                            </div>
+                        </div>
+                        <div class="enroll-section">
+                            <h4>Who Should Enroll?</h4>
+                            <div class="enroll-tags">
+                                <span class="enroll-tag">Bachelor's Students</span>
+                                <span class="enroll-tag">Master's Students</span>
+                                <span class="enroll-tag">Senior School (Science)</span>
+                                <span class="enroll-tag">Research Aspirants</span>
+                            </div>
+                        </div>
+                        <div class="course-cta">
+                            <a href="contact.html" class="btn btn-white">
+                                <i class="fas fa-paper-plane"></i> Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Molecular Biology Course -->
+            <div class="course-content" id="molecular">
+                <div class="course-detail-grid">
+                    <div class="course-info">
+                        <h3>Molecular Biology Training Programme</h3>
+                        <div class="course-meta">
+                            <div class="course-meta-item">
+                                <i class="fas fa-clock"></i> Hybrid Mode
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-flask"></i> Intensive Lab
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-certificate"></i> Certified
+                            </div>
+                        </div>
+                        <p>An intensive, hands-on laboratory course designed to provide practical expertise in molecular and applied biological techniques. Aligned with academic research standards and laboratory best practices.</p>
+                        
+                        <div class="course-modules">
+                            <h4><i class="fas fa-list-ul"></i> Course Modules</h4>
+                            <div class="module-list">
+                                <div class="module-item">
+                                    <span class="module-number">1</span>
+                                    <span>Fundamentals & GLP in Molecular Biology</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">2</span>
+                                    <span>Nucleic Acid Techniques (DNA/RNA)</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">3</span>
+                                    <span>Protein Analysis Techniques</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">4</span>
+                                    <span>PCR & Genetic Analysis</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">5</span>
+                                    <span>Molecular Data & Bioinformatics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-outcomes">
+                        <h4><i class="fas fa-check-circle"></i> Learning Outcomes</h4>
+                        <div class="outcome-list">
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Demonstrate proficiency in DNA, RNA, and protein techniques</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Independently perform PCR and gel electrophoresis</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Apply GLP standards in laboratory practice</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Interpret molecular experimental data</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Develop readiness for Ph.D.-level research</span>
+                            </div>
+                        </div>
+                        <div class="enroll-section">
+                            <h4>Who Should Enroll?</h4>
+                            <div class="enroll-tags">
+                                <span class="enroll-tag">M.Sc. Students</span>
+                                <span class="enroll-tag">Ph.D. Scholars</span>
+                                <span class="enroll-tag">Research Trainees</span>
+                                <span class="enroll-tag">Biotech Aspirants</span>
+                            </div>
+                        </div>
+                        <div class="course-cta">
+                            <a href="contact.html" class="btn btn-white">
+                                <i class="fas fa-paper-plane"></i> Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Microbiology Course -->
+            <div class="course-content" id="microbiology">
+                <div class="course-detail-grid">
+                    <div class="course-info">
+                        <h3>Microbiology Experimentation Programme</h3>
+                        <div class="course-meta">
+                            <div class="course-meta-item">
+                                <i class="fas fa-clock"></i> Hybrid Mode
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-bacteria"></i> Lab-Intensive
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-certificate"></i> Certified
+                            </div>
+                        </div>
+                        <p>A hands-on laboratory training course providing practical knowledge of microbial techniques, sterile handling procedures, and applied microbiological analysis aligned with Good Laboratory Practices.</p>
+                        
+                        <div class="course-modules">
+                            <h4><i class="fas fa-list-ul"></i> Course Modules</h4>
+                            <div class="module-list">
+                                <div class="module-item">
+                                    <span class="module-number">1</span>
+                                    <span>Fundamentals & Laboratory Practices</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">2</span>
+                                    <span>Microbial Isolation & Culture Techniques</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">3</span>
+                                    <span>Microbial Identification & Staining</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">4</span>
+                                    <span>Applied Microbiology & Molecular Integration</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">5</span>
+                                    <span>Data Analysis & Scientific Reporting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-outcomes">
+                        <h4><i class="fas fa-check-circle"></i> Learning Outcomes</h4>
+                        <div class="outcome-list">
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Perform microbial isolation and culturing independently</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Apply sterile techniques confidently</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Identify microorganisms using staining and microscopy</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Understand molecular tools in microbiological research</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Prepare structured laboratory reports</span>
+                            </div>
+                        </div>
+                        <div class="enroll-section">
+                            <h4>Who Should Enroll?</h4>
+                            <div class="enroll-tags">
+                                <span class="enroll-tag">B.Sc./M.Sc. Students</span>
+                                <span class="enroll-tag">Ph.D. Scholars</span>
+                                <span class="enroll-tag">Lab Trainees</span>
+                                <span class="enroll-tag">Research Interns</span>
+                            </div>
+                        </div>
+                        <div class="course-cta">
+                            <a href="contact.html" class="btn btn-white">
+                                <i class="fas fa-paper-plane"></i> Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biostatistics Course -->
+            <div class="course-content" id="biostatistics">
+                <div class="course-detail-grid">
+                    <div class="course-info">
+                        <h3>Biostatistics (with SPSS & Graphical Tools)</h3>
+                        <div class="course-meta">
+                            <div class="course-meta-item">
+                                <i class="fas fa-clock"></i> Hybrid Mode
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-chart-bar"></i> Data Analysis
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-certificate"></i> Certified
+                            </div>
+                        </div>
+                        <p>Designed to equip students and researchers with essential statistical skills required for scientific research, dissertation work, and publication-quality data analysis using SPSS and graphical tools.</p>
+                        
+                        <div class="course-modules">
+                            <h4><i class="fas fa-list-ul"></i> Course Modules</h4>
+                            <div class="module-list">
+                                <div class="module-item">
+                                    <span class="module-number">1</span>
+                                    <span>Foundations of Biostatistics</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">2</span>
+                                    <span>Statistical Inference & Hypothesis Testing</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">3</span>
+                                    <span>Comparative & Advanced Statistical Methods</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">4</span>
+                                    <span>Regression & Predictive Analysis</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">5</span>
+                                    <span>Research Data Interpretation & Reporting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-outcomes">
+                        <h4><i class="fas fa-check-circle"></i> Learning Outcomes</h4>
+                        <div class="outcome-list">
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Understand core statistical principles used in research</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Perform statistical tests using SPSS confidently</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Choose appropriate tests based on study design</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Interpret regression and correlation outputs</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Create publication-ready graphs and reports</span>
+                            </div>
+                        </div>
+                        <div class="enroll-section">
+                            <h4>Who Should Enroll?</h4>
+                            <div class="enroll-tags">
+                                <span class="enroll-tag">M.Sc./Ph.D. Students</span>
+                                <span class="enroll-tag">Clinical Researchers</span>
+                                <span class="enroll-tag">Thesis Writers</span>
+                                <span class="enroll-tag">Publication Seekers</span>
+                            </div>
+                        </div>
+                        <div class="course-cta">
+                            <a href="contact.html" class="btn btn-white">
+                                <i class="fas fa-paper-plane"></i> Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biodiversity Course -->
+            <div class="course-content" id="biodiversity">
+                <div class="course-detail-grid">
+                    <div class="course-info">
+                        <h3>Biodiversity Conservation & Wildlife Management</h3>
+                        <div class="course-meta">
+                            <div class="course-meta-item">
+                                <i class="fas fa-clock"></i> Hybrid + Field
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-leaf"></i> Field Research
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-certificate"></i> Certified
+                            </div>
+                        </div>
+                        <p>A comprehensive programme providing understanding of biodiversity, ecosystem dynamics, conservation challenges, and sustainable management practices through field-based learning and data-driven assessment.</p>
+                        
+                        <div class="course-modules">
+                            <h4><i class="fas fa-list-ul"></i> Course Modules</h4>
+                            <div class="module-list">
+                                <div class="module-item">
+                                    <span class="module-number">1</span>
+                                    <span>Foundations of Biodiversity</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">2</span>
+                                    <span>Human Impact & Conservation Challenges</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">3</span>
+                                    <span>Wildlife Management & Conservation Strategies</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">4</span>
+                                    <span>Field Research & Data Collection</span>
+                                </div>
+                                <div class="module-item">
+                                    <span class="module-number">5</span>
+                                    <span>Environmental Reporting & Project Presentation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-outcomes">
+                        <h4><i class="fas fa-check-circle"></i> Learning Outcomes</h4>
+                        <div class="outcome-list">
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Understand ecological principles and biodiversity significance</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Identify major conservation challenges and threats</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Apply wildlife management and sustainability strategies</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Conduct basic biodiversity field assessments</span>
+                            </div>
+                            <div class="outcome-item">
+                                <i class="fas fa-check"></i>
+                                <span>Prepare structured environmental research reports</span>
+                            </div>
+                        </div>
+                        <div class="enroll-section">
+                            <h4>Who Should Enroll?</h4>
+                            <div class="enroll-tags">
+                                <span class="enroll-tag">Environmental Science</span>
+                                <span class="enroll-tag">Zoology/Botany</span>
+                                <span class="enroll-tag">Wildlife Enthusiasts</span>
+                                <span class="enroll-tag">NGO Workers</span>
+                            </div>
+                        </div>
+                        <div class="course-cta">
+                            <a href="contact.html" class="btn btn-white">
+                                <i class="fas fa-paper-plane"></i> Enroll Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Duration Programs Section -->
+    <section class="section section-light" id="duration">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-clock"></i> Flexible Duration
+                </div>
+                <h2 class="section-title">Program Duration Options</h2>
+                <p class="section-subtitle">
+                    Choose the program duration that best fits your learning goals and schedule. From short-term intensive courses to comprehensive long-term training.
+                </p>
+            </div>
+            <div class="duration-grid">
+                <div class="duration-card">
+                    <div class="duration-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>45 Days</h3>
+                    <div class="duration-period">Intensive Training</div>
+                    <ul class="duration-features">
+                        <li><i class="fas fa-check"></i> Focused skill development</li>
+                        <li><i class="fas fa-check"></i> Core laboratory techniques</li>
+                        <li><i class="fas fa-check"></i> Certificate of completion</li>
+                        <li><i class="fas fa-check"></i> Weekend lab sessions</li>
+                    </ul>
+                    <a href="contact.html" class="duration-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="duration-card">
+                    <div class="duration-icon">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <h3>2 Months</h3>
+                    <div class="duration-period">Short-Term Program</div>
+                    <ul class="duration-features">
+                        <li><i class="fas fa-check"></i> Extended practical training</li>
+                        <li><i class="fas fa-check"></i> Multiple techniques covered</li>
+                        <li><i class="fas fa-check"></i> Project work included</li>
+                        <li><i class="fas fa-check"></i> Mentorship support</li>
+                    </ul>
+                    <a href="contact.html" class="duration-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="duration-card">
+                    <div class="duration-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>3 Months</h3>
+                    <div class="duration-period">Standard Program</div>
+                    <ul class="duration-features">
+                        <li><i class="fas fa-check"></i> Comprehensive curriculum</li>
+                        <li><i class="fas fa-check"></i> Advanced techniques</li>
+                        <li><i class="fas fa-check"></i> Research project</li>
+                        <li><i class="fas fa-check"></i> Career guidance</li>
+                    </ul>
+                    <a href="contact.html" class="duration-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="duration-card popular">
+                    <div class="duration-popular-badge">Best Value</div>
+                    <div class="duration-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>6 Months</h3>
+                    <div class="duration-period">Comprehensive Program</div>
+                    <ul class="duration-features">
+                        <li><i class="fas fa-check"></i> Complete training coverage</li>
+                        <li><i class="fas fa-check"></i> Multiple specializations</li>
+                        <li><i class="fas fa-check"></i> Live research projects</li>
+                        <li><i class="fas fa-check"></i> Placement assistance</li>
+                        <li><i class="fas fa-check"></i> Publication support</li>
+                    </ul>
+                    <a href="contact.html" class="duration-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="section section-dark" id="partnerships">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-handshake"></i> Collaboration
+                </div>
+                <h2 class="section-title">Partnership Opportunities</h2>
+                <p class="section-subtitle">
+                    We actively collaborate with diverse organizations to address complex challenges through integrated research, training, and applied action.
+                </p>
+            </div>
+            <div class="partnership-grid">
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Universities & Academic Institutions</h3>
+                    <p>Joint research projects, student exchange programs, and collaborative curriculum development.</p>
+                </div>
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Private Sector & Tech Enterprises</h3>
+                    <p>Innovation partnerships, product development, and industry-oriented research collaborations.</p>
+                </div>
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research Laboratories</h3>
+                    <p>Infrastructure sharing, joint experiments, and collaborative scientific investigations.</p>
+                </div>
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>International Research Consortia</h3>
+                    <p>Global research networks, international collaborations, and cross-border knowledge exchange.</p>
+                </div>
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Government & Multilateral Agencies</h3>
+                    <p>Policy research, public sector projects, and government-funded research initiatives.</p>
+                </div>
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>NGOs & Civil Society</h3>
+                    <p>Community-based research, social impact projects, and grassroots innovation support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="services-wrapper">
+                <div class="services-content">
+                    <div class="section-badge">
+                        <i class="fas fa-cogs"></i> Our Services
+                    </div>
+                    <h2>Scientific Testing & Research Support</h2>
+                    <p>
+                        Through advanced laboratory infrastructure and technical collaboration with GANESH Scientific Research Foundation, we provide research-focused scientific testing and analytical support tailored for students, scholars, and research organizations.
+                    </p>
+                    <div class="services-list">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <div>
+                                <h4>16S rDNA Microbial Identification</h4>
+                                <p>Molecular identification of bacteria and other microorganisms using 16S ribosomal DNA sequencing</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div>
+                                <h4>Sample Testing & Analysis</h4>
+                                <p>Comprehensive sample testing across molecular, microbiological, and environmental domains</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4>Data Validation & Statistical Analysis</h4>
+                                <p>Research data validation, statistical consultation, and analytical interpretation support</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-file-medical-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Research Consultation</h4>
+                                <p>Methodological consultation, experimental design guidance, and research planning support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-image">
+                    <img src="https://img.freepik.com/free-photo/doctor-working-medical-research_23-2149345499.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="Scientific Testing Services">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Research Journey?</h2>
+                <p>
+                    Join our comprehensive training programs and transform your career in Biotechnology. Innovation and growth converge at SARG Research Biolabs.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-white">
+                        <i class="fas fa-paper-plane"></i> Enroll Now
+                    </a>
+                    <a href="tel:+91XXXXXXXXXX" class="btn btn-outline">
+                        <i class="fas fa-phone"></i> Call: +91-XXXXXXXXXX
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <img src="images/logo.png" alt="logo" style="margin-left: 60px;">
+                        </div>
+                    </a>
+                    <p>
+                        A non-government, autonomous research organization dedicated to advancing excellence in Life
+                        Sciences, Biotechnology, and Environmental Studies.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="programs.html#courses">Research Foundation</a></li>
+                        <li><a href="programs.html#courses">Molecular Biology</a></li>
+                        <li><a href="programs.html#courses">Microbiology</a></li>
+                        <li><a href="programs.html#courses">Biostatistics</a></li>
+                        <li><a href="programs.html#courses">Biodiversity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>National Capital Territory of Delhi, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sargbiolabs.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91-XXXXXXXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SARG Research Biolabs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <!-- <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button> -->
+
+    <script src="js/navbar.js"></script>
+    <script>
+        // Course Tabs Functionality
+        const courseTabs = document.querySelectorAll('.course-tab');
+        const courseContents = document.querySelectorAll('.course-content');
+
+        courseTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                courseTabs.forEach(t => t.classList.remove('active'));
+                courseContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Show corresponding content
+                const courseId = tab.getAttribute('data-course');
+                document.getElementById(courseId).classList.add('active');
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards for animation
+        document.querySelectorAll('.internship-card, .academic-card, .flagship-card, .duration-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/site-effects.js"></script>
+</body>
+</html>
